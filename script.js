@@ -19,8 +19,8 @@ const downloadsByPage = {
   },
   "opdracht-1-1": {
     bijlagen: [
-      { label: "Bijlage 1 E-mail van Sanne Vermeer", type: "word", href: "downloads/bijlage-1-email-sanne-vermeer.html" },
-      { label: "Bijlage 2 Conclusies voorbereiden communicatie-uiting", type: "word", href: "downloads/bijlage-2-conclusies-communicatie-uiting.html" }
+      { label: "Bijlage 1 E-mail van Sanne Vermeer", type: "word", href: "downloads/bijlage-1-email-sanne-vermeer.doc" },
+      { label: "Bijlage 2 Conclusies voorbereiden communicatie-uiting", type: "word", href: "downloads/bijlage-2-conclusies-communicatie-uiting.doc" }
     ],
     formats: []
   },
@@ -30,25 +30,25 @@ const downloadsByPage = {
   },
   "opdracht-2": {
     bijlagen: [
-      { label: "Bijlage 3 Briefing digitale flyer premium chocoladegeschenken", type: "pdf", href: "downloads/bijlage-3-briefing-digitale-flyer.html" }
+      { label: "Bijlage 3 Briefing digitale flyer premium chocoladegeschenken", type: "word", href: "downloads/bijlage-3-briefing-digitale-flyer.doc" }
     ],
     formats: []
   },
   "opdracht-3-1": {
     bijlagen: [
-      { label: "Bijlage 4 Retourvoorwaarden zakelijke klanten DutchDelight Chocolates", type: "pdf", href: "downloads/bijlage-4-retourvoorwaarden-zakelijke-klanten.html" },
-      { label: "Bijlage 5 Online berichten DutchDelight Chocolates", type: "pdf", href: "downloads/bijlage-5-online-berichten.html" }
+      { label: "Bijlage 4 Retourvoorwaarden zakelijke klanten DutchDelight Chocolates", type: "word", href: "downloads/bijlage-4-retourvoorwaarden-zakelijke-klanten.doc" },
+      { label: "Bijlage 5 Online berichten DutchDelight Chocolates", type: "word", href: "downloads/bijlage-5-online-berichten.doc" }
     ],
     formats: [
-      { label: "Format notitie", type: "word", href: "downloads/format-notitie.html" }
+      { label: "Format notitie", type: "word", href: "downloads/format-notitie.doc" }
     ]
   },
   "opdracht-3-2": {
     bijlagen: [
-      { label: "Bijlage 6 Rapportage webcare DutchDelight Chocolates", type: "excel", href: "downloads/bijlage-6-rapportage-webcare.html" }
+      { label: "Bijlage 6 Rapportage webcare DutchDelight Chocolates", type: "excel", href: "downloads/bijlage-6-rapportage-webcare.xls" }
     ],
     formats: [
-      { label: "Format notitie", type: "word", href: "downloads/format-notitie.html" }
+      { label: "Format notitie", type: "word", href: "downloads/format-notitie.doc" }
     ]
   }
 };
@@ -66,7 +66,7 @@ function appendDownloadSection(title, items) {
     link.href = item.href;
     link.target = "_blank";
     link.rel = "noopener";
-    if ((item.type === "word" || item.type === "excel") && !item.href.endsWith(".html")) {
+    if (item.type === "word" || item.type === "excel") {
       link.download = "";
     }
     link.textContent = item.label;
