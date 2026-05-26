@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proefexamens Junior Accountmanager</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <section id="start-page" class="start-page" aria-labelledby="start-title">
+      <div class="start-shell">
+        <div class="start-copy">
+          <p class="start-eyebrow">Proefexamens Junior Accountmanager</p>
+          <h1 id="start-title">Kies de kerntaak waarvoor je een proefexamen wilt maken</h1>
+          <p>Start vanuit dit overzicht. Je docent geeft aan welke kerntaak je vandaag maakt.</p>
+        </div>
+        <div class="task-grid" aria-label="Keuze kerntaak">
+          <button class="task-card" data-exam-choice="b1-k1">
+            <span>B1-K1</span>
+            <strong>Onderzoekt de markt en doet voorstellen voor commercieel beleid</strong>
+            <small>Nog niet beschikbaar</small>
+          </button>
+          <button class="task-card available" data-exam-choice="b1-k2">
+            <span>B1-K2</span>
+            <strong>Verzorgt marketing en communicatie-activiteiten</strong>
+            <small>Beschikbaar: DutchDelight Chocolates</small>
+          </button>
+          <button class="task-card" data-exam-choice="p4-k1">
+            <span>P4-K1</span>
+            <strong>Voert accountmanagement uit</strong>
+            <small>Nog niet beschikbaar</small>
+          </button>
+          <button class="task-card" data-exam-choice="p4-k2">
+            <span>P4-K2</span>
+            <strong>Geeft uitvoering aan verkooptrajecten</strong>
+            <small>Nog niet beschikbaar</small>
+          </button>
+        </div>
+        <section id="choice-message" class="choice-message" hidden>
+          <h2>Dit proefexamen is nog niet beschikbaar</h2>
+          <p>Deze kerntaak staat alvast in het keuzemenu. Zodra het proefexamen is gebouwd, kan de student hier starten.</p>
+        </section>
+      </div>
+    </section>
+
+    <header class="account-bar exam-interface" hidden>
+      <div class="page-width account-inner">
+        <span class="user-icon" aria-hidden="true">♟</span>
+        <strong>student</strong>
+        <span>|</span>
+        <strong>mboRijnland</strong>
+        <span>|</span>
+        <a href="#">uitloggen</a>
+      </div>
+    </header>
+
+    <nav class="platform-nav exam-interface" aria-label="Hoofdnavigatie" hidden>
+      <div class="page-width nav-inner">
+        <div class="tabs-main">
+          <button class="start-return" type="button" data-return-start>Keuzemenu</button>
+          <a class="top-tab" href="dutchdelight-site/index.html" target="_blank" rel="noopener">DutchDelight</a>
+          <button class="top-tab" data-top-page="voorbereiding">Examenvoorbereiding</button>
+          <button class="top-tab active" data-top-page="examens">Examenopdrachten</button>
+        </div>
+        <div class="quick-tools" aria-label="Snel zoeken">
+          <span title="Home">⌂</span>
+          <span title="Help">?</span>
+          <input type="search" aria-label="Zoeken" placeholder="Typ zoekterm">
+          <button aria-label="Zoeken">⌕</button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="page-width exam-interface" hidden>
+      <section class="project-hero">
+        <div>
+          <h1>Proefexamen SPL B1-K2</h1>
+        </div>
+          <img class="hero-logo" src="dutchdelight-site/assets/logo-dutchdelight.png" alt="">
+      </section>
+
+      <section id="dutchdelight-page" class="top-page company-page">
+        <div class="breadcrumb">home › dutchdelight</div>
+        <article>
+          <h2>Informatie over DutchDelight Chocolates</h2>
+          <img class="company-logo" src="dutchdelight-site/assets/logo-dutchdelight.png" alt="DutchDelight Chocolates">
+
+          <p>DutchDelight Chocolates is een Nederlandse producent van premium chocoladeproducten voor de zakelijke markt. De organisatie ontwikkelt, produceert en verkoopt chocoladeproducten aan groothandels, delicatessenwinkels, horeca, bedrijven die relatiegeschenken inkopen en distributeurs in binnen- en buitenland.</p>
+          <p>Bij DutchDelight Chocolates werken 35 medewerkers. Het bedrijf is actief in Nederland, België, Luxemburg, Duitsland en Oostenrijk. DutchDelight Chocolates wil verder groeien in de zakelijke markt en zoekt manieren om de zichtbaarheid bij zakelijke klanten te vergroten.</p>
+
+          <h3>Premium chocoladegeschenken</h3>
+          <p>DutchDelight Chocolates introduceert een nieuwe productgroep: premium chocoladegeschenken voor zakelijke klanten. Deze producten zijn geschikt als relatiegeschenk, eindejaarsgeschenk, bedankje voor klanten, attentie voor medewerkers, geschenk bij evenementen en luxe give-away.</p>
+          <p>De nieuwe productlijn bestaat uit Velvet Orange, Caramel Sea Salt en Dark Almond Selection. De producten onderscheiden zich door premium chocolade, hoogwaardige ingrediënten, moderne smaakcombinaties en een luxe verpakking die past bij de zakelijke markt.</p>
+
+          <h3>Zakelijke markt</h3>
+          <p>Zakelijke klanten zoeken leveranciers die professioneel werken, betrouwbaar leveren en duidelijke informatie geven over prijs, mogelijkheden en offerteaanvraag. Voor DutchDelight Chocolates is het daarom belangrijk dat communicatie-uitingen zakelijk, helder en overtuigend zijn.</p>
+          <p>De verkoopprijs aan zakelijke klanten en groothandel bedraagt € 2,40 exclusief btw per verpakking.</p>
+
+          <h3>Webcareprotocol</h3>
+          <p>DutchDelight Chocolates reageert op online berichten volgens de ZEKER-methode: zakelijk, empathisch, kort, effectief en rustig. Medewerkers reageren altijd professioneel, ook wanneer een bericht kritisch of onjuist geformuleerd is.</p>
+          <p>Bij positieve berichten bedankt DutchDelight Chocolates de afzender en versterkt de organisatie de relatie. Bij negatieve berichten erkent DutchDelight Chocolates de ervaring van de klant, vraagt waar nodig om aanvullende gegevens via een privébericht en verwijst naar de juiste procedure of contactmogelijkheid.</p>
+          <p>Berichten over voedselveiligheid, allergenen, privacy, beschadigde levering of grote zakelijke bestellingen krijgen voorrang. Persvragen of berichten met mogelijke reputatieschade worden direct doorgezet naar Sanne Vermeer.</p>
+        </article>
+      </section>
+
+      <section id="voorbereiding-page" class="top-page company-page">
+        <div class="breadcrumb">home › examenvoorbereiding</div>
+        <article>
+          <h2>Examenvoorbereiding</h2>
+          <p>Gebruik deze pagina om je voor te bereiden op het proefexamen. Lees de instructie goed door en controleer welke bestanden je nodig hebt voordat je met de opdracht start.</p>
+          <p>Je werkt in dit proefexamen als medewerker Marketing bij DutchDelight Chocolates. Je verzamelt en verwerkt informatie om een b2b-communicatie-uiting voor te bereiden.</p>
+          <p>Download de bijlagen bij de opdracht, bewerk de invulbijlage op je eigen laptop en sla je werk op volgens de afspraken van je opleiding.</p>
+        </article>
+      </section>
+
+      <section id="examens-page" class="top-page active-top-page">
+        <div class="breadcrumb" id="breadcrumb">home › examenopdrachten</div>
+
+        <div class="content-grid">
+          <aside class="left-column">
+            <nav class="assignment-menu" aria-label="Examenopdrachten">
+              <button class="menu-item active" data-page="instructie">Instructie</button>
+              <button class="menu-group" data-group-toggle="group-1" aria-expanded="false">1 Voorbereiden communicatie-uiting <span>+</span></button>
+              <div class="submenu" data-group="group-1">
+                <button class="menu-item sub-item" data-page="opdracht-1-1" data-parent-group="group-1">1.1 Verwerken en verzamelen van informatie</button>
+                <button class="menu-item sub-item" data-page="opdracht-1-2" data-parent-group="group-1">1.2 Verwerken feedback</button>
+              </div>
+              <button class="menu-item" data-page="opdracht-2">2 Ontwikkelen communicatie-uiting</button>
+              <button class="menu-group" data-group-toggle="group-3" aria-expanded="false">3 Uitvoeren webcare <span>+</span></button>
+              <div class="submenu" data-group="group-3">
+                <button class="menu-item sub-item" data-page="opdracht-3-1" data-parent-group="group-3">3.1 Volgen van berichten en reageren op berichten</button>
+                <button class="menu-item sub-item" data-page="opdracht-3-2" data-parent-group="group-3">3.2 Evalueren uitgevoerde webcare</button>
+              </div>
+            </nav>
+
+            <section class="downloads" id="downloads-panel" aria-live="polite"></section>
+          </aside>
+
+          <section class="article-column">
+            <article id="instructie" class="article-page active-page" data-title="Instructie" data-crumb="home › examenopdrachten">
+              <h2>Instructie</h2>
+              <p>Je werkt als medewerker Marketing bij DutchDelight Chocolates. Je leidinggevende is Sanne Vermeer, Hoofd Marketing &amp; Sales.</p>
+              <p>Je maakt een proefexamenopdracht die hoort bij kerntaak <em>B1-K2: Verzorgt marketing en communicatie-activiteiten</em>. Je bereidt een b2b-communicatie-uiting voor voor de productgroep premium chocoladegeschenken.</p>
+              <p>Gebruik de informatie over DutchDelight Chocolates op de <a href="dutchdelight-site/index.html" target="_blank" rel="noopener">DutchDelight-site</a>. Je gebruikt interne informatie en minimaal twee actuele en betrouwbare externe bronnen.</p>
+              <p>Lever de ingevulde bijlage digitaal in bij je leidinggevende, Sanne Vermeer.</p>
+              <p>Dit proefexamen duurt 40 minuten, eventuele pauzes niet meegerekend.</p>
+              <p>Succes vandaag!</p>
+            </article>
+
+            <article id="opdracht-1-1" class="article-page" data-title="1.1 Verwerken en verzamelen van informatie" data-crumb="home › examenopdrachten › 1 voorbereiden communicatie-uiting › 1.1 verwerken en verzamelen van informatie">
+              <h2>1.1 Verwerken en verzamelen van informatie</h2>
+              <p>Tijdsindicatie: 40 minuten</p>
+
+              <h3>Situatie</h3>
+              <p>Sanne Vermeer, je leidinggevende, heeft je gevraagd om een voorbereiding te maken voor een b2b-communicatie-uiting voor de productgroep premium chocoladegeschenken.</p>
+              <p>Het doel van DutchDelight Chocolates is om op korte termijn meer offerteaanvragen te krijgen van zakelijke klanten. De communicatie-uiting moet hieraan bijdragen.</p>
+              <p>Je gaat eerst informatie verzamelen en verwerken. Daarna trek je conclusies voor de communicatie-uiting.</p>
+
+              <h3>Opdracht</h3>
+              <p>Je verzamelt en verwerkt informatie om een b2b-communicatie-uiting voor te bereiden voor de productgroep premium chocoladegeschenken van DutchDelight Chocolates.</p>
+
+              <p><em>Verzamelen van informatie</em></p>
+              <ol>
+                <li>Bestudeer de productgroep premium chocoladegeschenken op de <a href="dutchdelight-site/index.html" target="_blank" rel="noopener">DutchDelight-site</a>.</li>
+                <li>Lees de e-mail van Sanne Vermeer (<em>Bijlage 1 E-mail van Sanne Vermeer</em>).</li>
+                <li>Bestudeer de informatie op de homepage, de beeldbank en de medewerkerspagina Marketing van DutchDelight Chocolates.</li>
+                <li>Verzamel informatie over:
+                  <ul>
+                    <li>het doel van de communicatie-uiting;</li>
+                    <li>de doelgroep waarop de communicatie-uiting zich richt;</li>
+                    <li>passende communicatiekanalen bij deze doelgroep en dit doel;</li>
+                    <li>de productkenmerken van de premium chocoladegeschenken;</li>
+                    <li>minimaal twee externe bronnen die actueel en betrouwbaar zijn.</li>
+                  </ul>
+                </li>
+              </ol>
+
+              <p><em>Verwerken van informatie</em></p>
+              <ol>
+                <li>Analyseer en interpreteer de verzamelde informatie.</li>
+                <li>Trek conclusies voor de communicatie-uiting.</li>
+                <li>Leg je conclusies vast in <em>Bijlage 2 Conclusies voorbereiden communicatie-uiting</em>.</li>
+              </ol>
+
+              <p>Beschrijf in de bijlage:</p>
+              <ul>
+                <li>het doel van de communicatie-uiting;</li>
+                <li>hoe dit doel met het AIDA-model bereikt kan worden;</li>
+                <li>de doelgroep of doelgroepen;</li>
+                <li>de kernboodschap;</li>
+                <li>minimaal twee communicatiekanalen die ingezet worden;</li>
+                <li>een korte onderbouwing van de kanaalkeuze;</li>
+                <li>de gebruikte bronnen.</li>
+              </ul>
+
+              <p><em>Voorleggen van conclusies</em></p>
+              <ol>
+                <li>Controleer of je alle onderdelen in de bijlage hebt ingevuld.</li>
+                <li>Lever de ingevulde bijlage digitaal in bij Sanne Vermeer.</li>
+              </ol>
+
+              <h3>Resultaat</h3>
+              <p>Als resultaat van deze opdracht lever je het volgende product op.</p>
+              <ul>
+                <li>Ingevulde bijlage met conclusies voor een b2b-communicatie-uiting voor premium chocoladegeschenken.</li>
+              </ul>
+            </article>
+
+            <article id="opdracht-1-2" class="article-page" data-title="1.2 Verwerken feedback" data-crumb="home › examenopdrachten › 1 voorbereiden communicatie-uiting › 1.2 verwerken feedback">
+              <h2>1.2 Verwerken feedback</h2>
+              <p>Tijdsindicatie: 20 minuten</p>
+
+              <h3>Situatie</h3>
+              <p>Je hebt in opdracht 1.1 een voorbereiding gemaakt voor een b2b-communicatie-uiting. Je krijgt hierover feedback van Sanne Vermeer, je leidinggevende.</p>
+
+              <h3>Opdracht</h3>
+              <p>Je gaat de feedback van Sanne Vermeer verwerken.</p>
+
+              <p><em>Verwerken feedback in conclusies</em></p>
+              <ol>
+                <li>Lees de e-mail van Sanne Vermeer waarin je feedback krijgt op jouw voorbereiding van de communicatie-uiting.</li>
+              </ol>
+
+              <section class="email-card" aria-label="E-mail van Sanne Vermeer">
+                <dl class="email-meta">
+                  <div>
+                    <dt>Van:</dt>
+                    <dd><a href="mailto:s.vermeer@dutchdelight.nl">s.vermeer@dutchdelight.nl</a></dd>
+                  </div>
+                  <div>
+                    <dt>Aan:</dt>
+                    <dd>student@mbo.nl</dd>
+                  </div>
+                  <div>
+                    <dt>Datum:</dt>
+                    <dd>22-05-2026</dd>
+                  </div>
+                  <div>
+                    <dt>Onderwerp:</dt>
+                    <dd>Feedback voorbereiding b2b-communicatie-uiting</dd>
+                  </div>
+                </dl>
+
+                <p>Beste collega,</p>
+                <p>Hartelijk dank voor je voorbereiding voor de b2b-communicatie-uiting. Ik had je gevraagd een voorstel te doen voor passende communicatiekanalen voor de productgroep premium chocoladegeschenken.</p>
+                <p>Het management van DutchDelight Chocolates wil op korte termijn meer offerteaanvragen krijgen van zakelijke klanten. De kosten moeten daarbij beheersbaar blijven. Hieronder vind je het overzicht met kosten en inzetbaarheid van mogelijke communicatiekanalen.</p>
+
+                <p>Kosten en inzetbaarheid communicatiekanalen:</p>
+                <ol>
+                  <li>LinkedIn-campagne: € 350,- per maand.</li>
+                  <li>E-mailing naar bestaande zakelijke contacten: geen extra kosten.</li>
+                  <li>Landingspagina op de website: geen extra kosten, inzet door Marketing.</li>
+                  <li>Direct mailing met sample: € 4,25 per ontvanger exclusief verzendkosten.</li>
+                  <li>Telefonische opvolging door sales: geen extra kosten naast personeelskosten.</li>
+                </ol>
+
+                <p>Ik vraag je nu om uit jouw twee voorgestelde communicatiekanalen één voorkeurskanaal te kiezen. Kies het kanaal waarmee wij het snelst goede resultaten kunnen verwachten. Leg uit waarom je dit kanaal geschikt vindt voor dit communicatiedoel.</p>
+                <p>Verwerk je keuze in het document dat je in opdracht 1.1 hebt ingevuld bij het kopje <em>Aangepast voorstel na feedback Sanne Vermeer</em>.</p>
+                <p>Met vriendelijke groet,</p>
+                <p>Sanne Vermeer<br>Hoofd Marketing &amp; Sales<br>DutchDelight Chocolates</p>
+              </section>
+
+              <ol start="2">
+                <li>Verwerk de feedback van Sanne Vermeer in jouw ingevulde conclusies bij het kopje <em>Aangepast voorstel na feedback Sanne Vermeer</em>. Zoek hiervoor zo nodig aanvullende informatie.</li>
+              </ol>
+
+              <h3>Resultaat</h3>
+              <p>Als resultaat van deze opdracht lever je de volgende producten en/of diensten op.</p>
+              <ul>
+                <li>Aangepaste conclusies voorbereiden communicatie-uiting.</li>
+              </ul>
+            </article>
+
+            <article id="opdracht-2" class="article-page" data-title="2 Ontwikkelen communicatie-uiting" data-crumb="home › examenopdrachten › 2 ontwikkelen communicatie-uiting">
+              <h2>2 Ontwikkelen communicatie-uiting</h2>
+              <p>Tijdsindicatie: 90 minuten</p>
+
+              <h3>Situatie</h3>
+              <p>Sanne Vermeer heeft besloten om op korte termijn een digitale flyer te verspreiden. De doelgroep bestaat uit bestaande zakelijke klanten van DutchDelight Chocolates in Nederland.</p>
+              <p>Sanne heeft jou gevraagd deze flyer te ontwikkelen voor de productgroep premium chocoladegeschenken.</p>
+
+              <h3>Opdracht</h3>
+              <p>Je ontwikkelt een digitale flyer voor premium chocoladegeschenken voor een nieuwsbrief of mailing. De digitale flyer wordt verstuurd naar bestaande zakelijke klanten in Nederland.</p>
+
+              <p><em>Ontwikkelen van een communicatie-uiting</em></p>
+              <ol>
+                <li>Lees de briefing met de eisen van Sanne Vermeer voor de digitale flyer (<em>Bijlage 3 Briefing digitale flyer premium chocoladegeschenken</em>).</li>
+                <li>Bestudeer de informatie over DutchDelight Chocolates. Bekijk hiervoor:
+                  <ul>
+                    <li>de <a href="dutchdelight-site/index.html" target="_blank" rel="noopener">homepage van DutchDelight Chocolates</a>;</li>
+                    <li>de <a href="dutchdelight-site/beeldbank/index.html" target="_blank" rel="noopener">beeldbank</a>;</li>
+                    <li>de <a href="dutchdelight-site/medewerker/afdeling/marketing/procedures/index.html" target="_blank" rel="noopener">procedures van Marketing</a>;</li>
+                    <li>de <a href="dutchdelight-site/opdracht-2-bijlagen/index.html" target="_blank" rel="noopener">bijlagenpagina voor opdracht 2</a>.</li>
+                  </ul>
+                </li>
+                <li>Gebruik de richtlijnen voor huisstijl en zakelijke communicatie bij de ontwikkeling van de flyer.</li>
+                <li>Ontwikkel een dubbelzijdige digitale flyer. Gebruik hiervoor een ontwerp- of opmaakprogramma dat bij jou op school wordt gebruikt.</li>
+              </ol>
+
+              <p>Let op dat de flyer voldoet aan het volgende.</p>
+              <ul>
+                <li>Sluit aan op de eisen van de opdrachtgever.</li>
+                <li>Sluit aan op het doel, de doelgroep en de boodschap.</li>
+                <li>Is creatief en commercieel.</li>
+                <li>Houdt rekening met de huisstijl en professionele uitstraling van DutchDelight Chocolates.</li>
+                <li>Houdt rekening met relevante wet- en regelgeving, zoals portretrecht, merkenrecht en AVG.</li>
+                <li>Is taalkundig correct.</li>
+              </ul>
+
+              <h3>Resultaat</h3>
+              <p>Als resultaat van deze opdracht lever je de volgende producten en/of diensten op.</p>
+              <ul>
+                <li>Digitale flyer voor premium chocoladegeschenken van DutchDelight Chocolates.</li>
+              </ul>
+            </article>
+
+            <article id="opdracht-3-1" class="article-page" data-title="3.1 Volgen van berichten en reageren op berichten" data-crumb="home › examenopdrachten › 3 uitvoeren webcare › 3.1 volgen van berichten en reageren op berichten">
+              <h2>3.1 Volgen van berichten en reageren op berichten</h2>
+              <p>Tijdsindicatie: 45 minuten</p>
+
+              <h3>Situatie</h3>
+              <p>Op de online kanalen van DutchDelight Chocolates zijn berichten van consumenten en zakelijke klanten binnengekomen. Sanne Vermeer heeft jou gevraagd de berichten te volgen en er indien nodig op te reageren.</p>
+
+              <h3>Opdracht</h3>
+              <p>Je volgt berichten op de online kanalen van DutchDelight Chocolates en reageert op de berichten.</p>
+
+              <p><em>Volgen van berichten</em></p>
+              <ol>
+                <li>Bekijk op de <a href="dutchdelight-site/medewerker/afdeling/marketing/procedures/index.html" target="_blank" rel="noopener">medewerkerspagina Marketing</a> het webcareprotocol van DutchDelight Chocolates.</li>
+                <li>Lees <em>Bijlage 4 Retourvoorwaarden zakelijke klanten DutchDelight Chocolates</em>.</li>
+                <li>Lees <em>Bijlage 5 Online berichten DutchDelight Chocolates</em>.</li>
+                <li>Geef aan welke vijf online berichten uit bijlage 5 de meeste invloed hebben op DutchDelight Chocolates.
+                  <ul>
+                    <li>Schrijf de nummers van deze berichten op.</li>
+                    <li>Noteer de berichten op volgorde van invloed. Zet het bericht met de meeste invloed bovenaan.</li>
+                    <li>Leg uit waarom je voor deze volgorde kiest. Gebruik hiervoor het <em>Format notitie</em>.</li>
+                  </ul>
+                </li>
+              </ol>
+
+              <p><em>Reageren op berichten</em></p>
+              <ol>
+                <li>Geef in dezelfde notitie een reactie op twee positieve en twee negatieve berichten.
+                  <ul>
+                    <li>Volg hierbij de voorschriften en procedures van DutchDelight Chocolates, het webcareprotocol op de DutchDelight-site en bijlage 4.</li>
+                    <li>Pas de reactie aan de ontvanger aan en formuleer correct. Gebruik hiervoor de ZEKER-methode: zakelijk, empathisch, kort, effectief en rustig.</li>
+                  </ul>
+                </li>
+              </ol>
+
+              <h3>Resultaat</h3>
+              <p>Als resultaat van deze opdracht lever je de volgende producten en/of diensten op.</p>
+              <ul>
+                <li>Notitie met berichten op volgorde van invloed, met uitleg en reactie op twee positieve en twee negatieve berichten.</li>
+              </ul>
+            </article>
+
+            <article id="opdracht-3-2" class="article-page" data-title="3.2 Evalueren uitgevoerde webcare" data-crumb="home › examenopdrachten › 3 uitvoeren webcare › 3.2 evalueren uitgevoerde webcare">
+              <h2>3.2 Evalueren uitgevoerde webcare</h2>
+              <p>Tijdsindicatie: 45 minuten</p>
+
+              <h3>Situatie</h3>
+              <p>Je hebt in opdracht 3.1 de webcare uitgevoerd. Sanne Vermeer vraagt je deze te evalueren.</p>
+
+              <h3>Opdracht</h3>
+              <p>Je evalueert de uitgevoerde webcare van DutchDelight Chocolates en formuleert drie verbeterpunten. Je hebt hiervoor <em>Bijlage 6 Rapportage webcare DutchDelight Chocolates</em> van een collega van de afdeling Marketing ontvangen.</p>
+
+              <p><em>Evalueren van de webcare</em></p>
+              <ol>
+                <li>Lees <em>Bijlage 6 Rapportage webcare DutchDelight Chocolates</em>. In deze bijlage staat het volgende:
+                  <ul>
+                    <li>webcare-evaluatiepunten, onderverdeeld in communicatiemiddelen en onderwerp;</li>
+                    <li>gewenste reactietijd;</li>
+                    <li>gemiddelde reactietijd werkelijk;</li>
+                    <li>tevredenheidspercentage. Dit is het percentage klanten dat tevreden is met het antwoord van DutchDelight Chocolates. Het streven is een tevredenheidspercentage van 92%.</li>
+                  </ul>
+                </li>
+                <li>Beoordeel de uitgevoerde webcare op de evaluatiepunten.</li>
+                <li>Formuleer drie verbeterpunten. Gebruik hiervoor het <em>Format notitie</em>.</li>
+              </ol>
+
+              <h3>Resultaat</h3>
+              <p>Als resultaat van deze opdracht lever je de volgende producten en/of diensten op.</p>
+              <ul>
+                <li>Notitie met drie verbeterpunten voor de webcare van DutchDelight Chocolates.</li>
+              </ul>
+            </article>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
