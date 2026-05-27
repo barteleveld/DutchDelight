@@ -44,6 +44,14 @@
   white-space: nowrap;
 }
 
+.asset-card.logo-on-dark > a {
+  background: #4f235f;
+}
+
+.asset-card.logo-on-dark img {
+  background: #4f235f;
+}
+
 @media (max-width: 820px) {
   .nav-dropdown {
     width: 100%;
