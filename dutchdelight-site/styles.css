@@ -100,8 +100,49 @@ a:hover {
   color: var(--ink);
 }
 
-.mainnav a {
+.mainnav a,
+.nav-parent {
   font-size: 14px;
+}
+
+.nav-dropdown {
+  position: relative;
+  padding: 14px 0;
+}
+
+.nav-parent::after {
+  content: "v";
+  margin-left: 6px;
+  font-size: 10px;
+}
+
+.nav-submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  min-width: 174px;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 16px 30px rgba(36, 31, 33, .14);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity .16s ease, transform .16s ease;
+}
+
+.nav-dropdown:hover .nav-submenu,
+.nav-dropdown:focus-within .nav-submenu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav-submenu a {
+  display: block;
+  padding: 9px 10px;
+  white-space: nowrap;
 }
 
 .hero {
@@ -250,6 +291,10 @@ h3 {
   gap: 24px;
 }
 
+.card-grid + .split {
+  margin-top: 64px;
+}
+
 .brand-card,
 .info-card,
 .product-card,
@@ -349,13 +394,13 @@ h3 {
 .brand-hero.pulse {
   background:
     linear-gradient(90deg, rgba(41, 12, 78, .86), rgba(228, 52, 138, .28)),
-    url("assets/pulse-sports-canteen.jpg") center / cover;
+    url("assets/pulse-packs-lifestyle.jpg") center / cover;
 }
 
 .brand-hero.truecacao {
   background:
     linear-gradient(90deg, rgba(28, 57, 40, .88), rgba(120, 139, 84, .26)),
-    url("assets/truecacao-retail-display.jpg") center / cover;
+    url("assets/truecacao-packs-lifestyle.jpg") center / cover;
 }
 
 .noire-theme {
@@ -398,9 +443,19 @@ h3 {
 .product-grid,
 .asset-grid,
 .manager-grid,
-.download-grid {
+.download-grid,
+.detail-grid {
   display: grid;
   gap: 22px;
+}
+
+.product-showcase {
+  margin-top: 46px;
+}
+
+.detail-grid {
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 20px;
 }
 
 .product-grid,
@@ -579,6 +634,7 @@ textarea,
   .facts,
   .product-grid,
   .asset-grid,
+  .detail-grid,
   .manager-grid,
   .department-grid,
   .form-grid {
@@ -590,6 +646,22 @@ textarea,
   .topbar-inner {
     display: grid;
     justify-items: start;
+  }
+
+  .nav-dropdown {
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav-submenu {
+    position: static;
+    display: grid;
+    padding: 0 0 0 18px;
+    border: 0;
+    box-shadow: none;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
   }
 
   .topbar a {
