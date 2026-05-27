@@ -232,6 +232,20 @@ a:hover {
   background: var(--green-tab);
 }
 
+.tabs-main .top-tab-logo {
+  min-width: 156px;
+  justify-content: center;
+  padding: 0 18px;
+  background: #fff;
+}
+
+.top-tab-logo img {
+  display: block;
+  width: 132px;
+  max-height: 34px;
+  object-fit: contain;
+}
+
 .quick-tools {
   display: flex;
   align-items: center;
