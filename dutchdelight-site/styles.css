@@ -111,7 +111,7 @@ a:hover {
   align-items: end;
   background:
     linear-gradient(90deg, rgba(31, 22, 24, .76), rgba(75, 35, 88, .28)),
-    url("assets/hero-premium-chocolate-gifts.png") center / cover;
+    url("assets/hero-premium-chocolate-gifts.jpg") center / cover;
 }
 
 .hero-inner {
@@ -343,19 +343,19 @@ h3 {
 .brand-hero.noire {
   background:
     linear-gradient(90deg, rgba(20, 14, 15, .86), rgba(20, 14, 15, .18)),
-    url("assets/product-dark-almond-photo.png") center / cover;
+    url("assets/product-dark-almond-photo.jpg") center / cover;
 }
 
 .brand-hero.pulse {
   background:
     linear-gradient(90deg, rgba(41, 12, 78, .86), rgba(228, 52, 138, .28)),
-    url("assets/pulse-sports-canteen.png") center / cover;
+    url("assets/pulse-sports-canteen.jpg") center / cover;
 }
 
 .brand-hero.truecacao {
   background:
     linear-gradient(90deg, rgba(28, 57, 40, .88), rgba(120, 139, 84, .26)),
-    url("assets/truecacao-retail-display.png") center / cover;
+    url("assets/truecacao-retail-display.jpg") center / cover;
 }
 
 .noire-theme {
