@@ -270,6 +270,15 @@ a:hover {
   font-weight: 700;
 }
 
+.quick-tools .start-return {
+  min-height: 34px;
+  margin-right: 10px;
+  padding: 0 14px;
+  color: #fff;
+  background: var(--purple);
+  white-space: nowrap;
+}
+
 .project-hero {
   display: flex;
   align-items: center;
