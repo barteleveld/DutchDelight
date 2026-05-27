@@ -4,28 +4,102 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DutchDelight Chocolates | B2B merkenhuis</title>
-    <style>
-      :root{--ink:#241f21;--cocoa:#4b2358;--gold:#d8a85e;--cream:#fff7ed;--line:#e7ded5;--green:#244533;--pulse:#35135b}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.55;background:#fff}a{color:inherit;font-weight:700;text-decoration:none}a:hover{text-decoration:underline}.topbar{background:#211f20;color:#fff}.topbar nav,.header,.hero-inner,.page,.footer-inner{width:1120px;max-width:calc(100vw - 48px);margin:0 auto}.topbar nav{display:flex;justify-content:flex-end;min-height:42px}.topbar a{display:grid;place-items:center;padding:0 16px;border-left:1px solid #3d383b;font-size:13px}.header{min-height:104px;display:flex;align-items:center;justify-content:space-between;gap:24px}.logo img{display:block;width:230px;height:auto}.nav{display:flex;gap:22px;flex-wrap:wrap}.hero{min-height:520px;color:#fff;display:grid;align-items:end;background:linear-gradient(90deg,rgba(31,22,24,.82),rgba(75,35,88,.32)),url('assets/hero-premium-chocolate-gifts.jpg') center/cover}.hero-inner{padding:90px 0}.eyebrow{margin:0 0 12px;color:var(--gold);font-weight:800;text-transform:uppercase;font-size:13px}.hero h1{max-width:760px;margin:0;font-size:54px;line-height:1.05}.hero p:not(.eyebrow){max-width:690px;font-size:20px}.button-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}.button{display:inline-flex;min-height:44px;align-items:center;padding:12px 18px;background:var(--cocoa);color:#fff}.button.light{background:#fff;color:var(--ink)}.statement{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.statement div{width:880px;max-width:calc(100vw - 48px);margin:0 auto;padding:42px 0;text-align:center;font-size:23px;font-weight:800;color:var(--cocoa)}.page{padding:56px 0 84px}.split{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center}.split img,.card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}.lead{font-size:19px}.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:30px 0}.fact{padding:18px;border:1px solid var(--line);background:var(--cream)}.fact strong{display:block;font-size:28px;color:var(--cocoa)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.card{border:1px solid var(--line);background:#fff}.card-content{padding:22px}.card.noire{background:#1f1618;color:#fff}.card.pulse{background:linear-gradient(135deg,var(--pulse),#1d1230);color:#fff}.card.true{background:var(--green);color:#fff}.tag{display:inline-flex;margin-bottom:12px;padding:5px 9px;background:#f7efe5;color:var(--ink);font-size:12px;font-weight:800}.cta{margin-top:60px;padding:42px;background:var(--cocoa);color:#fff}.footer{background:#222;color:#fff}.footer-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;padding:44px 0}.footer a{display:block;margin:7px 0;font-size:13px}.copy{background:#8ca07f;color:#fff;padding:10px 24px}@media(max-width:820px){.header,.split,.cards,.facts,.footer-inner{display:grid;grid-template-columns:1fr}.hero h1{font-size:38px}}
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="nav-fix.css">
   </head>
   <body>
-    <div class="topbar"><nav><a href="business/index.html">Word klant</a><a href="about/index.html">Wie wij zijn</a><a href="brands/truecacao/index.html">Verantwoord kiezen</a><a href="medewerker/index.html">Medewerker</a></nav></div>
-    <header class="header">
-      <a class="logo" href="index.html"><img src="assets/logo-dutchdelight.png" alt="DutchDelight Chocolates"></a>
-      <nav class="nav"><a href="brands/index.html">Brands</a><a href="brands/noire/index.html">Noir&eacute;</a><a href="brands/pulse/index.html">Pulse</a><a href="brands/truecacao/index.html">TrueCacao</a><a href="business/index.html">Business</a><a href="contact/index.html">Contact</a></nav>
-    </header>
-    <section class="hero"><div class="hero-inner"><p class="eyebrow">DutchDelight Chocolates</p><h1>Dutch chocolate brands for every business moment</h1><p>DutchDelight Chocolates develops distinctive chocolate brands for retailers, hospitality partners, distributors, sports venues, offices and premium gift markets.</p><div class="button-row"><a class="button light" href="brands/index.html">Explore our brands</a><a class="button" href="business/index.html">Discover business opportunities</a></div></div></section>
-    <section class="statement"><div>Three brands. Three markets. One Dutch chocolate manufacturer.</div></section>
+    <div class="topbar"><nav class="topbar-inner" aria-label="Snelmenu"><a href="business/index.html">Word klant</a><a href="about/index.html">Wie wij zijn</a><a href="medewerker/index.html">Medewerker</a></nav></div>
+    <header class="site-header"><a class="brand" href="index.html"><img src="assets/logo-dutchdelight.png" alt="DutchDelight Chocolates"></a><nav class="mainnav"><div class="nav-dropdown"><a class="nav-parent" href="brands/index.html">Brands</a><div class="nav-submenu"><a href="brands/noire/index.html">Noir&eacute;</a><a href="brands/pulse/index.html">Pulse</a><a href="brands/truecacao/index.html">TrueCacao</a></div></div><a href="business/index.html">Business</a><a href="contact/index.html">Contact</a></nav></header>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">DutchDelight Chocolates</p>
+        <h1>Dutch chocolate brands for every business moment</h1>
+        <p>DutchDelight Chocolates develops distinctive chocolate brands for retailers, hospitality partners, distributors, sports venues, offices and premium gift markets.</p>
+        <div class="button-row">
+          <a class="button light" href="brands/index.html">Explore our brands</a>
+          <a class="button" href="business/index.html">Discover business opportunities</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="statement">
+      <div class="statement-inner">Three brands. Three markets. One Dutch chocolate manufacturer.</div>
+    </section>
+
     <main class="page">
-      <section class="split"><div><p class="eyebrow">B2B merkenhuis</p><h1>Een fabrikant achter sterke commerci&euml;le chocolademerken</h1><p class="lead">DutchDelight Chocolates ontwikkelt, produceert en verkoopt chocoladeconcepten voor zakelijke klanten. Vanuit Nederland leveren wij aan partners in Nederland, Belgi&euml;, Luxemburg, Duitsland en Oostenrijk.</p><div class="facts"><div class="fact"><strong>35</strong>medewerkers</div><div class="fact"><strong>5</strong>actieve landen</div><div class="fact"><strong>24 mln</strong>producten verkocht in 2025</div><div class="fact"><strong>B2B</strong>retail, horeca, events en gifting</div></div></div><img src="assets/lifestyle-packing-business-order.jpg" alt="Zakelijke chocoladeproductie en verpakking"></section>
-      <h2>Onze merken</h2>
-      <section class="cards">
-        <article class="card noire"><img src="assets/product-dark-almond-photo.jpg" alt="Noir&eacute; premium chocolade"><div class="card-content"><span class="tag">Premium gifting</span><h3>Noir&eacute; &mdash; by DutchDelight Chocolates</h3><p>Refined chocolate for premium moments. Voor delicatessenwinkels, luxe retail, horeca, hotels en relatiegeschenken.</p><a href="brands/noire/index.html">Bekijk Noir&eacute;</a></div></article>
-        <article class="card pulse"><img src="assets/pulse-sports-canteen.jpg" alt="Pulse chocoladesnacks"><div class="card-content"><span class="tag">Active moments</span><h3>Pulse &mdash; by DutchDelight Chocolates</h3><p>Chocolate energy for people on the move. Voor sport, studie, onderweg, events, vending en schoolkantines.</p><a href="brands/pulse/index.html">Bekijk Pulse</a></div></article>
-        <article class="card true"><img src="assets/truecacao-retail-display.jpg" alt="TrueCacao display"><div class="card-content"><span class="tag">Mindful mission</span><h3>TrueCacao &mdash; by DutchDelight Chocolates</h3><p>Chocolate with a mindful mission. Voor bewuste retail, koffiebars, conceptstores, bedrijfscatering en cadeaupakketten.</p><a href="brands/truecacao/index.html">Bekijk TrueCacao</a></div></article>
+      <section class="split">
+        <div>
+          <p class="eyebrow">B2B merkenhuis</p>
+          <h1>Een fabrikant achter sterke commerci&euml;le chocolademerken</h1>
+          <p class="lead">DutchDelight Chocolates ontwikkelt, produceert en verkoopt chocoladeconcepten voor zakelijke klanten. Vanuit Nederland leveren wij aan partners in Nederland, Belgi&euml;, Luxemburg, Duitsland en Oostenrijk.</p>
+          <div class="facts">
+            <div class="fact"><strong>35</strong>medewerkers</div>
+            <div class="fact"><strong>5</strong>actieve landen</div>
+            <div class="fact"><strong>24 mln</strong>producten verkocht in 2025</div>
+            <div class="fact"><strong>B2B</strong>retail, horeca, events en gifting</div>
+          </div>
+        </div>
+        <img src="assets/lifestyle-packing-business-order.jpg" alt="Zakelijke chocoladeproductie en verpakking">
       </section>
-      <section class="cta"><h2>Interesse in een chocolademerk voor jouw markt?</h2><p>DutchDelight denkt mee over assortimentskeuze, presentatie, introductiecampagnes en zakelijke verkoopkansen.</p><a class="button light" href="contact/index.html">Neem contact op</a></section>
+
+      <h2 id="brands">Onze merken</h2>
+      <section class="card-grid">
+        <article class="brand-card noire">
+          <img src="assets/product-dark-almond-photo.jpg" alt="Noir&eacute; premium chocolade">
+          <div class="brand-card-content">
+            <span class="tag">Premium gifting</span>
+            <h3>Noir&eacute; &mdash; by DutchDelight Chocolates</h3>
+            <p>Refined chocolate for premium moments. Voor delicatessenwinkels, luxe retail, horeca, hotels en relatiegeschenken.</p>
+            <a href="brands/noire/index.html">Bekijk Noir&eacute;</a>
+          </div>
+        </article>
+        <article class="brand-card pulse">
+          <img src="assets/pulse-packs-lifestyle.jpg" alt="Pulse chocoladesnacks bij een sportevenement">
+          <div class="brand-card-content">
+            <span class="tag">Active moments</span>
+            <h3>Pulse &mdash; by DutchDelight Chocolates</h3>
+            <p>Chocolate energy for people on the move. Voor sport, studie, onderweg, events, vending en schoolkantines.</p>
+            <a href="brands/pulse/index.html">Bekijk Pulse</a>
+          </div>
+        </article>
+        <article class="brand-card truecacao">
+          <img src="assets/truecacao-packs-lifestyle.jpg" alt="TrueCacao giftpack in natuurlijke setting">
+          <div class="brand-card-content">
+            <span class="tag">Mindful mission</span>
+            <h3>TrueCacao &mdash; by DutchDelight Chocolates</h3>
+            <p>Chocolate with a mindful mission. Voor bewuste retail, koffiebars, conceptstores, bedrijfscatering en cadeaupakketten.</p>
+            <a href="brands/truecacao/index.html">Bekijk TrueCacao</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="split reverse">
+        <img src="assets/gift-large-order.jpg" alt="Grotere zakelijke bestelling chocoladegeschenken">
+        <div>
+          <p class="eyebrow">Business segments</p>
+          <h2>Van premium cadeaus tot impulsverkoop</h2>
+          <p>DutchDelight ondersteunt zakelijke klanten met merkconcepten, productinformatie, beeldmateriaal, displays, campagneadvies en duidelijke contactmomenten met sales.</p>
+          <p>Onze merken sluiten aan op verschillende verkoopmomenten: luxe gifting, actieve snackmomenten en bewuste productkeuzes.</p>
+          <a class="button outline" href="business/index.html">Bekijk B2B-mogelijkheden</a>
+        </div>
+      </section>
+
+      <section class="cta-band">
+        <h2>Interesse in een chocolademerk voor jouw markt?</h2>
+        <p>DutchDelight denkt mee over assortimentskeuze, presentatie, introductiecampagnes en zakelijke verkoopkansen.</p>
+        <a class="button light" href="contact/index.html">Neem contact op</a>
+      </section>
     </main>
-    <footer class="footer"><div class="footer-inner"><section><h3>Service</h3><a href="business/index.html">Word klant</a><a href="beeldbank/index.html">Beeldbank</a></section><section><h3>Merken</h3><a href="brands/noire/index.html">Noir&eacute;</a><a href="brands/pulse/index.html">Pulse</a><a href="brands/truecacao/index.html">TrueCacao</a></section><section><h3>Over ons</h3><a href="about/index.html">Wie wij zijn</a></section><section><h3>Medewerker</h3><a href="medewerker/index.html">Medewerkerspagina</a></section></div></footer><div class="copy">&copy;2026 Stichting Praktijkleren</div>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <section><h3>Service en support</h3><a href="business/index.html">Word klant</a><a href="beeldbank/index.html">Beeldbank</a><a href="contact/index.html">Contact</a></section>
+        <section><h3>Merken</h3><a href="brands/noire/index.html">Noir&eacute;</a><a href="brands/pulse/index.html">Pulse</a><a href="brands/truecacao/index.html">TrueCacao</a></section>
+        <section><h3>Over ons</h3><a href="about/index.html">Wie wij zijn</a><a href="business/index.html">B2B-markten</a></section>
+        <section><h3>Medewerker</h3><a href="medewerker/index.html">Medewerkerspagina</a><img class="footer-logo" src="assets/logo-dutchdelight.png" alt=""></section>
+      </div>
+    </footer>
+    <div class="copyright"><div class="copyright-inner">&copy;2026 Stichting Praktijkleren</div></div>
   </body>
 </html>
