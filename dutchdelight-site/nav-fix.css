@@ -52,6 +52,10 @@
   background: #4f235f;
 }
 
+.card-grid + .split {
+  margin-top: 64px;
+}
+
 @media (max-width: 820px) {
   .nav-dropdown {
     width: 100%;
