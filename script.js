@@ -155,6 +155,11 @@ examChoiceButtons.forEach((button) => {
       return;
     }
 
+    if (button.dataset.examChoice === "p4-k1") {
+      window.location.href = "p4-k1-accountmanagement/index.html";
+      return;
+    }
+
     if (choiceMessage) {
       const taskName = button.querySelector("span")?.textContent || "Deze kerntaak";
       choiceMessage.querySelector("h2").textContent = `${taskName} is nog niet beschikbaar`;
