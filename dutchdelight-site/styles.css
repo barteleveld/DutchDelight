@@ -556,7 +556,6 @@ h3 {
 .asset-grid,
 .manager-grid,
 .download-grid,
-detail-grid,
 .detail-grid {
   display: grid;
   gap: 22px;
