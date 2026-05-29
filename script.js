@@ -203,3 +203,17 @@ document.querySelectorAll("[data-company-link]").forEach((link) => {
 });
 
 renderDownloads("instructie");
+
+document.querySelectorAll("p").forEach((paragraph) => {
+  if (paragraph.textContent === "Dit proefexamen duurt 40 minuten, eventuele pauzes niet meegerekend.") {
+    paragraph.textContent = "Dit proefexamen duurt in totaal 240 minuten, eventuele pauzes niet meegerekend.";
+  }
+
+  if (paragraph.textContent === "Je werkt in dit proefexamen als medewerker Marketing bij DutchDelight Chocolates. Je verzamelt en verwerkt informatie om een b2b-communicatie-uiting voor te bereiden.") {
+    paragraph.textContent = "Je werkt in dit proefexamen als medewerker Marketing bij DutchDelight Chocolates. Je verzamelt informatie, verwerkt feedback, ontwikkelt een digitale flyer en voert webcare-opdrachten uit.";
+  }
+
+  if (paragraph.textContent === "Download de bijlagen bij de opdracht, bewerk de invulbijlage op je eigen laptop en sla je werk op volgens de afspraken van je opleiding.") {
+    paragraph.textContent = "Download de bijlagen bij de opdrachten, bewerk invulbestanden op je eigen laptop en sla je werk op volgens de afspraken van je opleiding.";
+  }
+});
