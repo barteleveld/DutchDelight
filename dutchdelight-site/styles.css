@@ -391,6 +391,19 @@ h3 {
     url("assets/product-dark-almond-photo.jpg") center / cover;
 }
 
+.brand-hero.noire-hero {
+  min-height: 560px;
+  background:
+    linear-gradient(90deg, rgba(12, 9, 10, .92), rgba(43, 24, 18, .42), rgba(12, 9, 10, .14)),
+    url("assets/gift-assorted-closeup.jpg") center / cover;
+}
+
+.noire-hero .hero-tagline {
+  margin-top: 14px;
+  color: #ead6ac;
+  font-size: 24px;
+}
+
 .brand-hero.pulse {
   background:
     linear-gradient(90deg, rgba(41, 12, 78, .86), rgba(228, 52, 138, .28)),
@@ -405,6 +418,7 @@ h3 {
 
 .noire-theme {
   --accent: var(--noire-gold);
+  background: #120d0e;
 }
 
 .pulse-theme {
@@ -418,6 +432,104 @@ h3 {
 .theme-bar {
   border-left: 7px solid var(--accent);
   padding-left: 18px;
+}
+
+.noire-page {
+  color: #f2eadf;
+  background:
+    linear-gradient(180deg, #151011 0, #211516 42%, #120d0e 100%);
+}
+
+.noire-page .breadcrumb,
+.noire-page p {
+  color: #d4c6b7;
+}
+
+.noire-page h1,
+.noire-page h2,
+.noire-page h3 {
+  color: #fff8ed;
+}
+
+.noire-page .eyebrow,
+.noire-page .fineprint {
+  color: #d4aa62;
+}
+
+.noire-page .lead {
+  color: #f1e7d9;
+}
+
+.noire-intro img {
+  border: 1px solid rgba(202, 163, 91, .38);
+}
+
+.noire-line-overview,
+.noire-showcase,
+.noire-partners {
+  margin-top: 62px;
+}
+
+.noire-card {
+  color: #f4ecdf;
+  background: #1c1415;
+  border-color: rgba(202, 163, 91, .32);
+}
+
+.noire-card img {
+  border-bottom: 1px solid rgba(202, 163, 91, .24);
+}
+
+.noire-card p {
+  color: #d4c6b7;
+}
+
+.noire-card .fineprint {
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.noire-detail-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.noire-partners {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr);
+  gap: 38px;
+  align-items: start;
+}
+
+.noire-page .table-wrap {
+  border-color: rgba(202, 163, 91, .32);
+}
+
+.noire-page table {
+  color: #f2eadf;
+  background: #171112;
+}
+
+.noire-page th,
+.noire-page td {
+  border-bottom-color: rgba(202, 163, 91, .24);
+}
+
+.noire-page th {
+  color: #edcf91;
+  background: #211718;
+}
+
+.noire-cta {
+  border: 1px solid rgba(202, 163, 91, .38);
+  background:
+    linear-gradient(135deg, rgba(202, 163, 91, .24), rgba(40, 20, 21, .92)),
+    #201516;
+}
+
+.noire-outline {
+  color: #f8e8c2;
+  border-color: #d4aa62;
 }
 
 .facts {
@@ -444,6 +556,7 @@ h3 {
 .asset-grid,
 .manager-grid,
 .download-grid,
+detail-grid,
 .detail-grid {
   display: grid;
   gap: 22px;
@@ -635,6 +748,7 @@ textarea,
   .product-grid,
   .asset-grid,
   .detail-grid,
+  .noire-partners,
   .manager-grid,
   .department-grid,
   .form-grid {
