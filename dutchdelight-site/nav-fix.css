@@ -44,6 +44,22 @@
   white-space: nowrap;
 }
 
+.noire-theme .site-header,
+.noire-theme .nav-submenu {
+  background: #120d0e;
+}
+
+.noire-theme .mainnav a,
+.noire-theme .nav-parent,
+.noire-theme .nav-submenu a {
+  color: #fff;
+}
+
+.noire-theme .nav-submenu {
+  border-color: rgba(202, 163, 91, .35);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, .28);
+}
+
 .asset-card.logo-on-dark > a {
   background: #4f235f;
 }
