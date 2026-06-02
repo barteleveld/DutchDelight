@@ -30,7 +30,7 @@ const downloadsByPage = {
   },
   "opdracht-2": {
     bijlagen: [
-      { label: "Bijlage 3 Briefing digitale flyer premium chocoladegeschenken", type: "pdf", href: "downloads/Bijlage 3 Briefing digitale flyer premium chocoladegeschenken.pdf" }
+      { label: "Bijlage 3 Briefing digitale flyer Pulse", type: "pdf", href: "downloads/Bijlage 3 Briefing digitale flyer Pulse.pdf" }
     ],
     formats: []
   },
