@@ -1,93 +1,338 @@
 <!doctype html>
 <html lang="nl">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>P4-K1 Accountmanagement | DutchDelight</title>
-  <style>
-    :root{--purple:#4b2358;--soft:#cdb5d1;--green:#d9ece6;--mint:#99c7bd;--text:#25213d;--line:#d7d0d6}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.45;background:#fff}a{color:var(--purple);font-weight:700;text-decoration:none}a:hover{text-decoration:underline}.page{width:1160px;max-width:calc(100vw - 72px);margin:auto}.account{height:40px;display:flex;justify-content:flex-end;align-items:center;gap:8px;color:var(--purple)}.nav{background:var(--green)}.nav-inner{display:flex;justify-content:space-between;align-items:stretch}.tabs{display:flex;flex-wrap:wrap}.tabs a,.tabs button{min-height:46px;padding:0 18px;border:0;border-left:1px solid #7a8b86;background:transparent;color:var(--purple);font:700 16px Arial;display:flex;align-items:center;cursor:pointer}.tabs .active{background:var(--mint)}.quick{display:flex;align-items:center;gap:10px}.hero{height:78px;margin:24px auto 18px;display:flex;align-items:center;justify-content:space-between;overflow:hidden;background:linear-gradient(90deg,rgba(31,18,34,.2),rgba(31,18,34,.08)),radial-gradient(circle at 16% 50%,#8d3f3f 0 8%,transparent 9%),radial-gradient(circle at 36% 45%,#d6b56b 0 9%,transparent 10%),radial-gradient(circle at 57% 54%,#7b2d35 0 10%,transparent 11%),radial-gradient(circle at 78% 45%,#c57f3e 0 8%,transparent 9%),linear-gradient(90deg,#805e4a,#d4a15f 32%,#71313f 60%,#2e6d85)}.hero h1{margin:0;padding-left:34px;color:#fff;font-size:42px;text-shadow:3px 3px 2px rgba(0,0,0,.7)}.hero img{width:150px;max-height:60px;margin-right:20px;padding:8px;background:rgba(255,255,255,.92);object-fit:contain}.crumb{color:#899096;margin:12px 0 14px}.grid{display:grid;grid-template-columns:310px minmax(0,1fr);gap:28px}.menu{display:grid;gap:10px}.menu button{min-height:38px;padding:9px 16px;border:0;background:var(--soft);color:var(--purple);font-weight:700;text-align:left;cursor:pointer}.menu button.active{background:var(--purple);color:#fff}.downloads{margin-top:36px;padding-top:14px;border-top:1px solid var(--line)}.downloads h2,.downloads h3{font-size:18px;color:var(--purple);margin:0 0 10px}.downloads h3{margin-top:26px}.download{display:grid;grid-template-columns:20px 1fr;gap:8px;margin-bottom:12px;color:#33283a;font-size:15px;line-height:1.25}.download:before{display:grid;place-items:center;width:16px;height:18px;border:1px solid #aaa;font-size:10px;font-weight:700;background:#fff}.word:before{content:"W";color:#2d65b7}.pdf:before{content:"P";color:#d83a37}article{display:none;max-width:780px;padding-bottom:70px}article.active{display:block}h2,h3{color:var(--purple)}h2{font-size:20px;margin:0 0 4px}h3{font-size:18px;margin:30px 0 8px}p{margin:0 0 18px}ol,ul{margin-top:0;margin-bottom:22px;padding-left:24px}.note{padding:16px 18px;border-left:6px solid var(--purple);background:#faf6f0}@media(max-width:900px){.page{max-width:calc(100vw - 32px)}.nav-inner,.grid{display:block}.quick{padding:10px 0}.hero h1{font-size:30px;padding-left:18px}.hero img{display:none}article{max-width:none;margin-top:26px}}
-  </style>
-</head>
-<body>
-  <header class="page account"><strong>student</strong><span>|</span><strong>mboRijnland</strong><span>|</span><a href="#">uitloggen</a></header>
-  <nav class="nav"><div class="page nav-inner"><div class="tabs"><a href="../index.html">Startmenu</a><a href="../dutchdelight-site/index.html" target="_blank" rel="noopener">DutchDelight</a><button class="active" type="button">Examenopdrachten</button></div><div class="quick"><span>?</span><input type="search" aria-label="Zoeken" placeholder="Typ zoekterm"></div></div></nav>
-  <main class="page">
-    <section class="hero"><h1>Proefexamen P4-K1</h1><img src="../dutchdelight-site/assets/logo-dutchdelight.png" alt="DutchDelight Chocolates"></section>
-    <div class="crumb" id="crumb">home › examenopdrachten</div>
-    <div class="grid">
-      <aside><nav class="menu" aria-label="Examenopdrachten">
-        <button class="active" data-page="instructie">Instructie</button>
-        <button data-page="opdracht-1">1 Accountprofiel en accountanalyse</button>
-        <button data-page="opdracht-2">2 Accountstrategie en marketingmix</button>
-        <button data-page="opdracht-3">3 Actieplan</button>
-        <button data-page="opdracht-4">4 Evalueren accountplan</button>
-        <button data-page="opdracht-5">5 Netwerken</button>
-      </nav><section class="downloads" id="downloads"></section></aside>
-      <section>
-        <article id="instructie" class="active" data-title="Instructie" data-crumb="home › examenopdrachten">
-          <h2>Instructie</h2>
-          <p>Je werkt als junior accountmanager bij DutchDelight Chocolates. Je krijgt opdrachten van de accountmanager, M. de Bruin.</p>
-          <p>Je maakt opdrachten die horen bij kerntaak <em>P4-K1: Voert het accountmanagement uit en beheert relaties</em>. Je werkt binnen de context van DutchDelight Chocolates en account DolceDistribuzione.</p>
-          <p>Algemene informatie over DutchDelight Chocolates vind je op de <a href="../dutchdelight-site/index.html" target="_blank" rel="noopener">website van DutchDelight Chocolates</a>. Informatie over DolceDistribuzione vind je in de bijlagen links bij de opdrachten.</p>
-          <p>Download de bijlagen om ze op je eigen laptop te bewerken. Dit examenproject duurt 5 uur, eventuele pauzes niet meegerekend.</p>
-          <p>Succes vandaag!</p>
-        </article>
-        <article id="opdracht-1" data-title="1 Accountprofiel en accountanalyse" data-crumb="home › examenopdrachten › 1 accountprofiel en accountanalyse">
-          <h2>1 Accountprofiel en accountanalyse</h2><p>Tijdsindicatie: 80 minuten</p>
-          <h3>Situatie</h3><p>DutchDelight Chocolates introduceert drie nieuwe premium chocoladeproducten op de Europese markt: Velvet Orange, Caramel Sea Salt en Dark Almond Selection. Voor de verkoop zoekt DutchDelight verkooppartners in Zuid-Europa.</p><p>Een potentiële partner is DolceDistribuzione, een Italiaanse distributeur van luxe voedingsproducten. Je leidinggevende M. de Bruin vraagt je om een analyse te maken van dit account.</p>
-          <h3>Opdracht</h3><p>Je stelt een accountprofiel op en voert een SWOT-analyse van account DolceDistribuzione uit. Je gebruikt hiervoor het Accountplan DolceDistribuzione.</p>
-          <p><em>Opstellen van een accountprofiel</em></p><ol><li>Bestudeer de informatie over DolceDistribuzione.</li><li>Verzamel informatie over de marktpositie van DolceDistribuzione in de markt voor premium voedingsproducten. Bekijk ook de sectorinformatie en verkoopstrategie op de <a href="../dutchdelight-site/business/index.html" target="_blank" rel="noopener">DutchDelight-site</a>.</li><li>Benoem minimaal twee relevante ontwikkelingen.</li><li>Werk de informatie uit tot een accountprofiel in bijlage 2.</li></ol>
-          <p><em>Uitvoeren van een accountanalyse</em></p><ol><li>Voer een SWOT-analyse uit van account DolceDistribuzione.</li><li>Benoem en beargumenteer sterke en zwakke punten, kansen en bedreigingen.</li><li>Geef een oordeel over de waarde van DolceDistribuzione voor DutchDelight Chocolates.</li></ol>
-          <h3>Resultaat</h3><ul><li>Accountprofiel DolceDistribuzione, uitgewerkt in bijlage 2.</li><li>Accountanalyse DolceDistribuzione, uitgewerkt in bijlage 2.</li></ul><p class="note">Let op: in opdracht 2 werk je door in bijlage 2.</p>
-        </article>
-        <article id="opdracht-2" data-title="2 Accountstrategie en marketingmix" data-crumb="home › examenopdrachten › 2 accountstrategie en marketingmix">
-          <h2>2 Accountstrategie en marketingmix voor het account</h2><p>Tijdsindicatie: 60 minuten</p>
-          <h3>Situatie</h3><p>In opdracht 1 heb je voor DolceDistribuzione een accountprofiel en accountanalyse gemaakt. M. de Bruin vraagt je nu het accountplan verder uit te werken.</p>
-          <h3>Opdracht</h3><p>Je werkt het accountplan uit met een accountstrategie en marketingmix voor DolceDistribuzione.</p>
-          <p><em>Uitwerken van de accountstrategie</em></p><ol><li>Bestudeer je informatie uit opdracht 1.</li><li>Bestudeer de verkoopdoelen van DutchDelight Chocolates.</li><li>Formuleer SMART accountdoelen voor afzet van Velvet Orange, Caramel Sea Salt en Dark Almond Selection en voor contactmomenten met de account.</li><li>Stel een passende verkooppropositie op.</li><li>Vul het onderdeel Accountstrategie in.</li></ol>
-          <p><em>Uitwerken van de marketingmix</em></p><ol><li>Werk de salesmix voor account DolceDistribuzione uit.</li><li>Vul het onderdeel Marketingmix voor het account in.</li></ol>
-          <p><em>Bespreken van het accountplan</em></p><ol><li>Bied het accountplan aan M. de Bruin aan.</li><li>Voeg een begeleidend schrijven toe met het Format e-mail.</li><li>Richt je e-mail aan m.debruin@dutchdelight.nl.</li></ol>
-          <h3>Resultaat</h3><ul><li>Accountplan DolceDistribuzione, verder uitgewerkt in bijlage 2.</li><li>E-mail aan M. de Bruin.</li></ul>
-        </article>
-        <article id="opdracht-3" data-title="3 Actieplan" data-crumb="home › examenopdrachten › 3 actieplan">
-          <h2>3 Actieplan</h2><p>Tijdsindicatie: 50 minuten</p>
-          <h3>Situatie</h3><p>De directie wil de samenwerking met DolceDistribuzione verder uitwerken. Op basis van je marketingmix kies je een promotieactie voor de introductie van de nieuwe producten op de Italiaanse markt.</p>
-          <h3>Opdracht</h3><p>Je werkt een onderdeel van een actieplan uit en bewaakt de voortgang van de acties.</p>
-          <p><em>Uitwerken van het actieplan</em></p><ol><li>Bestudeer de marketingmix uit bijlage 2.</li><li>Kies één promotieactie uit de marketingmix.</li><li>Werk de promotieactie uit tot een actieplan met concrete acties, taakverdeling, planning, deadlines en contactmomenten.</li></ol>
-          <p><em>Bewaken van de uitvoering</em></p><ol><li>Bestudeer de e-mail van je collega over extra verkoopondersteuning.</li><li>Bedenk twee acties om extra verkoopondersteuning te leveren aan DolceDistribuzione.</li><li>Licht je collega per e-mail in met het Format e-mail.</li></ol>
-          <h3>Resultaat</h3><ul><li>Actieplan voor een promotieactie.</li><li>E-mail aan je collega over verkoopondersteuning.</li></ul>
-        </article>
-        <article id="opdracht-4" data-title="4 Evalueren accountplan" data-crumb="home › examenopdrachten › 4 evalueren accountplan">
-          <h2>4 Evalueren accountplan</h2><p>Tijdsindicatie: 60 minuten</p>
-          <h3>Situatie</h3><p>Het accountplan voor DolceDistribuzione is uitgevoerd en de resultaten over de afgelopen periode zijn bekend. M. de Bruin vraagt je het uitgevoerde accountplan te evalueren.</p>
-          <h3>Opdracht</h3><p>Je evalueert de uitvoering van het accountplan en stelt een evaluatierapport op met een verbetervoorstel.</p>
-          <p><em>Voorbereiden van de evaluatie</em></p><ol><li>Bestudeer het accountplan en actieplan uit de vorige opdrachten.</li><li>Kies een geschikte aanpak om verkoopresultaten, samenwerking en marktkansen te onderzoeken.</li></ol>
-          <p><em>Evalueren van het accountplan</em></p><ol><li>Bestudeer de e-mail van sales support en het verslag van het evaluatiegesprek.</li><li>Stel een evaluatierapport op met evaluatie, conclusies en verbetervoorstel.</li><li>Leg het rapport voor aan M. de Bruin met een begeleidende e-mail.</li></ol>
-          <h3>Resultaat</h3><ul><li>Evaluatierapport uitgevoerd accountplan DolceDistribuzione.</li><li>E-mail aan M. de Bruin.</li></ul>
-        </article>
-        <article id="opdracht-5" data-title="5 Netwerken" data-crumb="home › examenopdrachten › 5 netwerken">
-          <h2>5 Netwerken</h2><p>Tijdsindicatie: 50 minuten</p>
-          <h3>Situatie</h3><p>M. de Bruin wil weten welke netwerken relevant zijn voor DutchDelight Chocolates. Via één van deze netwerken wil je de nieuwe premium chocoladeproducten onder de aandacht brengen bij Europese distributeurs.</p>
-          <h3>Opdracht</h3><p>Je zoekt relevante netwerken en werkt een LinkedIn-post uit voor één van de nieuwe producten.</p>
-          <p><em>In kaart brengen relatienetwerken</em></p><ol><li>Benoem drie netwerken waardoor DutchDelight in contact kan komen met zakelijke relaties.</li><li>Neem per netwerk op: relevantie, doel en mogelijkheden om de positie van DutchDelight te verbeteren.</li></ol>
-          <p><em>Netwerken</em></p><ol><li>Bestudeer de informatie over Velvet Orange, Caramel Sea Salt en Dark Almond Selection.</li><li>Kies één product.</li><li>Benoem de voordelen voor een distributeur.</li><li>Werk een LinkedIn-post uit met passend beeld.</li></ol>
-          <h3>Resultaat</h3><ul><li>Overzicht van relevante netwerken.</li><li>Post voor LinkedIn.</li></ul>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proefexamen SPL P4-K1</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="account-bar">
+      <div class="page-width account-inner">
+        <span class="user-icon" aria-hidden="true">&#128100;</span>
+        <strong>student</strong>
+        <span>|</span>
+        <strong>mboRijnland</strong>
+        <span>|</span>
+        <a href="#">uitloggen</a>
+      </div>
+    </header>
+
+    <nav class="platform-nav" aria-label="Hoofdnavigatie">
+      <div class="page-width nav-inner">
+        <div class="tabs-main">
+          <a class="top-tab top-tab-logo" href="../dutchdelight-site/index.html" target="_blank" rel="noopener">
+            <img src="../dutchdelight-site/assets/logo-dutchdelight.png" alt="DutchDelight Chocolates">
+          </a>
+          <button class="top-tab" data-top-page="voorbereiding">Examenvoorbereiding</button>
+          <button class="top-tab active" data-top-page="examens">Examenopdrachten</button>
+        </div>
+        <div class="quick-tools" aria-label="Snel zoeken">
+          <a class="start-return" href="../index.html">Terug naar startmenu</a>
+          <span title="Home">&#8962;</span>
+          <span title="Help">?</span>
+          <input type="search" aria-label="Zoeken" placeholder="Typ zoekterm">
+          <button aria-label="Zoeken">&#8981;</button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="page-width">
+      <section class="project-hero">
+        <div>
+          <h1>Proefexamen SPL P4-K1</h1>
+        </div>
+        <img class="hero-logo" src="../dutchdelight-site/assets/logo-dutchdelight.png" alt="">
+      </section>
+
+      <section id="dutchdelight-page" class="top-page company-page">
+        <div class="breadcrumb">home › dutchdelight</div>
+        <article>
+          <h2>Informatie over DutchDelight Chocolates</h2>
+          <img class="company-logo" src="../dutchdelight-site/assets/logo-dutchdelight.png" alt="DutchDelight Chocolates">
+
+          <p>DutchDelight Chocolates is een Nederlands merkenhuis voor chocoladeproducten in de zakelijke markt. Het bedrijf ontwikkelt, produceert en verkoopt chocoladeconcepten voor retail, horeca, distributeurs, foodservice en zakelijke geschenken. Bij DutchDelight Chocolates werken 35 medewerkers. Het bedrijf is actief in Nederland, België, Luxemburg, Duitsland en Oostenrijk.</p>
+
+          <h3>De sector premium chocolade</h3>
+          <p>De sector premium chocolade bestaat uit producenten en distributeurs die zich richten op chocoladeproducten in het hogere segment van de markt. Binnen deze sector spelen smaak, uitstraling, productkwaliteit en herkomst van grondstoffen een belangrijke rol. Premium chocolade wordt verkocht via speciaalzaken, delicatessenwinkels, luxe retail, horeca en distributeurs die zich richten op hoogwaardige voedingsproducten.</p>
+          <p>Binnen de sector zijn kwaliteit en beleving belangrijke thema’s. Afnemers zoeken producten die zich onderscheiden door bijzondere smaakcombinaties, een verzorgde presentatie en een luxe uitstraling. Daarnaast wordt duurzaamheid steeds belangrijker. Hierbij gaat het onder andere om verantwoord geproduceerde cacao, aandacht voor eerlijke productieketens en het gebruik van duurzamere verpakkingen.</p>
+
+          <h3>Noire</h3>
+          <p>Noire is het luxemerk van DutchDelight Chocolates. Het merk is ontwikkeld voor premium retail, stijlvolle geschenken en verfijnde hospitalitymomenten. Noire richt zich op partners zoals delicatessenwinkels, luxe warenhuizen, hotels, restaurants, koffiezaken en leveranciers van relatiegeschenken.</p>
+          <p>Voor de Europese introductie ligt de nadruk op de productlijn <a href="../dutchdelight-site/brands/noire/index.html" target="_blank" rel="noopener">Noire Signature Bars</a>. Deze lijn bestaat uit elegante premium chocoladerepen met verfijnde smaakcombinaties en een luxe verpakking.</p>
+
+          <h3>Positie van DutchDelight Chocolates in de markt</h3>
+          <p>DutchDelight Chocolates heeft zich de afgelopen jaren vooral gericht op groei binnen bestaande markten. Daarbij lag de nadruk op het vergroten van de afzet met het bestaande assortiment. Tegelijkertijd verandert de Europese markt voor premium chocolade snel. Afnemers en consumenten hebben steeds meer keuze en tonen veel belangstelling voor nieuwe smaken, opvallende verpakkingen en producten met een onderscheidend verhaal. Ook concurrenten blijven vernieuwen en brengen regelmatig nieuwe productlijnen op de markt.</p>
+          <p>In 2025 heeft DutchDelight Chocolates 24 miljoen chocoladeproducten verkocht binnen Europa. Daarmee heeft het bedrijf een stabiele positie opgebouwd in de markt voor premium chocolade. Tegelijkertijd merkt DutchDelight Chocolates dat het noodzakelijk is om te blijven vernieuwen om aantrekkelijk te blijven voor bestaande en nieuwe afnemers.</p>
+
+          <h3>Verkoopstrategie van DutchDelight Chocolates</h3>
+          <p>DutchDelight Chocolates wil de afzet van Noire in Europa verder vergroten. Het bedrijf ziet vooral kansen in Zuid-Europa, waar vraag is naar hoogwaardige en onderscheidende chocoladeproducten voor luxe retail, delicatessenwinkels, horeca en cadeauverkoop. Om deze groei mogelijk te maken, wil DutchDelight Chocolates samenwerken met distributeurs die beschikken over een sterk regionaal netwerk en ervaring hebben in het premiumsegment. Daarnaast wil het bedrijf extra aandacht besteden aan commerciële ondersteuning, zoals promotieacties, proeverijen, verkoopmaterialen en presentaties op beurzen en in winkels.</p>
+
+          <h3>Introductie van Noire Signature Bars</h3>
+          <p>DutchDelight Chocolates introduceert drie nieuwe varianten binnen Noire Signature Bars: Noire Velvet Orange, Noire Caramel Sea Salt en Noire Dark Almond Selection. Met deze Noire-productlijn wil het bedrijf zowel de verkoop in bestaande markten versterken als nieuwe afzetmogelijkheden in Europa creëren. De producten zijn ontwikkeld voor het premiumsegment en onderscheiden zich door hoogwaardige ingrediënten, verfijnde smaakcombinaties en een luxe verpakking.</p>
+          <p>De verkoopprijs aan de groothandel bedraagt € 2,40 exclusief btw per verpakking.</p>
         </article>
       </section>
-    </div>
-  </main>
-  <script>
-    const menu=[...document.querySelectorAll('.menu button')], pages=[...document.querySelectorAll('article')], crumb=document.querySelector('#crumb'), dl=document.querySelector('#downloads');
-    const files={
-      instructie:{b:[],f:[]},
-      'opdracht-1':{b:[['Bijlage 1 Informatie over DolceDistribuzione','word','downloads/Bijlage%201%20Informatie%20over%20DolceDistribuzione.docx'],['Bijlage 2 Accountplan DolceDistribuzione','word','downloads/Bijlage%202%20Accountplan%20DolceDistribuzione.docx']],f:[]},
-      'opdracht-2':{b:[['Bijlage 3 Verkoopdoelen DutchDelight Chocolates','word','downloads/Bijlage%203%20Verkoopdoelen%20DutchDelight%20Chocolates.docx']],f:[['Format e-mail','word','downloads/Format%20e-mail.docx']]},
-      'opdracht-3':{b:[['Bijlage 4 Organogram DutchDelight Chocolates','pdf','downloads/Bijlage%204%20Organogram%20DutchDelight%20Chocolates.pdf'],['Bijlage 5 E-mail van collega over verkoopondersteuning','pdf','downloads/Bijlage%205%20E-mail%20van%20collega%20over%20verkoopondersteuning.pdf']],f:[['Format actieplan','word','downloads/Format%20actieplan.docx'],['Format e-mail','word','downloads/Format%20e-mail.docx']]},
-      'opdracht-4':{b:[['Bijlage 6 E-mail van sales support','pdf','downloads/Bijlage%206%20E-mail%20van%20sales%20support.pdf'],['Bijlage 7 Verslag evaluatiegesprek met account DolceDistribuzione','pdf','downloads/Bijlage%207%20Verslag%20evaluatiegesprek%20met%20account%20DolceDistribuzione.pdf']],f:[['Format e-mail','word','downloads/Format%20e-mail.docx']]},
-      'opdracht-5':{b:[['Bijlage 8 Informatie over Velvet Orange, Caramel Sea Salt en Dark Almond Selection','pdf','downloads/Bijlage%208%20Informatie%20over%20Velvet%20Orange%2C%20Caramel%20Sea%20Salt%20en%20Dark%20Almond%20Selection.pdf']],f:[['Format LinkedIn','word','downloads/Format%20LinkedIn.docx']]}
-    };
-    function renderDownloads(id){const d=files[id]||files.instructie;dl.innerHTML='';dl.hidden=!(d.b.length||d.f.length);[['Bijlagen',d.b],['Formats',d.f]].forEach(([h,items])=>{if(!items.length)return;dl.insertAdjacentHTML('beforeend',`<${h==='Bijlagen'?'h2':'h3'}>${h}</${h==='Bijlagen'?'h2':'h3'}>`);items.forEach(([label,type,href])=>dl.insertAdjacentHTML('beforeend',`<a class="download ${type}" href="${href}" target="_blank" rel="noopener" ${type==='word'?'download':''}>${label}</a>`));});}
-    function show(id){pages.forEach(p=>p.classList.toggle('active',p.id===id));menu.forEach(b=>b.classList.toggle('active',b.dataset.page===id));const p=document.getElementById(id);crumb.textContent=p.dataset.crumb;document.title=p.dataset.title+' | P4-K1 DutchDelight';renderDownloads(id);scrollTo({top:0,behavior:'smooth'});}menu.forEach(b=>b.addEventListener('click',()=>show(b.dataset.page)));renderDownloads('instructie');
-  </script>
-</body>
+
+      <section id="voorbereiding-page" class="top-page company-page">
+        <div class="breadcrumb">home › examenvoorbereiding</div>
+        <article>
+          <h2>Examenvoorbereiding</h2>
+          <p>Gebruik deze pagina om je voor te bereiden op het examenproject. Lees de instructie goed door en controleer welke bestanden je nodig hebt voordat je met de opdrachten start.</p>
+          <p>Zorg dat je de bijlagen bij de opdrachten downloadt, bewerkt op je eigen laptop en opslaat volgens de afspraken van je opleiding.</p>
+        </article>
+      </section>
+
+      <section id="examens-page" class="top-page active-top-page">
+        <div class="breadcrumb" id="breadcrumb">home › examenopdrachten</div>
+
+        <div class="content-grid">
+        <aside class="left-column">
+          <nav class="assignment-menu" aria-label="Examenopdrachten">
+            <button class="menu-item active" data-page="instructie">Instructie</button>
+            <button class="menu-item" data-page="opdracht-1">1 Accountprofiel en accountanalyse</button>
+            <button class="menu-item" data-page="opdracht-2">2 Accountstrategie en marketingmix voor het account</button>
+            <button class="menu-item" data-page="opdracht-3">3 Actieplan</button>
+            <button class="menu-item" data-page="opdracht-4">4 Evalueren accountplan</button>
+            <button class="menu-item" data-page="opdracht-5">5 Netwerken</button>
+          </nav>
+
+          <section class="downloads" id="downloads-panel" aria-live="polite"></section>
+        </aside>
+
+        <section class="article-column">
+          <article id="instructie" class="article-page active-page" data-title="Instructie" data-crumb="home › examenopdrachten">
+            <h2>Instructie</h2>
+            <p>Je werkt als junior accountmanager bij DutchDelight Chocolates. Je krijgt opdrachten van de accountmanager, M. de Bruin.</p>
+            <p>Je gaat examenopdrachten maken die behoren bij kerntaak <em>P4-K1: Voert het accountmanagement uit en beheert relaties</em>. Je maakt de opdrachten binnen de context van DutchDelight Chocolates en het submerk Noire. Je maakt hierbij gebruik van de informatie over DutchDelight Chocolates, Noire en DolceDistribuzione. De algemene informatie over DutchDelight Chocolates vind je op de <a href="../dutchdelight-site/index.html" target="_blank" rel="noopener">website van DutchDelight Chocolates</a>. De informatie over <a href="../dutchdelight-site/brands/noire/index.html" target="_blank" rel="noopener">Noire</a> en DolceDistribuzione vind je via de website en de bijlagen links bij de opdrachten.</p>
+            <p>Je leidinggevende heeft aangegeven hoe je de resultaten digitaal moet opslaan en inleveren. Bij de opdrachten zitten bijlagen. Download een bijlage om deze te bewerken en sla hem daarna op je eigen laptop op.</p>
+            <p>Dit examenproject duurt 5 uur, eventuele pauzes niet meegerekend.</p>
+            <p>Succes vandaag!</p>
+          </article>
+
+          <article id="opdracht-1" class="article-page" data-title="1 Accountprofiel en accountanalyse" data-crumb="home › examenopdrachten › 1 accountprofiel en accountanalyse">
+            <h2>1 Accountprofiel en accountanalyse</h2>
+            <p>Tijdsindicatie: 80 minuten</p>
+
+            <h3>Situatie</h3>
+            <p>DutchDelight Chocolates introduceert drie nieuwe varianten binnen het submerk Noire op de Europese markt: Noire Velvet Orange, Noire Caramel Sea Salt en Noire Dark Almond Selection. Deze Noire Signature Bars worden gemaakt van hoogwaardige ingrediënten en hebben een luxe uitstraling. De verpakkingen zijn stijlvol vormgegeven en sluiten aan bij de vraag naar premium chocolade in het hogere segment. Voor de verkoop van Noire is DutchDelight Chocolates op zoek naar verkooppartners in Zuid-Europa.</p>
+            <p>Een potentiële partner is DolceDistribuzione, een Italiaanse distributeur van luxe voedingsproducten. Je leidinggevende M. de Bruin heeft je gevraagd om een analyse te maken van account DolceDistribuzione.</p>
+
+            <h3>Opdracht</h3>
+            <p>Je stelt een accountprofiel op en voert een SWOT-analyse van account DolceDistribuzione uit. Je gebruikt hierbij het Accountplan DolceDistribuzione (<em>Bijlage 2 Accountplan DolceDistribuzione</em>).</p>
+
+            <p><em>Opstellen van een accountprofiel</em></p>
+            <ol>
+              <li>Bestudeer de informatie over account DolceDistribuzione (<em>Bijlage 1 Informatie over DolceDistribuzione</em>).</li>
+              <li>Verzamel informatie over de marktpositie van DolceDistribuzione in de markt voor premium voedingsproducten.
+                <ul>
+                  <li>Bekijk de informatie over Noire, de sector premium chocolade en de verkoopstrategie op de <a href="../dutchdelight-site/brands/noire/index.html" target="_blank" rel="noopener">Noire-pagina</a> en de <a href="../dutchdelight-site/business/index.html" target="_blank" rel="noopener">zakelijke pagina</a> van DutchDelight.</li>
+                  <li>Zoek zelf aanvullende bronnen.</li>
+                  <li>Benoem minimaal twee relevante ontwikkelingen.</li>
+                </ul>
+              </li>
+              <li>Werk de informatie over DolceDistribuzione en de marktpositie uit tot een accountprofiel.</li>
+              <li>Vul het onderdeel <em>Accountprofiel</em> in van het Accountplan DolceDistribuzione (<em>Bijlage 2 Accountplan DolceDistribuzione</em>).</li>
+            </ol>
+
+            <p><em>Uitvoeren van een accountanalyse</em></p>
+            <ol>
+              <li>Voer een SWOT-analyse uit van account DolceDistribuzione. Maak gebruik van de verzamelde informatie én van het accountprofiel.
+                <ul>
+                  <li>Benoem en beargumenteer sterke en zwakke punten van de account.</li>
+                  <li>Benoem en beargumenteer kansen en bedreigingen voor de account.</li>
+                </ul>
+              </li>
+              <li>Geef een oordeel over de waarde van account DolceDistribuzione voor de organisatie. Beargumenteer dit.</li>
+              <li>Vul het onderdeel <em>Accountanalyse</em> in van het Accountplan DolceDistribuzione (<em>Bijlage 2 Accountplan DolceDistribuzione</em>).</li>
+            </ol>
+
+            <h3>Resultaat</h3>
+            <p>Als resultaat van deze opdracht lever je de volgende producten en/of diensten op.</p>
+            <ul>
+              <li>Accountprofiel DolceDistribuzione, uitgewerkt in bijlage 2.</li>
+              <li>Accountanalyse DolceDistribuzione, uitgewerkt in bijlage 2.</li>
+            </ul>
+            <p>Let op: in opdracht 2 werk je door in <em>Bijlage 2 Accountplan DolceDistribuzione</em>.</p>
+          </article>
+
+          <article id="opdracht-2" class="article-page" data-title="2 Accountstrategie en marketingmix voor het account" data-crumb="home › examenopdrachten › 2 accountstrategie en marketingmix voor het account">
+            <h2>2 Accountstrategie en marketingmix voor het account</h2>
+            <p>Tijdsindicatie: 60 minuten</p>
+
+            <h3>Situatie</h3>
+            <p>In opdracht 1 heb je voor account DolceDistribuzione een accountprofiel opgesteld en een accountanalyse gemaakt. Je leidinggevende M. de Bruin vraagt je nu om het accountplan van DolceDistribuzione verder uit te werken. Daarbij richt je je in deze opdracht op de accountstrategie en de marketingmix voor dit account.</p>
+
+            <h3>Opdracht</h3>
+            <p>Je werkt het accountplan van DolceDistribuzione verder uit met een accountstrategie en marketingmix voor dit account. Hiervoor gebruik je het Accountplan DolceDistribuzione (<em>Bijlage 2 Accountplan DolceDistribuzione</em>) uit opdracht 1.</p>
+
+            <p><em>Uitwerken van de accountstrategie</em></p>
+            <ol>
+              <li>Bestudeer de informatie die je in opdracht 1 hebt verzameld.</li>
+              <li>Bestudeer de verkoopdoelen van DutchDelight Chocolates (<em>Bijlage 3 Verkoopdoelen DutchDelight Chocolates</em>).</li>
+              <li>Formuleer SMART accountdoelen voor account DolceDistribuzione voor de volgende onderdelen:
+                <ul>
+                  <li>afzet van Noire Velvet Orange, Noire Caramel Sea Salt en Noire Dark Almond Selection;</li>
+                  <li>de contactmomenten met de account.</li>
+                </ul>
+              </li>
+              <li>Stel een passende verkooppropositie op.</li>
+              <li>Vul het onderdeel <em>Accountstrategie</em> in van het Accountplan DolceDistribuzione.</li>
+            </ol>
+
+            <p><em>Uitwerken van de marketingmix voor het account</em></p>
+            <ol>
+              <li>Werk de salesmix voor account DolceDistribuzione uit.</li>
+              <li>Vul het onderdeel <em>Marketingmix voor het account</em> in van het Accountplan DolceDistribuzione.</li>
+            </ol>
+
+            <p><em>Bespreken van het accountplan</em></p>
+            <ol>
+              <li>Bied het accountplan aan je leidinggevende M. de Bruin aan.</li>
+              <li>Voeg een begeleidend schrijven toe. Gebruik hiervoor het <em>Format e-mail</em>.</li>
+              <li>Richt je e-mail aan m.debruin@dutchdelight.nl.</li>
+            </ol>
+
+            <h3>Resultaat</h3>
+            <p>Als resultaat van deze opdracht lever je de volgende producten en/of diensten op.</p>
+            <ul>
+              <li>Accountplan DolceDistribuzione, uitgewerkt in bijlage 2.</li>
+              <li>E-mail aan M. de Bruin.</li>
+            </ul>
+            <p>Let op: in opdracht 3 werk je verder vanuit de marketingmix voor dit account in <em>Bijlage 2 Accountplan DolceDistribuzione</em>.</p>
+          </article>
+
+          <article id="opdracht-3" class="article-page" data-title="3 Actieplan" data-crumb="home › examenopdrachten › 3 actieplan">
+            <h2>3 Actieplan</h2>
+            <p>Tijdsindicatie: 50 minuten</p>
+
+            <h3>Situatie</h3>
+            <p>De directie van DutchDelight Chocolates heeft besloten om de samenwerking met DolceDistribuzione verder uit te werken. Op basis van je marketingmix uit opdracht 2 kies je een concrete promotieactie voor de introductie van Noire Velvet Orange, Noire Caramel Sea Salt en Noire Dark Almond Selection op de Italiaanse markt.</p>
+
+            <h3>Opdracht</h3>
+            <p>Je werkt een onderdeel van een actieplan uit en bewaakt de voortgang van de acties.</p>
+
+            <p><em>Uitwerken van het actieplan</em></p>
+            <ol>
+              <li>Bestudeer de marketingmix voor het account die je in opdracht 2 in <em>Bijlage 2 Accountplan DolceDistribuzione</em> hebt uitgewerkt.</li>
+              <li>Maak een keuze voor één promotieactie uit de marketingmix voor dit account.</li>
+              <li>Werk de promotieactie uit tot een actieplan. Je kunt hiervoor het <em>Format actieplan</em> gebruiken. Neem hierin de volgende onderdelen op:
+                <ul>
+                  <li>concrete uitwerking in online en/of offline acties;</li>
+                  <li>taakverdeling binnen DutchDelight Chocolates;</li>
+                  <li>planning en deadlines;</li>
+                  <li>contactmomenten met DolceDistribuzione.</li>
+                </ul>
+              </li>
+            </ol>
+
+            <p><em>Bewaken van de uitvoering van het actieplan</em></p>
+            <ol>
+              <li>Bestudeer de e-mail van je collega over extra verkoopondersteuning.</li>
+              <li>Bedenk twee acties om extra verkoopondersteuning te kunnen leveren aan DolceDistribuzione.</li>
+              <li>Licht je collega per e-mail in over de acties die je voorstelt. Gebruik hiervoor het <em>Format e-mail</em>.</li>
+            </ol>
+
+            <h3>Resultaat</h3>
+            <p>Als resultaat van deze opdracht lever je de volgende producten en/of diensten op.</p>
+            <ul>
+              <li>Actieplan voor een promotieactie.</li>
+              <li>E-mail aan je collega over verkoopondersteuning.</li>
+            </ul>
+            <p><em>Let op: in opdracht 4 werk je verder vanuit het actieplan én vanuit Bijlage 2 Accountplan DolceDistribuzione.</em></p>
+          </article>
+
+          <article id="opdracht-4" class="article-page" data-title="4 Evalueren accountplan" data-crumb="home › examenopdrachten › 4 evalueren accountplan">
+            <h2>4 Evalueren accountplan</h2>
+            <p>Tijdsindicatie: 60 minuten</p>
+
+            <h3>Situatie</h3>
+            <p>Het accountplan voor DolceDistribuzione is uitgevoerd en de resultaten over de afgelopen periode zijn bekend. Je leidinggevende M. de Bruin vraagt jou om het uitgevoerde accountplan te evalueren.</p>
+
+            <h3>Opdracht</h3>
+            <p>Je evalueert de uitvoering van het accountplan DolceDistribuzione en stelt een evaluatierapport op met een verbetervoorstel.</p>
+
+            <p><em>Voorbereiden van de evaluatie</em></p>
+            <ol>
+              <li>Bestudeer het accountplan en het actieplan die je in de vorige opdrachten hebt uitgewerkt.</li>
+              <li>Kies een geschikte aanpak om de volgende evaluatiepunten te onderzoeken:
+                <ul>
+                  <li>behaalde verkoopresultaten in relatie tot de accountdoelen;</li>
+                  <li>samenwerking met DolceDistribuzione;</li>
+                  <li>ontwikkeling van afzet en marktkansen voor DutchDelight Chocolates.</li>
+                </ul>
+                Licht je antwoord toe voor elk evaluatiepunt.
+              </li>
+            </ol>
+
+            <p><em>Evalueren van het accountplan</em></p>
+            <ol>
+              <li>Bestudeer de e-mail van sales support en het verslag van het evaluatiegesprek met DolceDistribuzione.</li>
+              <li>Stel een evaluatierapport op voor je leidinggevende M. de Bruin. Neem hierin de volgende onderdelen op:
+                <ul>
+                  <li>evaluatie van de uitvoering van het accountplan;</li>
+                  <li>conclusie(s);</li>
+                  <li>verbetervoorstel.</li>
+                </ul>
+              </li>
+              <li>Leg het evaluatierapport voor aan je leidinggevende. Voeg een begeleidend schrijven toe. Gebruik hiervoor het <em>Format e-mail</em>. Richt je e-mail aan m.debruin@dutchdelight.nl.</li>
+            </ol>
+
+            <h3>Resultaat</h3>
+            <p>Als resultaat van deze opdracht lever je de volgende producten en/of diensten op.</p>
+            <ul>
+              <li>Evaluatierapport uitgevoerd accountplan DolceDistribuzione.</li>
+              <li>E-mail aan M. de Bruin.</li>
+            </ul>
+          </article>
+
+          <article id="opdracht-5" class="article-page" data-title="5 Netwerken" data-crumb="home › examenopdrachten › 5 netwerken">
+            <h2>5 Netwerken</h2>
+            <p>Tijdsindicatie: 50 minuten</p>
+
+            <h3>Situatie</h3>
+            <p>Je leidinggevende M. de Bruin wil weten welke netwerken relevant zijn voor DutchDelight Chocolates. Via één van deze netwerken wil je Noire Signature Bars onder de aandacht brengen bij potentiële Europese distributeurs.</p>
+
+            <h3>Opdracht</h3>
+            <p>Je zoekt relevante netwerken voor DutchDelight Chocolates. Vervolgens presenteer je één van de nieuwe Noire-varianten aan het netwerk. Dit doe je door het uitwerken van een post voor LinkedIn.</p>
+
+            <p><em>In kaart brengen relatienetwerken</em></p>
+            <ol>
+              <li>Benoem drie netwerken waardoor DutchDelight Chocolates in contact kan komen met zakelijke relaties. Maak hiervan een overzicht. Neem hierin het volgende op:
+                <ul>
+                  <li>een oordeel over de relevantie van het netwerk voor DutchDelight Chocolates;</li>
+                  <li>het doel dat je wilt realiseren in het netwerk;</li>
+                  <li>mogelijkheden om de positie van DutchDelight Chocolates in het netwerk te verbeteren.</li>
+                </ul>
+              </li>
+            </ol>
+
+            <p><em>Netwerken</em></p>
+            <ol>
+              <li>Bestudeer de informatie over Noire Signature Bars en de drie nieuwe varianten.</li>
+              <li>Maak een keuze voor één van de nieuwe Noire-varianten: Noire Velvet Orange, Noire Caramel Sea Salt of Noire Dark Almond Selection.</li>
+              <li>Benoem de voordelen voor een distributeur als hij klant wordt bij DutchDelight Chocolates.</li>
+              <li>Werk een post uit waarmee je het gekozen product onder de aandacht brengt. Je kunt hiervoor het <em>Format LinkedIn</em> gebruiken.
+                <ul>
+                  <li>Richt je op de doelgroep.</li>
+                  <li>Benadruk de voordelen van samenwerking met DutchDelight Chocolates.</li>
+                  <li>Voeg een passend beeld toe.</li>
+                </ul>
+              </li>
+            </ol>
+
+            <h3>Resultaat</h3>
+            <p>Als resultaat van deze opdracht lever je de volgende producten en/of diensten op.</p>
+            <ul>
+              <li>Overzicht van relevante netwerken voor DutchDelight Chocolates.</li>
+              <li>Post voor LinkedIn.</li>
+            </ul>
+          </article>
+        </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
 </html>
