@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>Bijlage 1 E-mail van Sanne Vermeer</title>
+    <style>
+      body{font-family:Arial,sans-serif;max-width:850px;margin:40px auto;line-height:1.5}
+      h1{color:#4b2358}
+      table{border-collapse:collapse;width:100%;margin:20px 0}
+      td,th{border:1px solid #ccc;padding:10px;text-align:left}
+      .mail{border:1px solid #ccc;padding:24px}
+    </style>
+  </head>
+  <body>
+    <h1>Bijlage 1 E-mail van Sanne Vermeer</h1>
+    <table>
+      <tr><th>Veld</th><th>Inhoud</th></tr>
+      <tr><td>Van</td><td>Sanne Vermeer, Hoofd Marketing &amp; Sales</td></tr>
+      <tr><td>Aan</td><td>Medewerker Marketing</td></tr>
+      <tr><td>Onderwerp</td><td>Voorbereiding b2b-communicatie-uiting Pulse</td></tr>
+    </table>
+    <section class="mail">
+      <p>Beste collega,</p>
+      <p>DutchDelight Chocolates wil het submerk Pulse sterker onder de aandacht brengen bij bestaande zakelijke klanten. Pulse is ontwikkeld voor actieve snackmomenten, zoals sport, studie, onderweg, events, vending en schoolkantines.</p>
+      <p>Ik wil je vragen om informatie te verzamelen en te verwerken voor een b2b-communicatie-uiting. Richt je op zakelijke beslissers bij sportkantines, scholen, vendinglocaties, tankstations, events, bedrijfsrestaurants en campuslocaties.</p>
+      <p>Kijk bij je voorbereiding naar het communicatiedoel, de doelgroep, passende communicatiekanalen, de kenmerken van Pulse en het AIDA-model. Gebruik ook minimaal twee actuele en betrouwbare externe bronnen.</p>
+      <p>Leg je conclusies vast in de bijlage <em>Conclusies voorbereiden communicatie-uiting</em>. Lever de ingevulde bijlage digitaal bij mij in.</p>
+      <p>Met vriendelijke groet,<br>Sanne Vermeer<br>Hoofd Marketing &amp; Sales<br>DutchDelight Chocolates</p>
+    </section>
+  </body>
+</html>

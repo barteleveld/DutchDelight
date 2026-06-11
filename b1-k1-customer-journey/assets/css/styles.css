@@ -1,0 +1,325 @@
+:root {
+  --purple: #4b2358;
+  --purple-mid: #6b3c73;
+  --purple-soft: #cdb5d1;
+  --green-soft: #d9ece6;
+  --green-tab: #99c7bd;
+  --text: #25213d;
+  --muted: #8c9298;
+  --line: #c9c9c9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.42;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: var(--purple);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.page-shell {
+  width: 1160px;
+  max-width: calc(100vw - 72px);
+  margin: 0 auto;
+}
+
+.site-header {
+  height: 44px;
+  border-top: 1px solid #bfc4c7;
+  background: #fff;
+}
+
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  color: var(--purple);
+}
+
+.header-inner::before {
+  content: "\1F464  student | mboRijnland | uitloggen";
+  font-weight: 700;
+}
+
+.brand,
+.nav-toggle {
+  display: none;
+}
+
+.site-nav {
+  min-height: 64px;
+  background: var(--green-soft);
+}
+
+.nav-grid {
+  min-height: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0;
+}
+
+.nav-grid::before {
+  content: "";
+  width: 170px;
+  min-height: 34px;
+  margin-right: 0;
+  border-left: 1px solid #74847f;
+  background: #fff url("../../../dutchdelight-site/assets/logo-dutchdelight.png") center / 118px auto no-repeat;
+}
+
+.nav-grid a {
+  display: flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 16px;
+  color: var(--purple);
+  border-left: 1px solid #74847f;
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-grid a:nth-of-type(n+4) {
+  display: none;
+}
+
+.nav-grid a.active,
+.nav-grid a:hover {
+  background: var(--green-tab);
+  text-decoration: none;
+}
+
+.nav-grid::after {
+  content: "Terug naar startmenu   \2302  ?   Typ zoekterm   \2315";
+  display: flex;
+  align-items: center;
+  min-height: 34px;
+  margin-left: auto;
+  padding: 0 14px;
+  color: var(--purple);
+  font-size: 15px;
+  font-weight: 700;
+  white-space: pre;
+}
+
+.exam-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  margin-top: 22px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(31, 18, 34, .22), rgba(31, 18, 34, .08)),
+    radial-gradient(circle at 18% 50%, #c03774 0 8%, transparent 9%),
+    radial-gradient(circle at 38% 45%, #f28c2c 0 9%, transparent 10%),
+    radial-gradient(circle at 58% 54%, #7a2c91 0 10%, transparent 11%),
+    radial-gradient(circle at 78% 45%, #2e8bbf 0 8%, transparent 9%),
+    linear-gradient(90deg, #5a1f75, #d13b7c 32%, #f3922b 60%, #2e6d85);
+  background-size: cover;
+}
+
+.exam-hero h1 {
+  margin: 0;
+  padding-left: 34px;
+  color: #fff;
+  font-size: 48px;
+  line-height: 1;
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, .75);
+}
+
+.hero-logo {
+  width: 128px;
+  max-height: 58px;
+  margin-right: 18px;
+  padding: 5px 8px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, .9);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+  padding: 0 0 60px;
+}
+
+.side-panel {
+  min-width: 0;
+}
+
+.side-panel > .eyebrow,
+.side-panel > h1,
+.side-panel > p,
+.quick-card {
+  display: none;
+}
+
+.assignment-menu {
+  display: grid;
+  gap: 10px;
+}
+
+.assignment-menu a {
+  width: 100%;
+  min-height: 36px;
+  padding: 8px 16px;
+  color: var(--purple);
+  background: var(--purple-soft);
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+  text-align: left;
+}
+
+.assignment-menu a.active {
+  color: #fff;
+  background: var(--purple);
+}
+
+.assignment-menu a.sub-item {
+  margin-top: -10px;
+  padding-left: 26px;
+  background: #a9d4c6;
+}
+
+.assignment-menu a.sub-item.active {
+  background: var(--purple);
+}
+
+.content-card {
+  max-width: 760px;
+  padding-bottom: 60px;
+}
+
+.breadcrumb {
+  grid-column: 1 / -1;
+  margin: 18px 0 12px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.content-card > .breadcrumb {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h2 {
+  margin: 0 0 4px;
+  color: var(--purple);
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+p {
+  margin: 0 0 20px;
+}
+
+.placeholder {
+  margin-top: 28px;
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: #3c3444;
+  font-weight: 700;
+}
+
+.email-card {
+  margin: 28px 0 28px;
+  padding: 22px 34px;
+  border: 1px solid #cfcfcf;
+  box-shadow: inset 16px 0 0 #f7f7f7, inset -16px 0 0 #f7f7f7;
+  background: #fff;
+}
+
+.info-box {
+  margin: 28px 0 28px;
+  padding: 22px 34px;
+  border: 1px solid #cfcfcf;
+  box-shadow: inset 16px 0 0 #f7f7f7, inset -16px 0 0 #f7f7f7;
+  background: #fff;
+}
+
+.email-meta {
+  margin: 0 0 28px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+.email-meta div {
+  display: grid;
+  grid-template-columns: 68px 1fr;
+  gap: 8px;
+}
+
+.email-meta dt,
+.email-meta dd {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .page-shell {
+    max-width: calc(100vw - 32px);
+  }
+
+  .nav-grid,
+  .layout {
+    display: block;
+  }
+
+  .nav-grid::before,
+  .nav-grid::after {
+    display: none;
+  }
+
+  .nav-grid a,
+  .nav-grid a:nth-of-type(n+4) {
+    display: flex;
+  }
+
+  .exam-hero h1 {
+    padding-left: 18px;
+    font-size: 34px;
+  }
+
+  .hero-logo {
+    display: none;
+  }
+
+  .content-card {
+    max-width: none;
+    margin-top: 26px;
+  }
+}
