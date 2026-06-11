@@ -412,6 +412,12 @@ em {
   font-size: 16px;
 }
 
+.download-card small {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.35;
+}
+
 .download-list {
   display: grid;
   gap: 10px;

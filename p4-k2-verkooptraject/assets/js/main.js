@@ -1,4 +1,4 @@
-const pathPrefix = location.pathname.includes("/opdrachten/") ? "../" : "";
+﻿const pathPrefix = location.pathname.includes("/opdrachten/") ? "../" : "";
 const currentFile = location.pathname.split("/").pop() || "index.html";
 const sidePanel = document.querySelector(".side-panel");
 const layout = document.querySelector(".layout");
@@ -26,11 +26,11 @@ const menuGroups = [
 ];
 
 const downloads = [
-  ["downloads/bijlagen/bijlage-1-crm-truecacao-placeholder.docx", "Bijlage 1 CRM-systeem TrueCacao"],
-  ["downloads/bijlagen/bijlage-2-klanttevredenheid-placeholder.pdf", "Bijlage 2 Klanttevredenheidsonderzoek TrueCacao"],
-  ["downloads/formats/format-offerte-placeholder.docx", "Format offerte"],
-  ["downloads/formats/format-orderbevestiging-placeholder.docx", "Format orderbevestiging"],
-  ["downloads/formats/format-email-placeholder.docx", "Format e-mail"]
+  ["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.docx", "Bijlage 1 CRM-systeem TrueCacao"],
+  ["downloads/bijlagen/Bijlage 2 Klanttevredenheidsonderzoek TrueCacao.pdf", "Bijlage 2 Klanttevredenheidsonderzoek TrueCacao"],
+  ["downloads/formats/Format offerte.docx", "Format offerte"],
+  ["downloads/formats/Format orderbevestiging.docx", "Format orderbevestiging"],
+  ["downloads/formats/Format e-mail.docx", "Format e-mail"]
 ];
 
 function rootHref(target) {
@@ -79,10 +79,10 @@ if (navGrid) {
     <a class="top-tab active" href="${rootHref("index.html")}">Examenopdrachten</a>
     <div class="quick-tools" aria-label="Snel zoeken">
       <a class="start-return" href="${rootHref("../index.html")}">Terug naar startmenu</a>
-      <span title="Home">⌂</span>
+      <span title="Home">&#8962;</span>
       <span title="Help">?</span>
       <input type="search" aria-label="Zoeken" placeholder="Typ zoekterm">
-      <button aria-label="Zoeken">⌕</button>
+      <button aria-label="Zoeken">&#8981;</button>
     </div>
   `;
 }
@@ -126,3 +126,4 @@ if (sidePanel) {
     });
   });
 }
+

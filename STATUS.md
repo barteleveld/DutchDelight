@@ -11,12 +11,12 @@ Laatste opschoonronde: 2026-06-10.
 | B1-K2 | `b1-k2-marketing-communicatie/` | Actief, nieuwe structuur | Heeft eigen startpagina, opdrachtpagina's, assets en downloads. |
 | P4-K1 | `p4-k1-accountmanagement/` | Actief, nieuwe structuur | Heeft eigen startpagina, opdrachtpagina's, assets en downloads. |
 | B1-K1 | `b1-k1-customer-journey/` | Actief, nieuwe structuur | Gebruikt losse opdrachtpagina's. |
-| P4-K2 | `p4-k2-verkooptraject/` | Concept | Bereikbaar vanuit startmenu, maar bevat nog placeholder-bijlagen/formats. |
+| P4-K2 | `p4-k2-verkooptraject/` | Concept, inhoudelijke basis | Bereikbaar vanuit startmenu. Eerste echte bijlagen en formats zijn toegevoegd; verdere inhoudelijke verfijning blijft nodig. |
 | Examen-template | `exam-template/` | Nieuw raamwerk | Kopieerbare basis voor nieuwe proefexamens. |
 
 ## Nog Opruimen
 
-- P4-K2 placeholder-bestanden vervangen door echte bijlagen en formats.
+- P4-K2 verder inhoudelijk verfijnen en visueel gelijk trekken met de andere examenmappen.
 - Oude upload/exportmappen eventueel archiveren buiten de bronstructuur.
 - Spelling `Noire` zonder accent consequent maken in nieuwe examenbestanden.
 
