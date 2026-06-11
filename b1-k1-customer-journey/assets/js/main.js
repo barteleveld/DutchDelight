@@ -66,7 +66,7 @@ if (layout) {
   const hero = document.createElement("section");
   hero.className = "exam-hero page-shell";
   hero.innerHTML = `<h1>Proefexamen SPL B1-K1</h1><img class="hero-logo" src="${rootHref("../dutchdelight-site/assets/logo-dutchdelight.png").replace("b1-k1-customer-journey/../", "")}" alt="">`;
-  document.querySelector(".site-nav")?.after(hero);
+  document.querySelector(".platform-nav, .site-nav")?.after(hero);
 
   const crumb = document.createElement("div");
   crumb.className = "breadcrumb";
