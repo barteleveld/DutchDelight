@@ -4,15 +4,25 @@ const currentFile = location.pathname.split("/").pop() || "index.html";
 const sidePanel = document.querySelector(".side-panel");
 const layout = document.querySelector(".layout");
 
-const pages = [
-  ["index.html", "Instructie"],
-  ["opdrachten/opdracht-1.html", "1 Marktpositie"],
-  ["opdrachten/opdracht-2.html", "2 Customer journey"],
-  ["opdrachten/opdracht-3-1.html", "3.1 Vertalen trends en ontwikkelingen"],
-  ["opdrachten/opdracht-3-2.html", "3.2 Feedback verwerken", "sub-item"],
-  ["opdrachten/opdracht-4.html", "4 Commercieel aanbod"],
-  ["opdrachten/opdracht-5-1.html", "5.1 Opstellen verbetervoorstel"],
-  ["opdrachten/opdracht-5-2.html", "5.2 Feedback verwerken", "sub-item"]
+const menuGroups = [
+  { target: "index.html", label: "Instructie" },
+  { target: "opdrachten/opdracht-1.html", label: "1 Marktpositie" },
+  { target: "opdrachten/opdracht-2.html", label: "2 Customer journey" },
+  {
+    label: "3 Trends en ontwikkelingen",
+    children: [
+      { target: "opdrachten/opdracht-3-1.html", label: "3.1 Vertalen trends en ontwikkelingen" },
+      { target: "opdrachten/opdracht-3-2.html", label: "3.2 Feedback verwerken" }
+    ]
+  },
+  { target: "opdrachten/opdracht-4.html", label: "4 Commercieel aanbod" },
+  {
+    label: "5 Verbetervoorstel",
+    children: [
+      { target: "opdrachten/opdracht-5-1.html", label: "5.1 Opstellen verbetervoorstel" },
+      { target: "opdrachten/opdracht-5-2.html", label: "5.2 Feedback verwerken" }
+    ]
+  }
 ];
 
 function rootHref(target) {
@@ -22,6 +32,34 @@ function rootHref(target) {
 function isActive(target) {
   if (currentFile === "index.html" && !currentPath.includes("/opdrachten/") && target === "index.html") return true;
   return target.endsWith(currentFile) && currentFile !== "index.html";
+}
+
+function groupHasActiveChild(group) {
+  return group.children?.some((child) => isActive(child.target));
+}
+
+function renderMenuGroup(group, index) {
+  if (!group.children) {
+    return `<a class="menu-item${isActive(group.target) ? " active" : ""}" href="${rootHref(group.target)}">${group.label}</a>`;
+  }
+
+  const groupId = `assignment-group-${index}`;
+  const expanded = groupHasActiveChild(group);
+  const children = group.children.map((child) => (
+    `<a class="submenu-item${isActive(child.target) ? " active" : ""}" href="${rootHref(child.target)}">${child.label}</a>`
+  )).join("");
+
+  return `
+    <div class="menu-section${expanded ? " expanded" : ""}">
+      <button class="menu-group${expanded ? " active" : ""}" type="button" aria-expanded="${expanded}" aria-controls="${groupId}">
+        <span>${group.label}</span>
+        <span class="menu-toggle" aria-hidden="true">${expanded ? "-" : "+"}</span>
+      </button>
+      <div class="submenu${expanded ? " open" : ""}" id="${groupId}">
+        ${children}
+      </div>
+    </div>
+  `;
 }
 
 if (layout) {
@@ -37,14 +75,20 @@ if (layout) {
 }
 
 if (sidePanel) {
-  const menuLinks = pages.map(([target, label, extraClass]) => {
-    const classes = ["menu-item"];
-    if (extraClass) classes.push(extraClass);
-    if (isActive(target)) classes.push("active");
-    return `<a class="${classes.join(" ")}" href="${rootHref(target)}">${label}</a>`;
-  }).join("");
-
   sidePanel.innerHTML = `
-    <nav class="assignment-menu" aria-label="Examenopdrachten">${menuLinks}</nav>
+    <nav class="assignment-menu" aria-label="Examenopdrachten">${menuGroups.map(renderMenuGroup).join("")}</nav>
   `;
+
+  sidePanel.querySelectorAll(".menu-group").forEach((button) => {
+    button.addEventListener("click", () => {
+      const section = button.closest(".menu-section");
+      const submenu = section?.querySelector(".submenu");
+      const toggle = button.querySelector(".menu-toggle");
+      const expanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!expanded));
+      section?.classList.toggle("expanded", !expanded);
+      submenu?.classList.toggle("open", !expanded);
+      if (toggle) toggle.textContent = expanded ? "+" : "-";
+    });
+  });
 }

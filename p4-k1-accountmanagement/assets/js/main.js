@@ -3,10 +3,86 @@ const currentFile = location.pathname.split("/").pop() || "index.html";
 const inAssignments = location.pathname.includes("/opdrachten/");
 const menu = document.querySelector(".assignment-menu");
 const downloadsPanel = document.querySelector("#downloads-panel");
-const pages = [["index.html", "Instructie"], ["opdrachten/opdracht-1.html", "1 Accountprofiel en accountanalyse"], ["opdrachten/opdracht-2.html", "2 Accountstrategie en marketingmix voor het account"], ["opdrachten/opdracht-3.html", "3 Actieplan"], ["opdrachten/opdracht-4.html", "4 Evalueren accountplan"], ["opdrachten/opdracht-5.html", "5 Netwerken"]];
-const downloadsByFile = {"opdracht-1.html": {bijlagen: [["downloads/Bijlage%201%20Informatie%20over%20DolceDistribuzione.docx", "Bijlage 1 Informatie over DolceDistribuzione", "word"], ["downloads/Bijlage%202%20Accountplan%20DolceDistribuzione.docx", "Bijlage 2 Accountplan DolceDistribuzione", "word"]], formats: []}, "opdracht-2.html": {bijlagen: [["downloads/Bijlage%203%20Verkoopdoelen%20DutchDelight%20Chocolates.docx", "Bijlage 3 Verkoopdoelen DutchDelight Chocolates", "word"]], formats: [["downloads/Format%20e-mail.docx", "Format e-mail", "word"]]}, "opdracht-3.html": {bijlagen: [["downloads/Bijlage%204%20Organogram%20DutchDelight%20Chocolates.pdf", "Bijlage 4 Organogram DutchDelight Chocolates", "pdf"], ["downloads/Bijlage%205%20E-mail%20van%20collega%20over%20verkoopondersteuning.pdf", "Bijlage 5 E-mail van collega over verkoopondersteuning", "pdf"]], formats: [["downloads/Format%20actieplan.docx", "Format actieplan", "word"], ["downloads/Format%20e-mail.docx", "Format e-mail", "word"]]}, "opdracht-4.html": {bijlagen: [["downloads/Bijlage%206%20E-mail%20van%20sales%20support.pdf", "Bijlage 6 E-mail van sales support", "pdf"], ["downloads/Bijlage%207%20Verslag%20evaluatiegesprek%20met%20account%20DolceDistribuzione.pdf", "Bijlage 7 Verslag evaluatiegesprek met account DolceDistribuzione", "pdf"]], formats: [["downloads/Format%20e-mail.docx", "Format e-mail", "word"]]}, "opdracht-5.html": {bijlagen: [["downloads/Bijlage%208%20Informatie%20over%20Noire%20Signature%20Bars.pdf", "Bijlage 8 Informatie over Noire Signature Bars", "pdf"]], formats: [["downloads/Format%20LinkedIn.docx", "Format LinkedIn", "word"]]}};
-function rootHref(target) { return `${pathPrefix}${target}`; }
-function isActive(target) { if (currentFile === "index.html" && target === "index.html" && !inAssignments) return true; return target.endsWith(currentFile) && currentFile !== "index.html"; }
-if (menu) menu.innerHTML = pages.map(([target, label]) => `<a class="menu-item${isActive(target) ? " active" : ""}" href="${rootHref(target)}">${label}</a>`).join("");
-function appendDownloadSection(title, items) { if (!downloadsPanel || !items.length) return; const heading = document.createElement(title === "Bijlagen" ? "h2" : "h3"); heading.textContent = title; downloadsPanel.appendChild(heading); items.forEach(([target, label, type]) => { const link = document.createElement("a"); link.className = `download ${type}`; link.href = rootHref(target); link.target = "_blank"; link.rel = "noopener"; if (type === "word" || type === "excel") link.download = ""; link.textContent = label; downloadsPanel.appendChild(link); }); }
-if (downloadsPanel) { const downloads = downloadsByFile[currentFile] || { bijlagen: [], formats: [] }; downloadsPanel.hidden = !(downloads.bijlagen.length || downloads.formats.length); appendDownloadSection("Bijlagen", downloads.bijlagen); appendDownloadSection("Formats", downloads.formats); }
+
+const menuGroups = [
+  { target: "index.html", label: "Instructie" },
+  { target: "opdrachten/opdracht-1.html", label: "1 Accountprofiel en accountanalyse" },
+  { target: "opdrachten/opdracht-2.html", label: "2 Accountstrategie en marketingmix voor het account" },
+  { target: "opdrachten/opdracht-3.html", label: "3 Actieplan" },
+  { target: "opdrachten/opdracht-4.html", label: "4 Evalueren accountplan" },
+  { target: "opdrachten/opdracht-5.html", label: "5 Netwerken" }
+];
+
+const downloadsByFile = {
+  "opdracht-1.html": {
+    bijlagen: [
+      ["downloads/Bijlage%201%20Informatie%20over%20DolceDistribuzione.docx", "Bijlage 1 Informatie over DolceDistribuzione", "word"],
+      ["downloads/Bijlage%202%20Accountplan%20DolceDistribuzione.docx", "Bijlage 2 Accountplan DolceDistribuzione", "word"]
+    ],
+    formats: []
+  },
+  "opdracht-2.html": {
+    bijlagen: [["downloads/Bijlage%203%20Verkoopdoelen%20DutchDelight%20Chocolates.docx", "Bijlage 3 Verkoopdoelen DutchDelight Chocolates", "word"]],
+    formats: [["downloads/Format%20e-mail.docx", "Format e-mail", "word"]]
+  },
+  "opdracht-3.html": {
+    bijlagen: [
+      ["downloads/Bijlage%204%20Organogram%20DutchDelight%20Chocolates.pdf", "Bijlage 4 Organogram DutchDelight Chocolates", "pdf"],
+      ["downloads/Bijlage%205%20E-mail%20van%20collega%20over%20verkoopondersteuning.pdf", "Bijlage 5 E-mail van collega over verkoopondersteuning", "pdf"]
+    ],
+    formats: [
+      ["downloads/Format%20actieplan.docx", "Format actieplan", "word"],
+      ["downloads/Format%20e-mail.docx", "Format e-mail", "word"]
+    ]
+  },
+  "opdracht-4.html": {
+    bijlagen: [
+      ["downloads/Bijlage%206%20E-mail%20van%20sales%20support.pdf", "Bijlage 6 E-mail van sales support", "pdf"],
+      ["downloads/Bijlage%207%20Verslag%20evaluatiegesprek%20met%20account%20DolceDistribuzione.pdf", "Bijlage 7 Verslag evaluatiegesprek met account DolceDistribuzione", "pdf"]
+    ],
+    formats: [["downloads/Format%20e-mail.docx", "Format e-mail", "word"]]
+  },
+  "opdracht-5.html": {
+    bijlagen: [["downloads/Bijlage%208%20Informatie%20over%20Noire%20Signature%20Bars.pdf", "Bijlage 8 Informatie over Noire Signature Bars", "pdf"]],
+    formats: [["downloads/Format%20LinkedIn.docx", "Format LinkedIn", "word"]]
+  }
+};
+
+function rootHref(target) {
+  return `${pathPrefix}${target}`;
+}
+
+function isActive(target) {
+  if (currentFile === "index.html" && target === "index.html" && !inAssignments) return true;
+  return target.endsWith(currentFile) && currentFile !== "index.html";
+}
+
+if (menu) {
+  menu.innerHTML = menuGroups.map((group) => (
+    `<a class="menu-item${isActive(group.target) ? " active" : ""}" href="${rootHref(group.target)}">${group.label}</a>`
+  )).join("");
+}
+
+function appendDownloadSection(title, items) {
+  if (!downloadsPanel || !items.length) return;
+  const heading = document.createElement(title === "Bijlagen" ? "h2" : "h3");
+  heading.textContent = title;
+  downloadsPanel.appendChild(heading);
+  items.forEach(([target, label, type]) => {
+    const link = document.createElement("a");
+    link.className = `download ${type}`;
+    link.href = rootHref(target);
+    link.target = "_blank";
+    link.rel = "noopener";
+    if (type === "word" || type === "excel") link.download = "";
+    link.textContent = label;
+    downloadsPanel.appendChild(link);
+  });
+}
+
+if (downloadsPanel) {
+  const downloads = downloadsByFile[currentFile] || { bijlagen: [], formats: [] };
+  downloadsPanel.hidden = !(downloads.bijlagen.length || downloads.formats.length);
+  appendDownloadSection("Bijlagen", downloads.bijlagen);
+  appendDownloadSection("Formats", downloads.formats);
+}

@@ -4,15 +4,25 @@ const sidePanel = document.querySelector(".side-panel");
 const layout = document.querySelector(".layout");
 const navGrid = document.querySelector(".nav-grid");
 
-const pages = [
-  ["index.html", "Instructie"],
-  ["opdrachten/opdracht-1.html", "1 Voorbereiding commercieel traject"],
-  ["opdrachten/opdracht-2.html", "2 Klantgesprek"],
-  ["opdrachten/opdracht-3.html", "3 Offertetraject"],
-  ["opdrachten/opdracht-4-1.html", "4.1 Verzorgen ordertraject"],
-  ["opdrachten/opdracht-4-2.html", "4.2 Bewaken ordertraject", "sub-item"],
-  ["opdrachten/opdracht-5-1.html", "5.1 Onderzoeken klanttevredenheid"],
-  ["opdrachten/opdracht-5-2.html", "5.2 Opstellen verbetervoorstel", "sub-item"]
+const menuGroups = [
+  { target: "index.html", label: "Instructie" },
+  { target: "opdrachten/opdracht-1.html", label: "1 Voorbereiding commercieel traject" },
+  { target: "opdrachten/opdracht-2.html", label: "2 Klantgesprek" },
+  { target: "opdrachten/opdracht-3.html", label: "3 Offertetraject" },
+  {
+    label: "4 Ordertraject",
+    children: [
+      { target: "opdrachten/opdracht-4-1.html", label: "4.1 Verzorgen ordertraject" },
+      { target: "opdrachten/opdracht-4-2.html", label: "4.2 Bewaken ordertraject" }
+    ]
+  },
+  {
+    label: "5 Klanttevredenheid",
+    children: [
+      { target: "opdrachten/opdracht-5-1.html", label: "5.1 Onderzoeken klanttevredenheid" },
+      { target: "opdrachten/opdracht-5-2.html", label: "5.2 Opstellen verbetervoorstel" }
+    ]
+  }
 ];
 
 const downloads = [
@@ -30,6 +40,34 @@ function rootHref(target) {
 function isActive(target) {
   if (currentFile === "index.html" && target === "index.html") return true;
   return target.endsWith(currentFile) && currentFile !== "index.html";
+}
+
+function groupHasActiveChild(group) {
+  return group.children?.some((child) => isActive(child.target));
+}
+
+function renderMenuGroup(group, index) {
+  if (!group.children) {
+    return `<a class="menu-item${isActive(group.target) ? " active" : ""}" href="${rootHref(group.target)}">${group.label}</a>`;
+  }
+
+  const groupId = `assignment-group-${index}`;
+  const expanded = groupHasActiveChild(group);
+  const children = group.children.map((child) => (
+    `<a class="submenu-item${isActive(child.target) ? " active" : ""}" href="${rootHref(child.target)}">${child.label}</a>`
+  )).join("");
+
+  return `
+    <div class="menu-section${expanded ? " expanded" : ""}">
+      <button class="menu-group${expanded ? " active" : ""}" type="button" aria-expanded="${expanded}" aria-controls="${groupId}">
+        <span>${group.label}</span>
+        <span class="menu-toggle" aria-hidden="true">${expanded ? "-" : "+"}</span>
+      </button>
+      <div class="submenu${expanded ? " open" : ""}" id="${groupId}">
+        ${children}
+      </div>
+    </div>
+  `;
 }
 
 if (navGrid) {
@@ -57,23 +95,16 @@ if (layout) {
 
   const crumb = document.createElement("div");
   crumb.className = "breadcrumb";
-  crumb.textContent = currentFile === "index.html" ? "home › examenopdrachten" : `home › examenopdrachten › ${document.querySelector("h2")?.textContent.toLowerCase() || ""}`;
+  crumb.textContent = currentFile === "index.html" ? "home > examenopdrachten" : `home > examenopdrachten > ${document.querySelector("h2")?.textContent.toLowerCase() || ""}`;
   layout.prepend(crumb);
 }
 
 if (sidePanel) {
-  const menuLinks = pages.map(([target, label, extraClass]) => {
-    const classes = ["menu-item"];
-    if (extraClass) classes.push(extraClass);
-    if (isActive(target)) classes.push("active");
-    return `<a class="${classes.join(" ")}" href="${rootHref(target)}">${label}</a>`;
-  }).join("");
-
   const bijlagen = downloads.slice(0, 2).map(([target, label]) => `<a href="${rootHref(target)}">${label}</a>`).join("");
   const formats = downloads.slice(2).map(([target, label]) => `<a href="${rootHref(target)}">${label}</a>`).join("");
 
   sidePanel.innerHTML = `
-    <nav class="assignment-menu" aria-label="Examenopdrachten">${menuLinks}</nav>
+    <nav class="assignment-menu" aria-label="Examenopdrachten">${menuGroups.map(renderMenuGroup).join("")}</nav>
     <section class="side-downloads" aria-label="Downloads">
       <h2>Bijlagen</h2>
       ${bijlagen}
@@ -81,4 +112,17 @@ if (sidePanel) {
       ${formats}
     </section>
   `;
+
+  sidePanel.querySelectorAll(".menu-group").forEach((button) => {
+    button.addEventListener("click", () => {
+      const section = button.closest(".menu-section");
+      const submenu = section?.querySelector(".submenu");
+      const toggle = button.querySelector(".menu-toggle");
+      const expanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!expanded));
+      section?.classList.toggle("expanded", !expanded);
+      submenu?.classList.toggle("open", !expanded);
+      if (toggle) toggle.textContent = expanded ? "+" : "-";
+    });
+  });
 }

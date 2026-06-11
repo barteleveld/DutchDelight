@@ -237,7 +237,15 @@ a:hover {
   gap: 10px;
 }
 
-.menu-item {
+.menu-section {
+  display: grid;
+  gap: 0;
+}
+
+.menu-group,
+.menu-item,
+.submenu-item {
+  display: block;
   width: 100%;
   min-height: 36px;
   padding: 8px 16px;
@@ -249,9 +257,37 @@ a:hover {
   text-align: left;
 }
 
-.menu-item.active {
+.menu-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-group.active,
+.menu-item.active,
+.submenu-item.active {
   color: #fff;
   background: var(--purple);
+}
+
+.menu-toggle {
+  margin-left: 12px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.submenu {
+  display: none;
+  margin-top: -10px;
+}
+
+.submenu.open {
+  display: grid;
+}
+
+.submenu-item {
+  padding-left: 26px;
+  background: #a9d4c6;
 }
 
 .downloads {

@@ -352,6 +352,11 @@ a:hover {
   gap: 10px;
 }
 
+.menu-section {
+  display: grid;
+  gap: 0;
+}
+
 .menu-group {
   width: 100%;
   min-height: 36px;
@@ -367,9 +372,15 @@ a:hover {
   align-items: center;
 }
 
-.menu-group.expanded {
+.menu-group.active {
   color: #fff;
   background: var(--purple);
+}
+
+.menu-toggle {
+  margin-left: 12px;
+  font-size: 20px;
+  line-height: 1;
 }
 
 .submenu {
@@ -382,7 +393,9 @@ a:hover {
   gap: 0;
 }
 
-.menu-item {
+.menu-item,
+.submenu-item {
+  display: block;
   width: 100%;
   min-height: 36px;
   padding: 8px 16px;
@@ -394,13 +407,14 @@ a:hover {
   text-align: left;
 }
 
-.menu-item.sub-item {
+.submenu-item {
   padding-left: 26px;
   color: var(--purple);
   background: #a9d4c6;
 }
 
-.menu-item.active {
+.menu-item.active,
+.submenu-item.active {
   color: #fff;
   background: var(--purple);
 }
