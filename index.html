@@ -11,16 +11,70 @@
       <div class="start-shell">
         <div class="start-copy">
           <p class="start-eyebrow">Proefexamens Junior Accountmanager</p>
-          <h1 id="start-title">Kies de kerntaak waarvoor je een proefexamen wilt maken</h1>
-          <p>Start vanuit dit overzicht. Je docent geeft aan welke kerntaak je vandaag maakt.</p>
+          <h1 id="start-title">Kies examenproject en versie</h1>
+          <p>Elk examenproject krijgt drie versies binnen dezelfde DutchDelight-casuswereld. De letter geeft de versie aan; het submerk bepaalt de context.</p>
         </div>
-        <div class="task-grid" aria-label="Keuze kerntaak">
-          <button class="task-card available" data-exam-choice="b1-k1"><span>B1-K1</span><strong>Onderzoekt de customer journey</strong><small>Beschikbaar: DutchDelight Pulse</small></button>
-          <button class="task-card available" data-exam-choice="b1-k2"><span>B1-K2</span><strong>Verzorgt marketing en communicatie-activiteiten</strong><small>Beschikbaar: DutchDelight Pulse</small></button>
-          <button class="task-card available" data-exam-choice="p4-k1"><span>P4-K1</span><strong>Voert accountmanagement uit</strong><small>Beschikbaar: DutchDelight Noire</small></button>
-          <button class="task-card available" data-exam-choice="p4-k2"><span>P4-K2</span><strong>Geeft uitvoering aan verkooptrajecten</strong><small>Concept: DutchDelight TrueCacao</small></button>
+
+        <div class="legend" aria-label="Statussen">
+          <span class="status-pill status-unavailable">Niet beschikbaar</span>
+          <span class="status-pill status-development">In ontwikkeling</span>
+          <span class="status-pill status-available">Beschikbaar</span>
         </div>
-        <section id="choice-message" class="choice-message" hidden><h2>Dit proefexamen is nog niet beschikbaar</h2><p>Deze kerntaak staat alvast in het keuzemenu. Zodra het proefexamen is gebouwd, kan de student hier starten.</p></section>
+
+        <div class="exam-grid" aria-label="Keuze examenproject en versie">
+          <section class="exam-project" aria-labelledby="b1-k1-title">
+            <div class="project-heading">
+              <span>B1-K1</span>
+              <h2 id="b1-k1-title">Onderzoekt de customer journey</h2>
+            </div>
+            <div class="version-list">
+              <button class="version-card unavailable" type="button" data-exam-choice="b1-k1-a"><strong>A Noire</strong><span>Niet beschikbaar</span></button>
+              <button class="version-card available" type="button" data-exam-choice="b1-k1-b"><strong>B Pulse</strong><span>Beschikbaar</span></button>
+              <button class="version-card unavailable" type="button" data-exam-choice="b1-k1-c"><strong>C TrueCacao</strong><span>Niet beschikbaar</span></button>
+            </div>
+          </section>
+
+          <section class="exam-project" aria-labelledby="b1-k2-title">
+            <div class="project-heading">
+              <span>B1-K2</span>
+              <h2 id="b1-k2-title">Verzorgt marketing en communicatie-activiteiten</h2>
+            </div>
+            <div class="version-list">
+              <button class="version-card unavailable" type="button" data-exam-choice="b1-k2-a"><strong>A Noire</strong><span>Niet beschikbaar</span></button>
+              <button class="version-card available" type="button" data-exam-choice="b1-k2-b"><strong>B Pulse</strong><span>Beschikbaar</span></button>
+              <button class="version-card unavailable" type="button" data-exam-choice="b1-k2-c"><strong>C TrueCacao</strong><span>Niet beschikbaar</span></button>
+            </div>
+          </section>
+
+          <section class="exam-project" aria-labelledby="p4-k1-title">
+            <div class="project-heading">
+              <span>P4-K1</span>
+              <h2 id="p4-k1-title">Voert accountmanagement uit</h2>
+            </div>
+            <div class="version-list">
+              <button class="version-card available" type="button" data-exam-choice="p4-k1-a"><strong>A Noire</strong><span>Beschikbaar</span></button>
+              <button class="version-card unavailable" type="button" data-exam-choice="p4-k1-b"><strong>B Pulse</strong><span>Niet beschikbaar</span></button>
+              <button class="version-card unavailable" type="button" data-exam-choice="p4-k1-c"><strong>C TrueCacao</strong><span>Niet beschikbaar</span></button>
+            </div>
+          </section>
+
+          <section class="exam-project" aria-labelledby="p4-k2-title">
+            <div class="project-heading">
+              <span>P4-K2</span>
+              <h2 id="p4-k2-title">Geeft uitvoering aan verkooptrajecten</h2>
+            </div>
+            <div class="version-list">
+              <button class="version-card unavailable" type="button" data-exam-choice="p4-k2-a"><strong>A Noire</strong><span>Niet beschikbaar</span></button>
+              <button class="version-card unavailable" type="button" data-exam-choice="p4-k2-b"><strong>B Pulse</strong><span>Niet beschikbaar</span></button>
+              <button class="version-card development" type="button" data-exam-choice="p4-k2-c"><strong>C TrueCacao</strong><span>In ontwikkeling</span></button>
+            </div>
+          </section>
+        </div>
+
+        <section id="choice-message" class="choice-message" hidden>
+          <h2>Deze versie is nog niet beschikbaar</h2>
+          <p>Deze versie staat alvast in het keuzescherm. Zodra het proefexamen is gebouwd, kan de student hier starten.</p>
+        </section>
       </div>
     </section>
     <script src="script.js"></script>

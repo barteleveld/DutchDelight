@@ -1,0 +1,325 @@
+from pathlib import Path
+
+from docx import Document
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.shared import Inches, Pt
+from reportlab.lib import colors
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
+from reportlab.lib.units import mm
+from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+
+
+ROOT = Path(__file__).resolve().parents[1]
+P4K2 = ROOT / "p4-k2-verkooptraject"
+BIJLAGEN = P4K2 / "downloads" / "bijlagen"
+FORMATS = P4K2 / "downloads" / "formats"
+
+
+def setup_doc(title, subtitle=None):
+    doc = Document()
+    section = doc.sections[0]
+    section.top_margin = Inches(0.8)
+    section.bottom_margin = Inches(0.8)
+    section.left_margin = Inches(0.8)
+    section.right_margin = Inches(0.8)
+
+    styles = doc.styles
+    styles["Normal"].font.name = "Arial"
+    styles["Normal"].font.size = Pt(10)
+    for style_name in ["Heading 1", "Heading 2", "Heading 3"]:
+        styles[style_name].font.name = "Arial"
+        styles[style_name].font.color.rgb = None
+
+    heading = doc.add_paragraph()
+    run = heading.add_run(title)
+    run.bold = True
+    run.font.name = "Arial"
+    run.font.size = Pt(18)
+    heading.alignment = WD_ALIGN_PARAGRAPH.LEFT
+
+    if subtitle:
+        p = doc.add_paragraph(subtitle)
+        p.runs[0].italic = True
+
+    return doc
+
+
+def add_kv_table(doc, rows):
+    table = doc.add_table(rows=0, cols=2)
+    table.style = "Table Grid"
+    for label, value in rows:
+        cells = table.add_row().cells
+        cells[0].text = label
+        cells[1].text = value
+        cells[0].paragraphs[0].runs[0].bold = True
+    doc.add_paragraph()
+    return table
+
+
+def add_customer(doc, number, name, rows, contact_rows):
+    doc.add_heading(f"{number}. {name}", level=1)
+    add_kv_table(doc, rows)
+    doc.add_heading("Contactmomenten", level=2)
+    table = doc.add_table(rows=1, cols=5)
+    table.style = "Table Grid"
+    headers = ["Moment", "Datum", "Kanaal", "Samenvatting", "Vervolgactie"]
+    for i, header in enumerate(headers):
+        table.rows[0].cells[i].text = header
+        table.rows[0].cells[i].paragraphs[0].runs[0].bold = True
+    for row in contact_rows:
+        cells = table.add_row().cells
+        for i, value in enumerate(row):
+            cells[i].text = value
+    doc.add_paragraph()
+
+
+def create_crm():
+    doc = setup_doc(
+        "Bijlage 1 CRM-systeem TrueCacao",
+        "Gebruik dit bestand om klantinformatie, contactmomenten en afspraken bij te werken."
+    )
+    doc.add_paragraph(
+        "Je werkt als junior accountmanager bij DutchDelight Chocolates. "
+        "Onderstaande klanten horen bij verschillende opdrachten binnen P4-K2. "
+        "Vul per opdracht de ontbrekende onderdelen aan en sla je eigen versie op."
+    )
+
+    add_customer(
+        doc,
+        1,
+        "Koffiehuis De Gouden Boon",
+        [
+            ("Plaats", "Utrecht"),
+            ("Contactpersoon", "Nina Verhoeven, eigenaar"),
+            ("Type klant", "Koffiehuis met lunchkaart en kleine cadeauhoek"),
+            ("Klantfase", "Orientatie na eerste informatieaanvraag"),
+            ("Interesse", "TrueCacao Pure Bites voor bij koffie en Discovery Packs voor vaste klanten"),
+            ("Belangrijk koopmotief", "Natuurlijke uitstraling, goed verhaal bij koffie, beperkte voorraadruimte"),
+            ("Mogelijke weerstand", "Twijfel over marge en minimale afname"),
+            ("Open veld verkoopdoel", ""),
+        ],
+        [
+            ["1", "03-06-2026", "E-mail", "Klant vraagt informatie over TrueCacao Bites en proefverpakkingen.", "Opvolgen met passend voorstel."],
+            ["2", "", "", "", ""],
+        ],
+    )
+
+    add_customer(
+        doc,
+        2,
+        "CampusCatering Nederland",
+        [
+            ("Plaats", "Leiden"),
+            ("Contactpersoon", "Jeroen Mulder, inkoper"),
+            ("Type klant", "Cateringorganisatie voor campuslocaties, vergaderruimtes en bedrijfsrestaurants"),
+            ("Klantfase", "Vergelijking van leveranciers"),
+            ("Interesse", "Assortiment voor counters, vergaderarrangementen en campuswinkels"),
+            ("Belangrijk koopmotief", "Betrouwbare levering, duidelijke productinformatie, herkenbare duurzame uitstraling"),
+            ("Mogelijke weerstand", "Prijs per stuk en risico op lage omloopsnelheid"),
+            ("Gewenste vervolgstap", "Klantgesprek met advies over assortiment en pilotlocaties"),
+        ],
+        [
+            ["1", "05-06-2026", "Telefoon", "Jeroen wil weten welke producten passen bij jonge professionals en studenten.", "Klantgesprek voorbereiden."],
+            ["2", "", "", "", ""],
+        ],
+    )
+
+    add_customer(
+        doc,
+        3,
+        "Natuurmarkt Van Dijk",
+        [
+            ("Plaats", "Amersfoort"),
+            ("Contactpersoon", "Saskia van Dijk, filiaalmanager"),
+            ("Type klant", "Natuurmarkt met food, koffiehoek en cadeauproducten"),
+            ("Klantfase", "Offerteaanvraag"),
+            ("Interesse", "Bars, Pure Bites en Discovery Packs voor introductie in het schap"),
+            ("Belangrijk koopmotief", "Schapbeeld, marge, productinformatie en introductiekorting"),
+            ("Afspraak", "Offerte met korting en gratis levering binnen 4 werkdagen"),
+            ("Open veld offertegegevens", ""),
+        ],
+        [
+            ["1", "06-06-2026", "E-mail", "Klant vraagt offerte voor introductieorder TrueCacao.", "Offerte opstellen en registreren."],
+            ["2", "", "", "", ""],
+        ],
+    )
+
+    add_customer(
+        doc,
+        4,
+        "Hotel De Linde",
+        [
+            ("Plaats", "Haarlem"),
+            ("Contactpersoon", "Farah El Amrani, operations manager"),
+            ("Type klant", "Hotel met vergaderzalen en zakelijke arrangementen"),
+            ("Klantfase", "Order geplaatst"),
+            ("Interesse", "Nut & Nib Bites, Office Boxes, Discovery Packs en Pure Dark 72% Bars voor kamers en arrangementen"),
+            ("Belangrijk koopmotief", "Betrouwbaarheid, representatieve uitstraling en duidelijke afspraken"),
+            ("Orderstatus", "In behandeling"),
+            ("Open veld orderproblemen/oplossingen", ""),
+        ],
+        [
+            ["1", "07-06-2026", "E-mail", "Klant accepteert offerte voor hotelkamers en vergaderarrangementen.", "Orderbevestiging maken."],
+            ["2", "", "", "", ""],
+        ],
+    )
+
+    doc.add_heading("Werkruimte kandidaat", level=1)
+    add_kv_table(doc, [
+        ("Naam kandidaat", ""),
+        ("Datum", ""),
+        ("Bestandsnaam", ""),
+        ("Opmerkingen", ""),
+    ])
+
+    doc.save(BIJLAGEN / "Bijlage 1 CRM-systeem TrueCacao.docx")
+
+
+def create_offer_format():
+    doc = setup_doc("Format offerte", "Vul dit format in voor opdracht 3.")
+    add_kv_table(doc, [
+        ("Offertenummer", ""),
+        ("Datum", ""),
+        ("Klantnaam", ""),
+        ("Contactpersoon", ""),
+        ("Adres/plaats", ""),
+        ("Geldigheid offerte", ""),
+        ("Betalingsvoorwaarden", ""),
+        ("Leveringsafspraak", ""),
+    ])
+    doc.add_heading("Aanbod", level=1)
+    table = doc.add_table(rows=1, cols=5)
+    table.style = "Table Grid"
+    for i, header in enumerate(["Product", "Aantal", "Prijs per stuk", "Totaal", "Opmerking"]):
+        table.rows[0].cells[i].text = header
+        table.rows[0].cells[i].paragraphs[0].runs[0].bold = True
+    for _ in range(6):
+        table.add_row()
+    doc.add_paragraph()
+    add_kv_table(doc, [
+        ("Subtotaal", ""),
+        ("Korting", ""),
+        ("Totaal exclusief btw", ""),
+        ("Btw", ""),
+        ("Totaal inclusief btw", ""),
+    ])
+    doc.add_heading("Toelichting en afsluiting", level=1)
+    doc.add_paragraph("Schrijf hier een korte, klantgerichte toelichting op het aanbod.")
+    doc.add_paragraph("Afsluiting:")
+    doc.save(FORMATS / "Format offerte.docx")
+
+
+def create_order_format():
+    doc = setup_doc("Format orderbevestiging", "Vul dit format in voor opdracht 4.1.")
+    add_kv_table(doc, [
+        ("Ordernummer", ""),
+        ("Datum", ""),
+        ("Klantnaam", ""),
+        ("Contactpersoon", ""),
+        ("Leveradres", ""),
+        ("Leverdatum/levertijd", ""),
+        ("Betalingsvoorwaarden", ""),
+    ])
+    doc.add_heading("Orderregels", level=1)
+    table = doc.add_table(rows=1, cols=5)
+    table.style = "Table Grid"
+    for i, header in enumerate(["Product", "Aantal", "Prijs per stuk", "Totaal", "Afspraak"]):
+        table.rows[0].cells[i].text = header
+        table.rows[0].cells[i].paragraphs[0].runs[0].bold = True
+    for _ in range(6):
+        table.add_row()
+    doc.add_paragraph()
+    add_kv_table(doc, [
+        ("Subtotaal", ""),
+        ("Korting", ""),
+        ("Totaalbedrag", ""),
+        ("Bijzonderheden", ""),
+    ])
+    doc.add_heading("Bevestiging", level=1)
+    doc.add_paragraph("Bevestig de afspraken klantgericht en vermeld bij wie de klant terecht kan met vragen.")
+    doc.save(FORMATS / "Format orderbevestiging.docx")
+
+
+def create_email_format():
+    doc = setup_doc("Format e-mail", "Gebruik dit format voor klantmails en interne e-mails.")
+    add_kv_table(doc, [
+        ("Aan", ""),
+        ("Van", ""),
+        ("Datum", ""),
+        ("Onderwerp", ""),
+    ])
+    doc.add_heading("E-mailtekst", level=1)
+    for label in ["Opening", "Aanleiding", "Kernboodschap", "Vervolgafspraak of actie", "Afsluiting"]:
+        doc.add_paragraph(label, style="Heading 2")
+        doc.add_paragraph("")
+        doc.add_paragraph("")
+    doc.save(FORMATS / "Format e-mail.docx")
+
+
+def create_satisfaction_pdf():
+    path = BIJLAGEN / "Bijlage 2 Klanttevredenheidsonderzoek TrueCacao.pdf"
+    doc = SimpleDocTemplate(str(path), pagesize=A4, rightMargin=18 * mm, leftMargin=18 * mm, topMargin=16 * mm, bottomMargin=16 * mm)
+    styles = getSampleStyleSheet()
+    title = ParagraphStyle("Title", parent=styles["Title"], fontName="Helvetica-Bold", fontSize=17, textColor=colors.HexColor("#4b2358"), spaceAfter=10)
+    h2 = ParagraphStyle("H2", parent=styles["Heading2"], fontName="Helvetica-Bold", fontSize=11, textColor=colors.HexColor("#4b2358"), spaceBefore=10, spaceAfter=4)
+    body = ParagraphStyle("Body", parent=styles["BodyText"], fontName="Helvetica", fontSize=9, leading=12)
+
+    story = [
+        Paragraph("Bijlage 2 Klanttevredenheidsonderzoek TrueCacao", title),
+        Paragraph("Onderzoek onder 24 zakelijke klanten die in mei of juni 2026 TrueCacao-producten hebben besteld.", body),
+        Spacer(1, 6),
+        Paragraph("Resultaten per onderwerp", h2),
+    ]
+
+    data = [
+        ["Onderwerp", "Score", "Belangrijkste signaal"],
+        ["Productkwaliteit", "4,4 / 5", "Klanten waarderen smaak en natuurlijke uitstraling."],
+        ["Assortiment", "3,7 / 5", "Vraag naar meer proefpakketten en kleinere displays."],
+        ["Levering", "3,2 / 5", "Enkele klanten noemen onduidelijke leverupdates."],
+        ["Communicatie", "3,4 / 5", "Reacties zijn vriendelijk, maar opvolging mag concreter."],
+        ["Service", "4,0 / 5", "Oplossingen worden gewaardeerd als de klant snel contact krijgt."],
+    ]
+    table = Table(data, colWidths=[42 * mm, 26 * mm, 96 * mm])
+    table.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#d9ece6")),
+        ("TEXTCOLOR", (0, 0), (-1, 0), colors.HexColor("#4b2358")),
+        ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+        ("GRID", (0, 0), (-1, -1), 0.4, colors.HexColor("#999999")),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("FONTSIZE", (0, 0), (-1, -1), 8),
+    ]))
+    story.extend([table, Spacer(1, 8), Paragraph("Open reacties van klanten", h2)])
+
+    reactions = [
+        "De producten passen goed bij onze duurzame uitstraling, maar wij willen vooraf duidelijker weten wanneer de levering komt.",
+        "De tasting packs werken goed als introductieproduct. Een kleiner displaypakket zou voor ons aantrekkelijk zijn.",
+        "De accountmanager denkt mee, maar de bevestiging van afspraken mag sneller na het gesprek.",
+        "Wij kregen bij een nalevering pas laat bericht. De oplossing was netjes, maar de communicatie kan eerder.",
+        "De productinformatie is duidelijk. Voor allergenen en ingredienten willen wij graag een compacte kaart voor medewerkers.",
+    ]
+    for reaction in reactions:
+        story.append(Paragraph(f"- {reaction}", body))
+
+    story.extend([
+        Spacer(1, 8),
+        Paragraph("Interne aandachtspunten", h2),
+        Paragraph("1. Maak leverupdates concreter: datum, status, mogelijke vertraging en contactpersoon.", body),
+        Paragraph("2. Ontwikkel een compacte introductieset voor kleinere klanten.", body),
+        Paragraph("3. Stuur na klantgesprekken binnen een werkdag een korte samenvatting met afspraken.", body),
+    ])
+    doc.build(story)
+
+
+def main():
+    BIJLAGEN.mkdir(parents=True, exist_ok=True)
+    FORMATS.mkdir(parents=True, exist_ok=True)
+    create_crm()
+    create_offer_format()
+    create_order_format()
+    create_email_format()
+    create_satisfaction_pdf()
+
+
+if __name__ == "__main__":
+    main()

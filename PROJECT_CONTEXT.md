@@ -1,6 +1,6 @@
 # Projectcontext ALA's B1-K2
 
-Dit project bevat proefexamens voor Junior Accountmanager binnen een gedeelde fictieve organisatie: DutchDelight Chocolates. Nieuwe chats moeten dit bestand eerst lezen, samen met `EXAM_FRAMEWORK.md` en `STATUS.md`.
+Dit project bevat proefexamens voor Junior Accountmanager binnen een gedeelde fictieve organisatie: DutchDelight Chocolates. Nieuwe chats moeten dit bestand eerst lezen, samen met `EXAM_FRAMEWORK.md`, `STATUS.md` en `VERSIES.md`.
 
 ## Gedeelde Casuswereld
 
