@@ -25,6 +25,57 @@ const menuGroups = [
   }
 ];
 
+const downloadsByFile = {
+  "opdracht-1.html": {
+    bijlagen: [
+      ["downloads/bijlagen/Bijlage 1 Resultaten enquete zakelijke afnemers Pulse.pdf", "Bijlage 1 Resultaten enquête zakelijke afnemers Pulse"],
+      ["downloads/bijlagen/Bijlage 2 Aanbod concurrenten energieke snacks.pdf", "Bijlage 2 Aanbod concurrenten energieke snacks"],
+      ["downloads/bijlagen/Bijlage 3 Uitgangspunten DutchDelight Chocolates en Pulse.pdf", "Bijlage 3 Uitgangspunten DutchDelight Chocolates en Pulse"]
+    ],
+    formats: [
+      ["downloads/formats/Format notitie.docx", "Format notitie"],
+      ["downloads/formats/Format e-mail.docx", "Format e-mail"]
+    ]
+  },
+  "opdracht-2.html": {
+    bijlagen: [["downloads/bijlagen/Bijlage 4 Klantreacties Pulse.xlsx", "Bijlage 4 Klantreacties Pulse"]],
+    formats: [
+      ["downloads/formats/Format notitie.docx", "Format notitie"],
+      ["downloads/formats/Format e-mail.docx", "Format e-mail"]
+    ]
+  },
+  "opdracht-3-1.html": {
+    bijlagen: [],
+    formats: [
+      ["downloads/formats/Format notitie.docx", "Format notitie"],
+      ["downloads/formats/Format 5W+1H-vragen.docx", "Format 5W+1H-vragen"],
+      ["downloads/formats/Format e-mail.docx", "Format e-mail"]
+    ]
+  },
+  "opdracht-3-2.html": {
+    bijlagen: [],
+    formats: [["downloads/formats/Format 5W+1H-vragen.docx", "Format 5W+1H-vragen"]]
+  },
+  "opdracht-4.html": {
+    bijlagen: [],
+    formats: [
+      ["downloads/formats/Format notitie.docx", "Format notitie"],
+      ["downloads/formats/Format e-mail.docx", "Format e-mail"]
+    ]
+  },
+  "opdracht-5-1.html": {
+    bijlagen: [["downloads/bijlagen/Bijlage 5 Bevindingen Pulse.pdf", "Bijlage 5 Bevindingen Pulse"]],
+    formats: [
+      ["downloads/formats/Format verbetervoorstel.docx", "Format verbetervoorstel"],
+      ["downloads/formats/Format e-mail.docx", "Format e-mail"]
+    ]
+  },
+  "opdracht-5-2.html": {
+    bijlagen: [],
+    formats: [["downloads/formats/Format verbetervoorstel.docx", "Format verbetervoorstel"]]
+  }
+};
+
 function rootHref(target) {
   return `${pathPrefix}${target}`;
 }
@@ -75,8 +126,22 @@ if (layout) {
 }
 
 if (sidePanel) {
+  const downloads = downloadsByFile[currentFile] || { bijlagen: [], formats: [] };
+  const renderDownloadLinks = (items) => items.map(([target, label]) => {
+    const type = target.toLowerCase().endsWith(".pdf") ? "pdf" : target.toLowerCase().endsWith(".xlsx") ? "excel" : "word";
+    const downloadAttribute = type === "word" || type === "excel" ? " download" : "";
+    return `<a class="download ${type}" href="${rootHref(target)}" target="_blank" rel="noopener"${downloadAttribute}>${label}</a>`;
+  }).join("");
+  const downloadPanel = downloads.bijlagen.length || downloads.formats.length
+    ? `<section class="side-downloads" aria-label="Downloads">
+        ${downloads.bijlagen.length ? `<h2>Bijlagen</h2>${renderDownloadLinks(downloads.bijlagen)}` : ""}
+        ${downloads.formats.length ? `<h3>Formats</h3>${renderDownloadLinks(downloads.formats)}` : ""}
+      </section>`
+    : "";
+
   sidePanel.innerHTML = `
     <nav class="assignment-menu" aria-label="Examenopdrachten">${menuGroups.map(renderMenuGroup).join("")}</nav>
+    ${downloadPanel}
   `;
 
   sidePanel.querySelectorAll(".menu-group").forEach((button) => {

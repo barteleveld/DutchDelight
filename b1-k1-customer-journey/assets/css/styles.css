@@ -354,6 +354,58 @@ a:hover {
   background: #a9d4c6;
 }
 
+.side-downloads {
+  margin-top: 38px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.side-downloads h2,
+.side-downloads h3 {
+  margin: 0 0 10px;
+  color: var(--purple);
+  font-size: 18px;
+}
+
+.side-downloads h3 {
+  margin-top: 26px;
+}
+
+.side-downloads a {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+  margin: 0 0 12px;
+  color: #3c3444;
+  font-size: 15px;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.side-downloads a::before {
+  content: "W";
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 18px;
+  border: 1px solid #b9b9b9;
+  background: #fff;
+  color: #2d65b7;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.side-downloads a.pdf::before {
+  content: "P";
+  color: #d83a37;
+}
+
+.side-downloads a.excel::before {
+  content: "X";
+  color: #16834b;
+}
+
 .content-card {
   max-width: 760px;
   padding-bottom: 60px;
