@@ -341,6 +341,11 @@ a:hover {
   color: #2d65b7;
 }
 
+.download.excel::before {
+  content: "X";
+  color: #217346;
+}
+
 .missing-download {
   color: #777;
   font-weight: 700;

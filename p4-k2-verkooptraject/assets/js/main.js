@@ -27,23 +27,23 @@ const menuGroups = [
 
 const downloadsByFile = {
   "opdracht-1.html": {
-    bijlagen: [["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.docx", "Bijlage 1 CRM-systeem TrueCacao", "word"]],
+    bijlagen: [["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.xlsx", "Bijlage 1 CRM-systeem TrueCacao", "excel"]],
     formats: []
   },
   "opdracht-2.html": {
-    bijlagen: [["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.docx", "Bijlage 1 CRM-systeem TrueCacao", "word"]],
+    bijlagen: [["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.xlsx", "Bijlage 1 CRM-systeem TrueCacao", "excel"]],
     formats: []
   },
   "opdracht-3.html": {
-    bijlagen: [["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.docx", "Bijlage 1 CRM-systeem TrueCacao", "word"]],
+    bijlagen: [["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.xlsx", "Bijlage 1 CRM-systeem TrueCacao", "excel"]],
     formats: [["downloads/formats/Format offerte.docx", "Format offerte", "word"]]
   },
   "opdracht-4-1.html": {
-    bijlagen: [["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.docx", "Bijlage 1 CRM-systeem TrueCacao", "word"]],
+    bijlagen: [["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.xlsx", "Bijlage 1 CRM-systeem TrueCacao", "excel"]],
     formats: [["downloads/formats/Format orderbevestiging.docx", "Format orderbevestiging", "word"]]
   },
   "opdracht-4-2.html": {
-    bijlagen: [["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.docx", "Bijlage 1 CRM-systeem TrueCacao", "word"]],
+    bijlagen: [["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.xlsx", "Bijlage 1 CRM-systeem TrueCacao", "excel"]],
     formats: [["downloads/formats/Format e-mail.docx", "Format e-mail", "word"]]
   },
   "opdracht-5-1.html": {
@@ -56,7 +56,7 @@ const downloadsByFile = {
   },
   "bijlagen.html": {
     bijlagen: [
-      ["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.docx", "Bijlage 1 CRM-systeem TrueCacao", "word"],
+      ["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.xlsx", "Bijlage 1 CRM-systeem TrueCacao", "excel"],
       ["downloads/bijlagen/Bijlage 2 Klanttevredenheidsonderzoek TrueCacao.pdf", "Bijlage 2 Klanttevredenheidsonderzoek TrueCacao", "pdf"]
     ],
     formats: []
