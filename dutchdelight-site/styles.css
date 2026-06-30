@@ -737,9 +737,6 @@ textarea,
 }
 
 @media (max-width: 820px) {
-  .site-header,
-  .topbar-inner,
-  .mainnav,
   .footer-inner,
   .split,
   .card-grid,
@@ -754,32 +751,62 @@ textarea,
     grid-template-columns: 1fr;
   }
 
-  .site-header,
-  .mainnav,
   .topbar-inner {
-    display: grid;
-    justify-items: start;
-  }
-
-  .nav-dropdown {
-    width: 100%;
-    padding: 0;
-  }
-
-  .nav-submenu {
-    position: static;
-    display: grid;
-    padding: 0 0 0 18px;
-    border: 0;
-    box-shadow: none;
-    opacity: 1;
-    pointer-events: auto;
-    transform: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    min-height: 0;
   }
 
   .topbar a {
+    width: auto;
+    min-width: 0;
+    padding: 9px 12px;
+    border-left: 0;
+  }
+
+  .site-header {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 0;
+    padding: 18px 0;
+    gap: 18px;
+  }
+
+  .brand img {
+    width: 180px;
+  }
+
+  .mainnav {
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    justify-content: start;
+    gap: 12px 22px;
+  }
+
+  .split > *,
+  .manager-card {
+    min-width: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  .manager-card p {
+    overflow-wrap: anywhere;
+  }
+
+  .nav-dropdown {
+    width: auto;
+    padding: 0;
+  }
+
+  .nav-parent::after {
+    display: none;
+  }
+
+  .nav-submenu {
+    display: none;
   }
 
   .hero h1,
