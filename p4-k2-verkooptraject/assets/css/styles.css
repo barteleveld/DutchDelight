@@ -37,61 +37,60 @@ a:hover {
   text-decoration: underline;
 }
 
-.page-shell {
+.page-width {
   width: 1160px;
   max-width: calc(100vw - 72px);
   margin: 0 auto;
 }
 
-.site-header {
+.account-bar {
   height: 44px;
   border-top: 1px solid #bfc4c7;
   background: #fff;
 }
 
-.header-inner {
-  height: 100%;
+.account-inner {
   display: flex;
-  align-items: center;
   justify-content: flex-end;
+  align-items: center;
   gap: 8px;
+  height: 100%;
   color: var(--purple);
 }
 
-.header-inner::before {
-  content: "\1F464  student | mboRijnland | uitloggen";
-  font-weight: 700;
+.user-icon {
+  font-size: 24px;
+  line-height: 1;
 }
 
-.brand,
-.nav-toggle {
-  display: none;
-}
-
-.site-nav {
+.platform-nav {
   min-height: 64px;
   background: var(--green-soft);
 }
 
-.nav-grid {
-  min-height: 64px;
+.nav-inner {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.tabs-main {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  gap: 0;
 }
 
-.nav-grid::before {
-  content: none;
-}
-
-.nav-grid a {
+.tabs-main a,
+.tabs-main button {
   display: flex;
   align-items: center;
-  min-height: 34px;
+  min-height: 32px;
   padding: 0 16px;
   color: var(--purple);
   border-left: 1px solid #74847f;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
   background: transparent;
   cursor: pointer;
   font-size: 15px;
@@ -99,14 +98,13 @@ a:hover {
   text-decoration: none;
 }
 
-.nav-grid a.active,
-.nav-grid a:hover {
+.tabs-main a.active,
+.tabs-main button.active {
   background: var(--green-tab);
-  text-decoration: none;
 }
 
-.nav-grid .top-tab-logo {
-  min-width: 170px;
+.tabs-main .top-tab-logo {
+  min-width: 156px;
   justify-content: center;
   padding: 0 18px;
   background: #fff;
@@ -114,7 +112,7 @@ a:hover {
 
 .top-tab-logo img {
   display: block;
-  width: 118px;
+  width: 132px;
   max-height: 34px;
   object-fit: contain;
 }
@@ -124,7 +122,6 @@ a:hover {
   align-items: center;
   gap: 8px;
   min-width: 290px;
-  margin-left: auto;
   color: var(--purple);
 }
 
@@ -163,7 +160,7 @@ a:hover {
   font-weight: 700;
 }
 
-.exam-hero {
+.project-hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -180,7 +177,7 @@ a:hover {
   background-size: cover;
 }
 
-.exam-hero h1 {
+.project-hero h1 {
   margin: 0;
   padding-left: 34px;
   color: #fff;
@@ -198,23 +195,41 @@ a:hover {
   background: rgba(255, 255, 255, .9);
 }
 
-.layout {
+.breadcrumb {
+  margin: 18px 0 12px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.content-grid {
   display: grid;
   grid-template-columns: 300px minmax(0, 1fr);
   gap: 28px;
   align-items: start;
-  padding: 0 0 60px;
 }
 
-.side-panel {
-  min-width: 0;
-}
-
-.side-panel > .eyebrow,
-.side-panel > h1,
-.side-panel > p,
-.quick-card {
+.top-page {
   display: none;
+}
+
+.top-page.active-top-page {
+  display: block;
+}
+
+.company-page article {
+  max-width: 980px;
+  padding-bottom: 60px;
+}
+
+.company-logo {
+  display: block;
+  width: 320px;
+  max-width: 100%;
+  margin: 18px 0 24px 76px;
+}
+
+.left-column {
+  min-width: 0;
 }
 
 .assignment-menu {
@@ -275,24 +290,25 @@ a:hover {
   background: #a9d4c6;
 }
 
-.side-downloads {
+.downloads {
   margin-top: 42px;
   padding-top: 14px;
   border-top: 1px solid var(--line);
 }
 
-.side-downloads h2,
-.side-downloads h3 {
+.downloads h2,
+.downloads h3 {
   margin: 0 0 8px;
   color: var(--purple);
   font-size: 18px;
 }
 
-.side-downloads h3 {
+.downloads h3 {
   margin-top: 28px;
 }
 
-.side-downloads a {
+.download,
+.missing-download {
   display: grid;
   grid-template-columns: 20px 1fr;
   gap: 8px;
@@ -303,47 +319,57 @@ a:hover {
   line-height: 1.25;
 }
 
-.side-downloads a::before,
-.download-list a::before {
-  content: "W";
+.download::before,
+.missing-download::before {
   display: grid;
   place-items: center;
   width: 16px;
   height: 18px;
   border: 1px solid #b9b9b9;
   background: #fff;
-  color: #2d65b7;
   font-size: 10px;
   font-weight: 700;
 }
 
-.side-downloads a[href$=".pdf"]::before,
-.download-list a[href$=".pdf"]::before {
+.download.pdf::before {
   content: "P";
   color: #d83a37;
 }
 
-.content-card {
+.download.word::before {
+  content: "W";
+  color: #2d65b7;
+}
+
+.missing-download {
+  color: #777;
+  font-weight: 700;
+}
+
+.missing-download::before {
+  content: "!";
+  color: #777;
+}
+
+.missing-note {
+  display: block;
+  margin-top: 2px;
+  color: #777;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.article-column {
   max-width: 760px;
+}
+
+.article-page {
+  display: none;
   padding-bottom: 60px;
 }
 
-.breadcrumb {
-  grid-column: 1 / -1;
-  margin: 18px 0 12px;
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.content-card > .breadcrumb {
-  display: none;
-}
-
-h1,
-h2,
-h3,
-p {
-  margin-top: 0;
+.article-page.active-page {
+  display: block;
 }
 
 h2 {
@@ -379,89 +405,58 @@ em {
   font-style: italic;
 }
 
-.time {
-  margin-bottom: 42px;
-}
-
 .info-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
-.task-card,
 .download-card {
   display: grid;
   gap: 8px;
-  min-height: 92px;
+  min-height: 118px;
   padding: 16px;
+  color: var(--text);
   border: 1px solid var(--line);
   background: #fff;
 }
 
-.task-card span,
+.download-card:hover {
+  border-color: var(--green-tab);
+  text-decoration: none;
+}
+
 .download-card span {
   color: var(--muted);
   font-size: 14px;
 }
 
-.task-card strong,
 .download-card strong {
   color: var(--purple);
-  font-size: 16px;
 }
 
 .download-card small {
-  color: var(--text);
   font-size: 14px;
+  font-weight: 400;
   line-height: 1.35;
 }
 
-.download-list {
-  display: grid;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.download-list a {
-  display: grid;
-  grid-template-columns: 20px 1fr;
-  gap: 8px;
-  align-items: start;
-  color: #3c3444;
-  font-size: 15px;
-  line-height: 1.25;
-}
-
 @media (max-width: 900px) {
-  .page-shell {
+  .page-width {
     max-width: calc(100vw - 32px);
   }
 
-  .site-nav {
-    position: static;
-  }
-
-  .nav-grid,
-  .layout {
+  .nav-inner,
+  .content-grid {
     display: block;
   }
 
-  .nav-grid::before {
-    display: none;
-  }
-
-  .nav-grid a {
-    display: flex;
-  }
-
   .quick-tools {
-    margin-left: 0;
     padding: 10px 0;
   }
 
-  .exam-hero h1 {
+  .project-hero h1 {
     padding-left: 18px;
     font-size: 34px;
   }
@@ -470,7 +465,7 @@ em {
     display: none;
   }
 
-  .content-card {
+  .article-column {
     max-width: none;
     margin-top: 26px;
   }

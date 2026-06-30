@@ -1,8 +1,8 @@
-﻿const pathPrefix = location.pathname.includes("/opdrachten/") ? "../" : "";
+const pathPrefix = location.pathname.includes("/opdrachten/") ? "../" : "";
 const currentFile = location.pathname.split("/").pop() || "index.html";
-const sidePanel = document.querySelector(".side-panel");
-const layout = document.querySelector(".layout");
-const navGrid = document.querySelector(".nav-grid");
+const inAssignments = location.pathname.includes("/opdrachten/");
+const menu = document.querySelector(".assignment-menu");
+const downloadsPanel = document.querySelector("#downloads-panel");
 
 const menuGroups = [
   { target: "index.html", label: "Instructie" },
@@ -17,7 +17,7 @@ const menuGroups = [
     ]
   },
   {
-    label: "5 Klanttevredenheid",
+    label: "5 Aftersales",
     children: [
       { target: "opdrachten/opdracht-5-1.html", label: "5.1 Onderzoeken klanttevredenheid" },
       { target: "opdrachten/opdracht-5-2.html", label: "5.2 Opstellen verbetervoorstel" }
@@ -25,20 +25,58 @@ const menuGroups = [
   }
 ];
 
-const downloads = [
-  ["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.docx", "Bijlage 1 CRM-systeem TrueCacao"],
-  ["downloads/bijlagen/Bijlage 2 Klanttevredenheidsonderzoek TrueCacao.pdf", "Bijlage 2 Klanttevredenheidsonderzoek TrueCacao"],
-  ["downloads/formats/Format offerte.docx", "Format offerte"],
-  ["downloads/formats/Format orderbevestiging.docx", "Format orderbevestiging"],
-  ["downloads/formats/Format e-mail.docx", "Format e-mail"]
-];
+const downloadsByFile = {
+  "opdracht-1.html": {
+    bijlagen: [["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.docx", "Bijlage 1 CRM-systeem TrueCacao", "word"]],
+    formats: []
+  },
+  "opdracht-2.html": {
+    bijlagen: [["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.docx", "Bijlage 1 CRM-systeem TrueCacao", "word"]],
+    formats: []
+  },
+  "opdracht-3.html": {
+    bijlagen: [["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.docx", "Bijlage 1 CRM-systeem TrueCacao", "word"]],
+    formats: [["downloads/formats/Format offerte.docx", "Format offerte", "word"]]
+  },
+  "opdracht-4-1.html": {
+    bijlagen: [["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.docx", "Bijlage 1 CRM-systeem TrueCacao", "word"]],
+    formats: [["downloads/formats/Format orderbevestiging.docx", "Format orderbevestiging", "word"]]
+  },
+  "opdracht-4-2.html": {
+    bijlagen: [["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.docx", "Bijlage 1 CRM-systeem TrueCacao", "word"]],
+    formats: [["downloads/formats/Format e-mail.docx", "Format e-mail", "word"]]
+  },
+  "opdracht-5-1.html": {
+    bijlagen: [],
+    formats: [["downloads/formats/Format e-mail.docx", "Format e-mail", "word"]]
+  },
+  "opdracht-5-2.html": {
+    bijlagen: [["downloads/bijlagen/Bijlage 2 Klanttevredenheidsonderzoek TrueCacao.pdf", "Bijlage 2 Klanttevredenheidsonderzoek TrueCacao", "pdf"]],
+    formats: [["downloads/formats/Format e-mail.docx", "Format e-mail", "word"]]
+  },
+  "bijlagen.html": {
+    bijlagen: [
+      ["downloads/bijlagen/Bijlage 1 CRM-systeem TrueCacao.docx", "Bijlage 1 CRM-systeem TrueCacao", "word"],
+      ["downloads/bijlagen/Bijlage 2 Klanttevredenheidsonderzoek TrueCacao.pdf", "Bijlage 2 Klanttevredenheidsonderzoek TrueCacao", "pdf"]
+    ],
+    formats: []
+  },
+  "formats.html": {
+    bijlagen: [],
+    formats: [
+      ["downloads/formats/Format offerte.docx", "Format offerte", "word"],
+      ["downloads/formats/Format orderbevestiging.docx", "Format orderbevestiging", "word"],
+      ["downloads/formats/Format e-mail.docx", "Format e-mail", "word"]
+    ]
+  }
+};
 
 function rootHref(target) {
   return `${pathPrefix}${target}`;
 }
 
 function isActive(target) {
-  if (currentFile === "index.html" && target === "index.html") return true;
+  if (currentFile === "index.html" && target === "index.html" && !inAssignments) return true;
   return target.endsWith(currentFile) && currentFile !== "index.html";
 }
 
@@ -63,57 +101,14 @@ function renderMenuGroup(group, index) {
         <span>${group.label}</span>
         <span class="menu-toggle" aria-hidden="true">${expanded ? "-" : "+"}</span>
       </button>
-      <div class="submenu${expanded ? " open" : ""}" id="${groupId}">
-        ${children}
-      </div>
+      <div class="submenu${expanded ? " open" : ""}" id="${groupId}">${children}</div>
     </div>
   `;
 }
 
-if (navGrid) {
-  navGrid.innerHTML = `
-    <a class="top-tab top-tab-logo" href="${rootHref("../dutchdelight-site/index.html")}" target="_blank" rel="noopener">
-      <img src="${rootHref("../dutchdelight-site/assets/logo-dutchdelight.png")}" alt="DutchDelight Chocolates">
-    </a>
-    <a class="top-tab" href="${rootHref("index.html")}">Examenvoorbereiding</a>
-    <a class="top-tab active" href="${rootHref("index.html")}">Examenopdrachten</a>
-    <div class="quick-tools" aria-label="Snel zoeken">
-      <a class="start-return" href="${rootHref("../index.html")}">Terug naar startmenu</a>
-      <span title="Home">&#8962;</span>
-      <span title="Help">?</span>
-      <input type="search" aria-label="Zoeken" placeholder="Typ zoekterm">
-      <button aria-label="Zoeken">&#8981;</button>
-    </div>
-  `;
-}
-
-if (layout) {
-  const hero = document.createElement("section");
-  hero.className = "exam-hero page-shell";
-  hero.innerHTML = `<h1>Proefexamen SPL P4-K2</h1><img class="hero-logo" src="${rootHref("../dutchdelight-site/assets/logo-dutchdelight.png")}" alt="">`;
-  document.querySelector(".site-nav")?.after(hero);
-
-  const crumb = document.createElement("div");
-  crumb.className = "breadcrumb";
-  crumb.textContent = currentFile === "index.html" ? "home > examenopdrachten" : `home > examenopdrachten > ${document.querySelector("h2")?.textContent.toLowerCase() || ""}`;
-  layout.prepend(crumb);
-}
-
-if (sidePanel) {
-  const bijlagen = downloads.slice(0, 2).map(([target, label]) => `<a href="${rootHref(target)}">${label}</a>`).join("");
-  const formats = downloads.slice(2).map(([target, label]) => `<a href="${rootHref(target)}">${label}</a>`).join("");
-
-  sidePanel.innerHTML = `
-    <nav class="assignment-menu" aria-label="Examenopdrachten">${menuGroups.map(renderMenuGroup).join("")}</nav>
-    <section class="side-downloads" aria-label="Downloads">
-      <h2>Bijlagen</h2>
-      ${bijlagen}
-      <h3>Formats</h3>
-      ${formats}
-    </section>
-  `;
-
-  sidePanel.querySelectorAll(".menu-group").forEach((button) => {
+if (menu) {
+  menu.innerHTML = menuGroups.map(renderMenuGroup).join("");
+  menu.querySelectorAll(".menu-group").forEach((button) => {
     button.addEventListener("click", () => {
       const section = button.closest(".menu-section");
       const submenu = section?.querySelector(".submenu");
@@ -127,3 +122,27 @@ if (sidePanel) {
   });
 }
 
+function appendDownloadSection(title, items) {
+  if (!downloadsPanel || !items.length) return;
+  const heading = document.createElement(title === "Bijlagen" ? "h2" : "h3");
+  heading.textContent = title;
+  downloadsPanel.appendChild(heading);
+
+  items.forEach(([target, label, type]) => {
+    const link = document.createElement("a");
+    link.className = `download ${type}`;
+    link.href = rootHref(target);
+    link.target = "_blank";
+    link.rel = "noopener";
+    if (type === "word" || type === "excel") link.download = "";
+    link.textContent = label;
+    downloadsPanel.appendChild(link);
+  });
+}
+
+if (downloadsPanel) {
+  const downloads = downloadsByFile[currentFile] || { bijlagen: [], formats: [] };
+  downloadsPanel.hidden = !(downloads.bijlagen.length || downloads.formats.length);
+  appendDownloadSection("Bijlagen", downloads.bijlagen);
+  appendDownloadSection("Formats", downloads.formats);
+}
