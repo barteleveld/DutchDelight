@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --ink: #241f21;
   --muted: #6d6266;
   --line: #e7ded5;
@@ -625,6 +625,50 @@ th {
   padding: 42px;
   color: #fff;
   background: var(--cocoa);
+}
+
+.contact-details {
+  margin-top: 48px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-details h2 {
+  margin-top: 0;
+}
+
+.contact-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 28px;
+  margin: 24px 0;
+}
+
+.contact-details-grid dt {
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.contact-details-grid dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.contact-details-grid address {
+  font-style: normal;
+}
+
+.contact-details-grid a {
+  color: var(--cocoa);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contact-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .form-grid {
