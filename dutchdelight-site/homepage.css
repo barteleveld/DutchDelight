@@ -67,7 +67,6 @@
 .partner-inner { justify-content: space-between; gap: 30px; }
 .partner-actions { flex-direction: column; align-items: flex-start; flex-shrink: 0; }
 .partners p { margin-bottom: 0; }
-.copyright { background: #395440; }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .tile, .tile img, .arrow { transition: transform .28s ease, box-shadow .28s ease, background .2s ease; }
