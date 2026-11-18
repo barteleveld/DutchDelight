@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../nav-fix.css">
     <link rel="stylesheet" href="../navigation.css">
+    <link rel="stylesheet" href="contact.css">
+    <script src="contact.js" defer></script>
     <script src="../navigation.js" defer></script>
   </head>
   <body>
@@ -36,40 +38,46 @@
         </details>
       </nav>
     </header>
-    <main id="inhoud" tabindex="-1" class="page">
-      <div class="breadcrumb">dutchdelight.nl &rsaquo; contact</div>
-      <section class="split">
-        <div>
-          <p class="eyebrow">Zakelijk contact</p>
-          <h1>Neem contact op met DutchDelight Chocolates</h1>
-          <p class="lead">Neem contact met ons op voor vragen over Noire, Pulse en TrueCacao, zakelijke bestellingen, distributie, samples of campagneondersteuning. Bel, mail of gebruik het contactformulier.</p>
+    <main id="inhoud" tabindex="-1">
+      <section class="contact-cover">
+        <div class="wrap">
+          <nav class="crumb" aria-label="Kruimelpad"><a href="../index.html">Home</a><span aria-hidden="true">/</span>Contact</nav>
+          <h1>Contact met <em>DutchDelight</em></h1>
+          <p>Een vraag over onze chocolade, een proefbestelling of een samenwerking? Ons team denkt graag met u mee.</p>
+          <a class="cover-link" href="#contactgegevens">Onze contactgegevens <span aria-hidden="true">&darr;</span></a>
         </div>
-        <img src="../assets/lifestyle-business-gifts-office.jpg" alt="Zakelijke klant ontvangt DutchDelight chocoladegeschenk">
       </section>
 
-      <section class="contact-details" aria-labelledby="contactgegevens">
-        <h2 id="contactgegevens">Onze contactgegevens</h2>
-        <dl class="contact-details-grid">
-          <div><dt>Algemene vragen</dt><dd><a href="mailto:info@dutchdelight.nl">info@dutchdelight.nl</a></dd></div>
-          <div><dt>Verkoop en samenwerking</dt><dd><a href="mailto:sales@dutchdelight.nl">sales@dutchdelight.nl</a></dd></div>
-          <div><dt>Telefoon</dt><dd><a href="tel:+31300000000">030 000 00 00</a></dd></div>
-          <div><dt>Adres</dt><dd><address>DutchDelight Chocolates<br>Cacaolaan 12<br>3542 AB Utrecht<br>Nederland</address></dd></div>
-          <div><dt>Website</dt><dd><a href="../index.html">www.dutchdelight.nl</a></dd></div>
-          <div><dt>Bereikbaarheid</dt><dd>Maandag t/m vrijdag<br>09.00 tot 17.00 uur<br>Bezoek op afspraak</dd></div>
-        </dl>
-        <p class="contact-note">DutchDelight Chocolates is een fictieve onderneming. Deze contactgegevens horen bij de onderwijscasus.</p>
-      </section>
+      <div class="wrap contact-layout">
+        <section aria-labelledby="contactgegevens">
+          <h2 id="contactgegevens" tabindex="-1">Direct contact</h2>
+          <dl class="directory">
+            <div><dt>Algemene vragen</dt><dd><a href="mailto:info@dutchdelight.nl">info@dutchdelight.nl</a></dd></div>
+            <div><dt>Verkoop &amp; samenwerking</dt><dd><a href="mailto:sales@dutchdelight.nl">sales@dutchdelight.nl</a></dd></div>
+            <div><dt>Telefoon</dt><dd><a href="tel:+31300000000">030 000 00 00</a></dd></div>
+            <div><dt>Bezoekadres</dt><dd><address>DutchDelight Chocolates<br>Cacaolaan 12<br>3542 AB Utrecht<br>Nederland</address></dd></div>
+            <div><dt>Bereikbaarheid</dt><dd>Maandag t/m vrijdag<br>09.00 tot 17.00 uur<br>Bezoek op afspraak</dd></div>
+            <div><dt>Website</dt><dd><a href="../index.html">www.dutchdelight.nl</a></dd></div>
+          </dl>
+          <button class="copy-contact" type="button" hidden>Kopieer contactgegevens</button>
+          <p class="copy-status" role="status"></p>
+          <p class="case-note">Deze bedrijfsgegevens horen bij de fictieve onderneming DutchDelight Chocolates.</p>
+        </section>
 
-      <h2>Contactformulier</h2>
-      <form class="form-grid" action="#" method="get">
-        <label>Naam<input type="text" name="naam"></label>
-        <label>Bedrijf<input type="text" name="bedrijf"></label>
-        <label>E-mail<input type="email" name="email"></label>
-        <label>Land<input type="text" name="land"></label>
-        <label class="full">Interesse in merk<select name="merk"><option>Noire</option><option>Pulse</option><option>TrueCacao</option><option>Meerdere merken</option></select></label>
-        <label class="full">Bericht<textarea name="bericht" rows="7"></textarea></label>
-        <button class="button" type="submit">Versturen</button>
-      </form>
+        <section class="write-us" aria-labelledby="bericht">
+          <h2 id="bericht">Stuur een bericht</h2>
+          <p>Schrijf uw vraag aan ons verkoopteam. U kunt het concept daarna in uw eigen mailprogramma bekijken en versturen.</p>
+          <form action="mailto:sales@dutchdelight.nl" method="post" enctype="text/plain">
+            <label>Naam<input name="naam" autocomplete="name" required></label>
+            <label>Bedrijf <small>(optioneel)</small><input name="bedrijf" autocomplete="organization"></label>
+            <label>E-mail<input type="email" name="email" autocomplete="email" required></label>
+            <label>Land <small>(optioneel)</small><input name="land" autocomplete="country-name"></label>
+            <label class="full">Interesse in merk<select name="merk"><option>Algemene vraag</option><option>Noire</option><option>Pulse</option><option>TrueCacao</option><option>Meerdere merken</option></select></label>
+            <label class="full">Uw bericht<textarea name="bericht" rows="5" required></textarea></label>
+            <button class="draft full" type="submit">Open e-mailconcept <span aria-hidden="true">&rarr;</span></button>
+          </form>
+        </section>
+      </div>
     </main>
     <footer class="footer"><div class="footer-inner"><section><h3>Service</h3><a href="../business/index.html">Word klant</a><a href="../beeldbank/index.html">Beeldbank</a></section><section><h3>Merken</h3><a href="../brands/noire/index.html">Noire</a><a href="../brands/pulse/index.html">Pulse</a><a href="../brands/truecacao/index.html">TrueCacao</a></section><section><h3>Over ons</h3><a href="../about/index.html">Wie wij zijn</a><a href="../../wijzigingen.html">Wijzigingen</a></section><section><h3>Contact</h3><a href="index.html">Contactformulier</a><img class="footer-logo" src="../assets/logo-dutchdelight.png" alt=""></section></div></footer>
     <div class="copyright"><div class="copyright-inner">&copy;2026 DutchDelight Chocolates</div></div>
