@@ -1,0 +1,90 @@
+.overview { color: #302a30; }
+.overview h1, .overview h2, .overview h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.1;
+  font-weight: 400;
+}
+.overview h1 { font-size: 62px; }
+.overview h2 { font-size: 37px; }
+.overview h3 { font-size: 24px; }
+.spread .wrap { padding-block: 24px 40px; }
+.spread h1 { max-width: 18ch; margin-top: 26px; }
+.spread p { font-size: 19px; max-width: 53ch; line-height: 1.5; margin: 14px 0 0; }
+.trail { display: flex; gap: 10px; align-items: center; font-size: 13px; }
+.trail a { text-decoration: underline; text-underline-offset: 4px; }
+.business-cover, .about-cover { color: white; background-color: #302735; background-size: cover; }
+.business-cover { background-image: linear-gradient(90deg, #271929ef, #352331cf 44%, #38243222 90%), url("assets/lifestyle-business-gifts-office.jpg"); background-position: center 48%; }
+.about-cover { background-image: linear-gradient(90deg, #172820ee, #192b24cf 45%, #1d33242e 90%), url("assets/lifestyle-packing-business-order.jpg"); background-position: center 42%; }
+.spread em { color: #f5dfed; }
+.about-cover em { color: #dce9d7; }
+.story-link, .folio-action { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-weight: 700; }
+.story-link { color: var(--cocoa); text-decoration: underline; text-underline-offset: 4px; }
+.spread .story-link { color: white; margin-top: 12px; }
+.portfolio-intro { background: #f4eef3; color: #402842; }
+.portfolio-intro h1 { max-width: none; }
+.folios { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; padding-block: 32px 52px; }
+.folio { display: flex; flex-direction: column; border-radius: 5px; overflow: hidden; color: white; font-weight: 400; }
+.folio.noire { background: #322329; }
+.folio.pulse { background: #4e2466; }
+.folio.truecacao { background: #294d3b; }
+.folio-photo { overflow: hidden; aspect-ratio: 1.82; }
+.folio-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.folio-text { padding: 20px 24px 12px; display: flex; flex-direction: column; flex: 1; }
+.folio-text p { margin: 10px 0; }
+.folio-text .market { margin: 0 0 8px; font-size: 13px; font-weight: 700; color: #f3e2e6; }
+.folio-action { margin-top: auto; justify-content: space-between; border-top: 1px solid #ffffff45; }
+.folio:hover { text-decoration: none; }
+.folio:hover .folio-action span { transform: translateX(3px); }
+.comparison, .support-band { background: #f4f4f0; padding-block: 46px; }
+.comparison .table-wrap { margin-top: 22px; border-color: #d5d9d1; }
+.comparison table { font-size: 15px; }
+.comparison thead th { background: #2c4337; color: white; }
+.comparison tbody th { color: #2b4035; background: #f7f9f5; }
+.band { padding-block: 48px; }
+.line-grid { margin-top: 20px; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px 34px; }
+.line-item { border-top: 2px solid #c7b8c9; padding-top: 16px; }
+.line-item p { color: #5d535c; margin: 9px 0 0; }
+.editorial, .photo-story, .reading-grid { display: grid; align-items: start; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: 7%; }
+.editorial p, .photo-story p, .reading-grid p { font-size: 17px; max-width: 64ch; }
+.editorial > div > p:first-child { margin-top: 0; }
+.ledger { margin: 0; }
+.ledger > div { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: 14px; padding: 14px 0; border-top: 1px solid #cbd1c8; }
+.ledger dt { font-weight: 700; }
+.ledger dd { margin: 0; }
+.photo-story { align-items: center; }
+.photo-story img { width: 100%; aspect-ratio: 1.65; object-fit: cover; border-radius: 4px; }
+.pulse-feature { background: #f3edf7; padding-block: 40px; }
+.figures { background: #eff3ed; }
+.figures .wrap { display: grid; grid-template-columns: repeat(4,1fr); padding-block: 28px; gap: 18px; }
+.figures p { margin: 0; padding-left: 16px; border-left: 2px solid #a1b499; color: #334337; }
+.figures strong { display: block; font: 38px/1.1 Georgia,serif; margin-bottom: 4px; }
+.reading-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .folio-photo img, .folio-action span { transition: transform .22s ease; }
+  .folio:hover img { transform: scale(1.035); }
+}
+@media (max-width: 860px) {
+  .folio-text { padding: 16px 14px 8px; }
+  .line-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 720px) {
+  .spread .wrap { padding-block: 16px 26px; }
+  .overview h1 { font-size: 42px; }
+  .overview h2 { font-size: 30px; }
+  .spread h1 { margin-top: 20px; }
+  .spread p, .editorial p, .reading-grid p, .photo-story p { font-size: 16px; }
+  .business-cover, .about-cover { background-position: 65% center; background-blend-mode: normal, luminosity; }
+  .folios, .editorial, .photo-story, .reading-grid { grid-template-columns: 1fr; gap: 22px; }
+  .folios { padding-block: 20px 32px; }
+  .folio-photo { aspect-ratio: 2.2; }
+  .folio-text { padding-inline: 20px; }
+  .line-grid { grid-template-columns: 1fr; gap: 18px; }
+  .line-item { padding-top: 12px; }
+  .band, .support-band, .comparison, .pulse-feature { padding-block: 32px; }
+  .figures .wrap { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .figures strong { font-size: 32px; }
+  .comparison table { min-width: 620px; }
+  .comparison th:first-child { position: sticky; left: 0; }
+  .ledger > div { grid-template-columns: 1fr; gap: 3px; }
+}

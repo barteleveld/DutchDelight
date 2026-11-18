@@ -18,17 +18,19 @@ html { scroll-padding-top: 88px; }
   display: flex;
   align-items: center;
 }
-.nav-row { min-height: 68px; gap: 28px; }
+.nav-row { min-height: 68px; gap: 8px; }
 .wordmark { margin-right: auto; display: flex; }
 .wordmark img { width: 175px; }
-.wide-links { gap: 28px; }
+.wide-links { gap: 6px; }
 .nav-row a, .more summary { font-size: 14px; }
 .nav-row a:not(.wordmark), .more summary {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
 }
-.nav-row a:hover { color: var(--cocoa); text-underline-offset: 5px; }
+.nav-row a:not(.wordmark), .more summary { padding-inline: 12px; border-radius: 5px; }
+.nav-row a:hover, .nav-row a:focus-visible { text-decoration: none; }
+.nav-row a:not(.wordmark):hover { color: var(--cocoa); background: #f6f1f6; }
 .more { position: relative; }
 .more summary { gap: 9px; padding-inline: 13px; cursor: pointer; font-weight: 700; list-style: none; }
 .more summary::-webkit-details-marker { display: none; }
@@ -49,14 +51,23 @@ html { scroll-padding-top: 88px; }
 .menu-links a { width: 100%; padding: 0 14px; }
 .menu-links a:hover { background: #f5eff5; }
 .nav-row .narrow-link:not(.wordmark) { display: none; }
-.nav-row [aria-current="page"] { text-decoration: underline; text-underline-offset: 5px; }
+.nav-row [aria-current="page"] { color: #49244e; background: #eee4ef; }
+.nav-row [aria-current="page"]::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex: none;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
 .noire-theme .mast, .noire-theme .menu-links { background: #120d0e; color: #fff; border-color: #4c3932; }
-.noire-theme .nav-row a:hover, .noire-theme .more summary:hover, .noire-theme .more[open] summary { background: #392b28; color: #fff; }
+.noire-theme .nav-row a:not(.wordmark):hover, .noire-theme .nav-row [aria-current="page"], .noire-theme .more summary:hover, .noire-theme .more[open] summary { background: #392b28; color: #fff; }
 
 @media (max-width: 720px) {
   html { scroll-padding-top: 70px; }
   .wrap { width: calc(100% - 36px); }
-  .nav-row { min-height: 57px; gap: 14px; }
+  .nav-row { min-height: 57px; gap: 4px; }
   .wordmark img { width: 135px; }
   .wide-links { display: none; }
   .nav-row .narrow-link:not(.wordmark) { display: flex; }
