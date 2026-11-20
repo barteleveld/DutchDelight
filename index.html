@@ -3,80 +3,54 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Proefexamens Junior Accountmanager</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Examenkiezer | Proefexamens Junior Accountmanager</title>
+    <link rel="stylesheet" href="kiezer.css">
   </head>
   <body>
-    <section id="start-page" class="start-page" aria-labelledby="start-title">
-      <div class="start-shell">
-        <div class="start-copy">
-          <p class="start-eyebrow">Proefexamens Junior Accountmanager</p>
-          <h1 id="start-title">Kies examenproject en versie</h1>
-          <p>Elk examenproject krijgt drie versies binnen dezelfde DutchDelight-casuswereld. De letter geeft de versie aan; het submerk bepaalt de context.</p>
+    <a class="skip" href="#examens">Naar de examens</a>
+    <header class="mast">
+      <div class="shell mast-inner">
+        <a href="dutchdelight-site/index.html" aria-label="Naar de bedrijfswebsite van DutchDelight"><img src="dutchdelight-site/assets/logo-dutchdelight.svg" alt="DutchDelight Chocolates" width="720" height="180"></a>
+        <a class="news" href="wijzigingen.html">Wijzigingen <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </header>
+    <main class="shell" id="examens" tabindex="-1">
+      <div class="intro">
+        <p class="kicker">Junior Accountmanager</p>
+        <h1>Kies je proefexamen.</h1>
+      </div>
+      <div class="matrix">
+        <div class="brands" aria-hidden="true">
+          <div class="axis"><span>Examenonderdeel</span><small>Kerntaak / code</small></div>
+          <div class="brand brand-A"><img src="dutchdelight-site/assets/product-velvet-orange-photo.jpg" alt=""><div><small>Versie A</small><b>Noire</b></div></div>
+          <div class="brand brand-B"><img src="dutchdelight-site/assets/pulse-sports-canteen.jpg" alt=""><div><small>Versie B</small><b>Pulse</b></div></div>
+          <div class="brand brand-C"><img src="dutchdelight-site/assets/truecacao-cafe-display.jpg" alt=""><div><small>Versie C</small><b>TrueCacao</b></div></div>
         </div>
-
-        <div class="legend" aria-label="Statussen">
-          <span class="status-pill status-unavailable">Niet beschikbaar</span>
-          <span class="status-pill status-development">In ontwikkeling</span>
-          <span class="status-pill status-available">Beschikbaar</span>
-        </div>
-
-        <div class="exam-grid" aria-label="Keuze examenproject en versie">
-          <section class="exam-project" aria-labelledby="b1-k1-title">
-            <div class="project-heading">
-              <span>B1-K1</span>
-              <h2 id="b1-k1-title">Onderzoekt de customer journey</h2>
-            </div>
-            <div class="version-list">
-              <button class="version-card unavailable" type="button" data-exam-choice="b1-k1-a"><strong>A Noire</strong><span>Niet beschikbaar</span></button>
-              <button class="version-card available" type="button" data-exam-choice="b1-k1-b"><strong>B Pulse</strong><span>Beschikbaar</span></button>
-              <button class="version-card unavailable" type="button" data-exam-choice="b1-k1-c"><strong>C TrueCacao</strong><span>Niet beschikbaar</span></button>
-            </div>
-          </section>
-
-          <section class="exam-project" aria-labelledby="b1-k2-title">
-            <div class="project-heading">
-              <span>B1-K2</span>
-              <h2 id="b1-k2-title">Verzorgt marketing en communicatie-activiteiten</h2>
-            </div>
-            <div class="version-list">
-              <button class="version-card unavailable" type="button" data-exam-choice="b1-k2-a"><strong>A Noire</strong><span>Niet beschikbaar</span></button>
-              <button class="version-card available" type="button" data-exam-choice="b1-k2-b"><strong>B Pulse</strong><span>Beschikbaar</span></button>
-              <button class="version-card unavailable" type="button" data-exam-choice="b1-k2-c"><strong>C TrueCacao</strong><span>Niet beschikbaar</span></button>
-            </div>
-          </section>
-
-          <section class="exam-project" aria-labelledby="p4-k1-title">
-            <div class="project-heading">
-              <span>P4-K1</span>
-              <h2 id="p4-k1-title">Voert accountmanagement uit</h2>
-            </div>
-            <div class="version-list">
-              <button class="version-card available" type="button" data-exam-choice="p4-k1-a"><strong>A Noire</strong><span>Beschikbaar</span></button>
-              <button class="version-card unavailable" type="button" data-exam-choice="p4-k1-b"><strong>B Pulse</strong><span>Niet beschikbaar</span></button>
-              <button class="version-card unavailable" type="button" data-exam-choice="p4-k1-c"><strong>C TrueCacao</strong><span>Niet beschikbaar</span></button>
-            </div>
-          </section>
-
-          <section class="exam-project" aria-labelledby="p4-k2-title">
-            <div class="project-heading">
-              <span>P4-K2</span>
-              <h2 id="p4-k2-title">Geeft uitvoering aan verkooptrajecten</h2>
-            </div>
-            <div class="version-list">
-              <button class="version-card unavailable" type="button" data-exam-choice="p4-k2-a"><strong>A Noire</strong><span>Niet beschikbaar</span></button>
-              <button class="version-card unavailable" type="button" data-exam-choice="p4-k2-b"><strong>B Pulse</strong><span>Niet beschikbaar</span></button>
-              <button class="version-card development" type="button" data-exam-choice="p4-k2-c"><strong>C TrueCacao</strong><span>In ontwikkeling</span></button>
-            </div>
-          </section>
-        </div>
-
-        <section id="choice-message" class="choice-message" hidden>
-          <h2>Deze versie is nog niet beschikbaar</h2>
-          <p>Deze versie staat alvast in het keuzescherm. Zodra het proefexamen is gebouwd, kan de student hier starten.</p>
+        <section class="exam" aria-labelledby="b1-k1">
+          <h2 id="b1-k1"><b>B1-K1</b><span>Onderzoekt de customer journey</span></h2>
+          <div class="choice off"><strong>A <span>Noire</span></strong><small>Niet beschikbaar</small></div>
+          <a class="choice ready" href="b1-k1-customer-journey/index.html" aria-label="B1-K1, versie B Pulse, Beschikbaar"><strong>B <span>Pulse</span></strong><small>Beschikbaar</small></a>
+          <div class="choice off"><strong>C <span>TrueCacao</span></strong><small>Niet beschikbaar</small></div>
+        </section>
+        <section class="exam" aria-labelledby="b1-k2">
+          <h2 id="b1-k2"><b>B1-K2</b><span>Verzorgt marketing en communicatie-activiteiten</span></h2>
+          <div class="choice off"><strong>A <span>Noire</span></strong><small>Niet beschikbaar</small></div>
+          <a class="choice ready" href="b1-k2-marketing-communicatie/index.html" aria-label="B1-K2, versie B Pulse, Beschikbaar"><strong>B <span>Pulse</span></strong><small>Beschikbaar</small></a>
+          <div class="choice off"><strong>C <span>TrueCacao</span></strong><small>Niet beschikbaar</small></div>
+        </section>
+        <section class="exam" aria-labelledby="p4-k1">
+          <h2 id="p4-k1"><b>P4-K1</b><span>Voert accountmanagement uit</span></h2>
+          <a class="choice ready" href="p4-k1-accountmanagement/index.html" aria-label="P4-K1, versie A Noire, Beschikbaar"><strong>A <span>Noire</span></strong><small>Beschikbaar</small></a>
+          <div class="choice off"><strong>B <span>Pulse</span></strong><small>Niet beschikbaar</small></div>
+          <div class="choice off"><strong>C <span>TrueCacao</span></strong><small>Niet beschikbaar</small></div>
+        </section>
+        <section class="exam" aria-labelledby="p4-k2">
+          <h2 id="p4-k2"><b>P4-K2</b><span>Geeft uitvoering aan verkooptrajecten</span></h2>
+          <div class="choice off"><strong>A <span>Noire</span></strong><small>Niet beschikbaar</small></div>
+          <div class="choice off"><strong>B <span>Pulse</span></strong><small>Niet beschikbaar</small></div>
+          <a class="choice draft" href="p4-k2-verkooptraject/index.html" aria-label="P4-K2, versie C TrueCacao, In ontwikkeling"><strong>C <span>TrueCacao</span></strong><small>In ontwikkeling</small></a>
         </section>
       </div>
-    </section>
-    <script src="script.js"></script>
+    </main>
   </body>
 </html>
