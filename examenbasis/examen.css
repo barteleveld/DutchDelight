@@ -1,0 +1,108 @@
+:root {
+  color-scheme: light;
+  --ink: #25282a;
+  --copper: #83401f;
+  --charcoal: #25282a;
+  --selected: #f4e8da;
+  --muted: #605d58;
+  --rule: #dcdad6;
+  --subtle: #f6f2ec;
+  font: 16px/1.58 "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+}
+* { box-sizing: border-box; }
+body, h1, h2, h3, h4, p { margin: 0; }
+body { background: #fff; }
+a { color: var(--copper); }
+button { font: inherit; cursor: pointer; }
+a:focus-visible, button:focus-visible { outline: 3px solid #995322; outline-offset: 2px; }
+[hidden] { display: none !important; }
+.page-width { width: min(1180px, calc(100% - 64px)); margin-inline: auto; }
+.skip { position: absolute; z-index: 2; transform: translateY(-140%); padding: 10px; background: white; }
+.skip:focus { transform: none; }
+.platform-nav { border-bottom: 1px solid var(--rule); }
+.nav-inner, .tabs-main, .quick-tools { display: flex; align-items: stretch; }
+.nav-inner { justify-content: space-between; gap: 16px; }
+.platform-nav a { display: flex; align-items: center; min-height: 60px; padding: 8px 14px; color: var(--copper); text-decoration: none; font-size: 14px; font-weight: 650; }
+.platform-nav .top-tab-logo { padding: 0 28px 0 0; }
+.top-tab-logo img { display: block; width: 154px; }
+.top-tab.active { background: var(--selected); box-shadow: inset 0 -3px var(--copper); }
+.platform-nav a:hover { background-color: var(--subtle); }
+.start-return::before { content: "\2190"; margin-right: 7px; }
+.exam-banner { color: white; background: var(--charcoal); overflow: hidden; }
+.banner-inner { position: relative; isolation: isolate; padding-block: 17px 19px; }
+.banner-inner::after { content: ""; position: absolute; z-index: -1; inset: 0 0 0 auto; width: min(39%, 405px); background: linear-gradient(90deg,var(--charcoal) 0%,transparent 35%),var(--exam-photo, none) center 48% / cover; }
+.banner-copy p { color: #f1d4ad; font-size: 13px; font-weight: 650; }
+.banner-copy h1 { font: 400 37px/1.2 Georgia, serif; margin: 2px 0 4px; }
+.banner-copy span { font-size: 14px; }
+.layout { display: grid; grid-template-columns: 286px minmax(0,1fr); gap: 46px; align-items: start; padding-block: 27px 64px; }
+.left-column { min-width: 0; padding-right: 19px; border-right: 1px solid var(--rule); }
+.menu-label, .mobile-menu { font-size: 13px; font-weight: 700; }
+.menu-label { margin: 0 10px 8px; color: var(--muted); }
+.assignment-menu { display: grid; gap: 3px; }
+.menu-item, .menu-group, .submenu-item, .mobile-menu { color: var(--ink); background: transparent; text-decoration: none; border: 0; border-radius: 4px; }
+.menu-item, .menu-group, .submenu-item { padding: 10px; display: block; line-height: 1.4; font-size: 14px; }
+.menu-item, .menu-group { font-weight: 650; }
+.menu-group, .mobile-menu { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 10px; text-align: left; }
+.menu-toggle { font-family: Arial,sans-serif; color: var(--copper); }
+.menu-item:hover, .menu-group:hover, .submenu-item:hover { background: var(--subtle); }
+.menu-item.active, .submenu-item.active { color: var(--copper); background: var(--selected); box-shadow: inset 3px 0 var(--copper); font-weight: 700; }
+.menu-group.active { color: var(--copper); }
+.submenu { display: none; margin: 0 0 3px 12px; border-left: 1px solid var(--rule); padding-left: 5px; }
+.submenu.open { display: grid; }
+.mobile-menu { display: none; }
+.downloads { margin-top: 23px; border-top: 1px solid var(--rule); }
+.downloads :is(h2,h3) { margin: 15px 0 4px; font-size: 16px; }
+.download { display: grid; grid-template-columns: 41px minmax(0,1fr); align-items: baseline; gap: 8px; padding: 9px 0; color: var(--ink); text-decoration: none; font-size: 14px; line-height: 1.4; overflow-wrap: anywhere; }
+.download:hover { color: var(--copper); text-decoration: underline; }
+.download::before { padding: 3px 1px; text-align: center; border-radius: 3px; font: 700 10px/1.4 Arial,sans-serif; }
+.pdf::before { content: "PDF"; background: #f9e9e5; color: #873e35; }
+.word::before { content: "DOCX"; background: #e8eff9; color: #34557c; }
+.excel::before { content: "XLSX"; background: #efece5; color: #554b37; }
+.article-column { max-width: 76ch; min-width: 0; overflow-wrap: break-word; }
+.breadcrumb { color: var(--muted); font-size: 13px; margin-bottom: 12px; }
+.article-column h2 { font: 600 29px/1.18 "Segoe UI", Arial,sans-serif; margin-bottom: 15px; }
+.article-column h3 { margin: 26px 0 6px; font-size: 21px; color: var(--copper); }
+.article-column h4 { margin: 18px 0 5px; font-size: 17px; }
+.article-column p + p { margin-top: 13px; }
+.article-column h2 + p:has(> strong:only-child) { color: #5b4b37; font-size: 14px; border-left: 3px solid #ae8150; padding-left: 9px; }
+.article-column ul, .article-column ol { padding-left: 22px; margin-block: 8px; }
+.article-column li { margin: 4px 0; }
+.article-column a { text-underline-offset: 3px; font-weight: 600; }
+.email-card { margin: 20px 0; padding: 18px; border-left: 3px solid #a88348; background: #faf7f1; }
+.email-card dl { margin: 0 0 15px; }
+.email-card dl div { display: grid; grid-template-columns: 70px minmax(0,1fr); gap: 8px; padding: 3px 0; }
+.email-card dt { font-weight: 650; }
+.email-card dd { margin: 0; }
+@media (max-width: 850px) {
+  .page-width { width: calc(100% - 36px); }
+  .layout { grid-template-columns: 225px minmax(0,1fr); gap: 24px; }
+  .platform-nav a { padding-inline: 10px; }
+  .platform-nav .top-tab-logo { padding-right: 12px; }
+}
+@media (max-width: 700px) {
+  .nav-inner { position: relative; display: block; }
+  .tabs-main { display: grid; grid-template-columns: auto auto; justify-content: start; }
+  .platform-nav .top-tab-logo { grid-column: 1/-1; width: max-content; min-height: 44px; }
+  .top-tab-logo img { width: 125px; }
+  .platform-nav a { min-height: 44px; font-size: 13px; padding-inline: 8px; }
+  .quick-tools { position: absolute; right: 0; top: 0; }
+  .quick-tools a { padding-inline: 0; }
+  .banner-inner { padding-block: 12px; }
+  .banner-inner::after { display: none; }
+  .banner-copy h1 { font-size: 28px; }
+  .layout { display: block; padding-top: 13px; }
+  .left-column { padding: 0; border: 0; }
+  .menu-label { display: none; }
+  .mobile-menu { display: flex; padding: 10px 12px; min-height: 44px; background: var(--subtle); color: var(--copper); }
+  .mobile-menu[aria-expanded="false"] + .assignment-menu { display: none; }
+  .assignment-menu { margin-block: 5px; }
+  .downloads { margin-top: 10px; }
+  .downloads :is(h2,h3) { margin-top: 8px; }
+  .article-column { border-top: 1px solid var(--rule); margin-top: 15px; padding-top: 14px; }
+  .article-column h2 { font-size: 24px; }
+}
+body[data-brand="Noire"] { --exam-photo: url("../dutchdelight-site/assets/product-velvet-orange-photo.jpg"); }
+body[data-brand="Pulse"] { --exam-photo: url("../dutchdelight-site/assets/pulse-sports-canteen.jpg"); }
+body[data-brand="TrueCacao"] { --exam-photo: url("../dutchdelight-site/assets/truecacao-cafe-display.jpg"); }
+.download.text::before { content: "TXT"; background: #eeeae5; color: #554b37; }

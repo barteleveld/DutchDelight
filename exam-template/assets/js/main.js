@@ -1,24 +1,11 @@
-const pathPrefix = location.pathname.includes("/opdrachten/") ? "../" : "";
-const currentFile = location.pathname.split("/").pop() || "index.html";
-const menu = document.querySelector(".assignment-menu");
+const menuGroups = [{target: "index.html", label: "Instructie"}, {label: "1 Klantgesprek", children: [{target: "opdrachten/opdracht-1.html", label: "1.1 Bereid een klantgesprek voor"}]}];
+const downloadsByFile = {"opdracht-1.html": {bijlagen: [], formats: [["downloads/formats/Gespreksnotitie.txt", "Gespreksnotitie", "text"]]}};
 
-const pages = [
-  ["index.html", "Instructie"],
-  ["opdrachten/opdracht-1.html", "1 Eerste opdracht"]
-];
-
-function rootHref(target) {
-  return `${pathPrefix}${target}`;
-}
-
-function isActive(target) {
-  if (currentFile === "index.html" && target === "index.html") return true;
-  return target.endsWith(currentFile) && currentFile !== "index.html";
-}
-
-if (menu) {
-  menu.innerHTML = pages.map(([target, label]) => {
-    const active = isActive(target) ? " active" : "";
-    return `<a class="menu-item${active}" href="${rootHref(target)}">${label}</a>`;
-  }).join("");
-}
+window.examConfig = {
+  "title": "Examenbasis",
+  "subject": "Junior Accountmanager",
+  "version": "Voorbeeldversie",
+  "brand": "",
+  menuGroups,
+  downloadsByFile
+};
