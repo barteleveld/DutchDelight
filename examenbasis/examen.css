@@ -70,8 +70,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid #995322; outline-offs
 .article-column li { margin: 4px 0; }
 .article-column a { text-underline-offset: 3px; font-weight: 600; }
 .email-card { margin: 20px 0; padding: 18px; border-left: 3px solid #a88348; background: #faf7f1; }
-.email-card dl { margin: 0 0 15px; }
-.email-card dl div { display: grid; grid-template-columns: 70px minmax(0,1fr); gap: 8px; padding: 3px 0; }
+.email-card dl { display: grid; grid-template-columns: max-content minmax(0,1fr); column-gap: 12px; margin: 0 0 15px; }
+.email-card dl div { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; padding: 3px 0; }
 .email-card dt { font-weight: 650; }
 .email-card dd { margin: 0; }
 @media (max-width: 850px) {
