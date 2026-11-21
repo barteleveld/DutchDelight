@@ -7,8 +7,6 @@
   const downloadsPanel = document.querySelector("#downloads-panel");
 
   const { title, subject, version, brand, menuGroups, downloadsByFile } = window.examConfig;
-  const firstAssignment = menuGroups.flatMap(group => group.children || [group])
-    .find(item => item.target.startsWith("opdrachten/"));
   const site = rootHref("../dutchdelight-site/");
   document.body.dataset.brand = brand;
   const shell = document.querySelector(".exam-header");
@@ -16,8 +14,7 @@
     <nav class="platform-nav" aria-label="Hoofdnavigatie"><div class="page-width nav-inner">
       <div class="tabs-main">
         <a class="top-tab top-tab-logo" href="${site}index.html" target="_blank" rel="noopener"><img src="${site}assets/logo-dutchdelight.png" alt="DutchDelight Chocolates"></a>
-        <a class="top-tab${inAssignments ? "" : " active"}" href="${rootHref("index.html")}">Examenvoorbereiding</a>
-        <a class="top-tab${inAssignments ? " active" : ""}" href="${rootHref(firstAssignment?.target || "index.html")}">Examenopdrachten</a>
+        <a class="top-tab active" href="${rootHref("index.html")}">Examenopdrachten</a>
       </div>
       <div class="quick-tools"><a class="start-return" href="${rootHref("../index.html")}">Terug naar startmenu</a></div>
     </div></nav>
