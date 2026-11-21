@@ -1,9 +1,3 @@
-const pathPrefix = location.pathname.includes("/opdrachten/") ? "../" : "";
-const currentFile = location.pathname.split("/").pop() || "index.html";
-const inAssignments = location.pathname.includes("/opdrachten/");
-const menu = document.querySelector(".assignment-menu");
-const downloadsPanel = document.querySelector("#downloads-panel");
-
 const menuGroups = [
   { target: "index.html", label: "Instructie" },
   { target: "opdrachten/opdracht-1.html", label: "1 Accountprofiel en accountanalyse" },
@@ -48,41 +42,11 @@ const downloadsByFile = {
   }
 };
 
-function rootHref(target) {
-  return `${pathPrefix}${target}`;
-}
-
-function isActive(target) {
-  if (currentFile === "index.html" && target === "index.html" && !inAssignments) return true;
-  return target.endsWith(currentFile) && currentFile !== "index.html";
-}
-
-if (menu) {
-  menu.innerHTML = menuGroups.map((group) => (
-    `<a class="menu-item${isActive(group.target) ? " active" : ""}" href="${rootHref(group.target)}">${group.label}</a>`
-  )).join("");
-}
-
-function appendDownloadSection(title, items) {
-  if (!downloadsPanel || !items.length) return;
-  const heading = document.createElement(title === "Bijlagen" ? "h2" : "h3");
-  heading.textContent = title;
-  downloadsPanel.appendChild(heading);
-  items.forEach(([target, label, type]) => {
-    const link = document.createElement("a");
-    link.className = `download ${type}`;
-    link.href = rootHref(target);
-    link.target = "_blank";
-    link.rel = "noopener";
-    if (type === "word" || type === "excel") link.download = "";
-    link.textContent = label;
-    downloadsPanel.appendChild(link);
-  });
-}
-
-if (downloadsPanel) {
-  const downloads = downloadsByFile[currentFile] || { bijlagen: [], formats: [] };
-  downloadsPanel.hidden = !(downloads.bijlagen.length || downloads.formats.length);
-  appendDownloadSection("Bijlagen", downloads.bijlagen);
-  appendDownloadSection("Formats", downloads.formats);
-}
+window.examConfig = {
+  title: "Proefexamen P4-K1",
+  subject: "Accountmanagement",
+  version: "Versie A",
+  brand: "Noire",
+  menuGroups,
+  downloadsByFile
+};
